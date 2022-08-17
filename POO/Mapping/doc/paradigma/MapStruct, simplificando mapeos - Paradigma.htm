@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="icon" type="image/png" href="https://www.paradigmadigital.com/assets/img/logo/favicon.png">
+    <link rel="manifest" href="https://www.paradigmadigital.com/manifest.json">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-commons.css">
+
+    <link rel="preconnect" href="https://www.paradigmadigital.com/">
+    <link rel="alternate" type="application/rss+xml" href="https://www.paradigmadigital.com/feed/" title="Paradigma Digital Feed">
+
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-blocks.css" as="style" type="text/css" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="stylesheet" href="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-parallax.css" as="style" type="text/css" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <link rel="stylesheet" href="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-filters.css" as="style" type="text/css" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-blog.css" as="style" type="text/css" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-errors.css" as="style" type="text/css" onload="this.onload=null;this.rel='stylesheet'">
+
+    
+    <script type="text/javascript" async="" src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/js"></script><script type="text/javascript" async="" src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/linkid.js"></script><script async="" src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/analytics.js"></script><script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.paradigmadigital.com/dev/mapstruct/"
+        },
+        "headline": "MapStruct, simplificando mapeos
+",
+        "image": [
+            "https%3A//www.paradigmadigital.com/assets/img/defaults/post.svg"
+        ],
+        "datePublished": "2019-05-27T07:19:00.000Z",
+        "dateModified": "2022-05-18T12:03:23.968Z",
+        "author": {
+            "@type": "Person",
+            "name": "Raúl Martínez"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Paradigma Digital",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.paradigmadigital.com/assets/img/logo/logo.svg"
+            }
+        },
+        "description": "¿A qué debe su fama MapStruct? Esta herramienta facilita el mapeo de objetos entre sí ahorrándonos codificarlos a mano. Te contamos cómo funciona en el blog
+"
+        }
+    </script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+    
+    
+    
+
+
+    
+    
+        
+    
+
+    <title>MapStruct, simplificando mapeos
+ - Paradigma</title>
+    <meta name="title" content="MapStruct, simplificando mapeos
+ - Paradigma">
+
+    
+    
+    <meta name="description" content="¿A qué debe su fama MapStruct? Esta herramienta facilita el mapeo de objetos entre sí ahorrándonos codificarlos a mano. Te contamos cómo funciona en…">
+
+    <link rel="canonical" href="https://www.paradigmadigital.com/dev/mapstruct/">
+    
+
+    <meta property="fb:pages" content="300325170013920">
+    <meta name="google-site-verification" content="ISk1yAO3TvmSPbhF0Hacl75Mo0bpBLNP1SoXvhOUkWE">
+
+    
+    <meta name="theme-color" content="#FF4745">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.paradigmadigital.com/dev/mapstruct/">
+<meta property="twitter:title" content="MapStruct, simplificando mapeos
+">
+<meta property="twitter:description" content="¿A qué debe su fama MapStruct? Esta herramienta facilita el mapeo de objetos entre sí ahorrándonos codificarlos a mano. Te contamos cómo funciona en…">
+
+<!-- Open Graph / Facebook -->
+
+    <meta property="og:locale" content="es_ES">
+    
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.paradigmadigital.com/dev/mapstruct/">
+<meta property="og:title" content="MapStruct, simplificando mapeos
+">
+<meta property="og:description" content="¿A qué debe su fama MapStruct? Esta herramienta facilita el mapeo de objetos entre sí ahorrándonos codificarlos a mano. Te contamos cómo funciona en…">
+
+
+    <meta property="twitter:image" content="https://www.paradigmadigital.com/assets/img/defaults/post.svg">
+    <meta property="og:image" content="https://www.paradigmadigital.com/assets/img/defaults/post.svg">
+
+
+
+    
+
+    
+
+    
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Paradigma Digital",
+    "@id": "https://www.paradigmadigital.com/#organization",
+    "url": "https://www.paradigmadigital.com/",
+    "logo": "https://www.paradigmadigital.com/assets/img/logo/paradigma-logos/horizontal/paradigma_digital_logo_default.svg",
+    "sameAs": [
+      "https://www.youtube.com/c/ParadigmaDigital",
+      "https://www.linkedin.com/company/paradigmadigital/",
+      "https://www.instagram.com/paradigma_digital/",
+      "https://twitter.com/paradigmate"
+    ],
+    "description": "Ayudamos a nuestros clientes a convertir la tecnología en su superpoder y a usarla con responsabilidad para dejar una huella positiva en el mundo, al mismo tiempo que ellos mismos se transforman",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Vía de las Dos Castillas, 33 - Ática 2",
+      "addressRegion": "Madrid",
+      "addressLocality": "Pozuelo de Alarcón",
+      "postalCode": "28224",
+      "addressCountry": "España"
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "91 352 59 42",
+      "contactType": "customer service"
+    }]
+  }
+</script>
+
+    <script>
+        var _env = {
+            searchAPI: 'https://bridge.paradigmadigital.com/search/',
+            commentsAPI: 'https://bridge.paradigmadigital.com/comments/',
+            pollsAPI: 'https://bridge.paradigmadigital.com/polls/',
+            sitePath: 'https://www.paradigmadigital.com',
+            assetsPath: 'https://www.paradigmadigital.com/assets/',
+            defaultPostImg: 'img/defaults/post.svg',
+            siteLang: 'es',
+            eventCatSlug: 'eventos',
+        };
+
+        function checkES6Support() {
+            "use strict";
+            if (typeof Symbol == "undefined") return false;
+            try {
+                eval("class Foo {}");
+                eval("var bar = (x) => x+1");
+            } catch (e) { return false; }
+            return true;
+        }
+
+        var es6Enabled = checkES6Support();
+
+        function PdLoadScript(fileName, display, moment = 'domReady') {
+            display = typeof display !== 'undefined' ?  display : false;
+            var load = true;
+            if (display === 'desktop' && window.outerWidth < 768) {
+                load = false;
+            }
+
+            if (!load) { return; }
+
+            var path = _env.assetsPath + 'js/';
+            if (!es6Enabled) { path += 'es5/'; }
+
+            var script = document.createElement('script');
+            script.src = path + fileName;
+
+            if (moment === 'domReady') {
+              // document.ready
+              document.addEventListener("DOMContentLoaded", function(){
+                  document.querySelector('#loadedScripts').appendChild(script);
+              });
+            } else {
+              setTimeout(() => {
+                document.querySelector('#loadedScripts').appendChild(script);
+              }, moment)
+
+            }
+
+        }
+
+        // missing forEach on NodeList for IE11
+        if (window.NodeList && !NodeList.prototype.forEach) {
+            NodeList.prototype.forEach = Array.prototype.forEach;
+        }
+</script>
+
+    
+    
+    <script>
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) {
+                return parts.pop().split(';').shift();
+            }
+            return false;
+        };
+
+        // google analitycs
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            if (getCookie('pd-cookies-analytics')) {
+              ga('create', 'UA-2282690-1', 'auto');
+            } else {
+              ga('create', 'UA-2282690-1', 'auto', {
+                'storage': 'none',
+                'anonymizeIp': true,
+                'clientId': window.localStorage.getItem('googleAnalyticsClientId')
+              });
+            }
+
+            ga(function(tracker) {
+              window.localStorage.setItem('googleAnalyticsClientId', tracker.get('clientId'));
+            });
+
+            ga('require', 'GTM-T8K7N3F');
+            ga('require', 'linkid');
+            ga('send', 'pageview');
+
+      if (getCookie('pd-cookies-analytics')) {
+        
+
+        // Start of HubSpot Embed Code
+        var script = document.createElement('script');
+            script.id = 'hs-script-loader';
+            script.src = '//js.hs-scripts.com/2189055.js';
+
+        document.head.append(script);
+        // End of HubSpot Embed Code
+      }
+    </script>
+
+    
+
+<script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/prism.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/clipboard.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/v2.js"></script><style type="text/css" id="hs-form-style3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990">.fn-date-picker.pika-single{z-index:9999;display:block;position:relative;color:#333;background:#fff;border:1px solid #ccc;border-bottom-color:#bbb;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;*zoom:1}.fn-date-picker.pika-single.is-hidden{display:none}.fn-date-picker.pika-single.is-bound{position:absolute;box-shadow:0 5px 15px -5px rgba(0,0,0,.5)}.fn-date-picker.pika-single:after,.fn-date-picker.pika-single:before{content:" ";display:table}.fn-date-picker.pika-single:after{clear:both}.fn-date-picker .pika-lendar{float:left;width:240px;margin:8px}.fn-date-picker .pika-title{position:relative;text-align:center}.fn-date-picker .pika-title select{cursor:pointer;position:absolute;z-index:9998;margin:0;left:0;top:5px;filter:alpha(opacity=0);opacity:0}.fn-date-picker .pika-label{display:inline-block;*display:inline;position:relative;z-index:9999;overflow:hidden;margin:0;padding:5px 3px;font-size:14px;line-height:20px;font-weight:700;background-color:#fff}.fn-date-picker .pika-next,.fn-date-picker .pika-prev{display:block;cursor:pointer;position:relative;outline:none;border:0;padding:0;width:20px;height:30px;text-indent:20px;white-space:nowrap;overflow:hidden;background-color:transparent;background-position:50%;background-repeat:no-repeat;background-size:75% 75%;opacity:.5;*position:absolute;*top:0}.fn-date-picker .pika-next:hover,.fn-date-picker .pika-prev:hover{opacity:1}.fn-date-picker .pika-next.is-disabled,.fn-date-picker .pika-prev.is-disabled{cursor:default;opacity:.2}.fn-date-picker .is-rtl .pika-next,.fn-date-picker .pika-prev{float:left;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==");*left:0}.fn-date-picker .is-rtl .pika-prev,.fn-date-picker .pika-next{float:right;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=");*right:0}.fn-date-picker .pika-select{display:inline-block;*display:inline}.fn-date-picker .pika-table{width:100%;border-collapse:collapse;border-spacing:0;border:0}.fn-date-picker .pika-table td,.fn-date-picker .pika-table th{width:14.285714285714286%;padding:0}.fn-date-picker .pika-table th{color:#999;font-size:12px;line-height:25px;font-weight:700;text-align:center}.fn-date-picker .pika-table abbr{border-bottom:none;cursor:help}.fn-date-picker .pika-button{cursor:pointer;display:block;-moz-box-sizing:border-box;box-sizing:border-box;outline:none;border:0;margin:0;width:100%;padding:5px;color:#666;font-size:12px;line-height:15px;text-align:right;background:#f5f5f5}.fn-date-picker .pika-button:hover{color:#fff!important;background:#ff8000!important;box-shadow:none!important;border-radius:3px!important}.fn-date-picker .is-today .pika-button{color:#3af;font-weight:700}.fn-date-picker .is-selected .pika-button{color:#fff;font-weight:700;background:#3af;box-shadow:inset 0 1px 3px #178fe5;border-radius:3px}.fn-date-picker .is-disabled .pika-button{pointer-events:none;cursor:default;color:#999;opacity:.3}.fn-date-picker .pika-week{font-size:11px;color:#999}
+
+.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .inputs-list.inline-list li{vertical-align:top;display:inline-block;word-wrap:break-word;padding-right:16px}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .inputs-list.inline-list li:after{clear:both}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .inputs-list.inline-list li input{float:left}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .inputs-list.inline-list.inline-list-2 li{width:50%}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .inputs-list.inline-list.inline-list-2 li:nth-child(2n){padding-right:0}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .inputs-list.inline-list.inline-list-3 li{width:33%}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .inputs-list.inline-list.inline-list-3 li:nth-child(3n){width:34%;padding-right:0}.hs-fieldtype-intl-phone.hs-input{padding:0;background:none;border:none;height:auto}.hs-fieldtype-intl-phone.hs-input:after{clear:both;content:" ";display:table}.hs-fieldtype-intl-phone.hs-input .hs-input{margin-bottom:0}.hs-fieldtype-intl-phone.hs-input input{width:68%!important;float:right}.hs-fieldtype-intl-phone.hs-input select{float:left;width:30%!important}@media (max-device-width:480px) and (min-device-width:320px),(max-width:400px){.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990>.hs-phone>.input>.hs-fieldtype-intl-phone.hs-input>input.hs-input{width:68%!important}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990>.hs-phone>.input>.hs-fieldtype-intl-phone.hs-input>select.hs-input{width:30%!important}}.hs-input-range-container{width:95%}.hs-input-range-container div{display:inline-block;line-height:50px}.hs-input-range-container .hs-input-range{width:90%;height:40px}.hs-input-range-container .hs-input-range>*{vertical-align:middle}.hs-input-range-container .hs-input-range input{margin:0 5px;width:85%}.hs-input-range-container .hs-input-range-value-container{width:10%}.hs-input-range-container .hs-input{width:100%!important;margin-right:1px;background-color:#fff;text-align:center}.hs-input-range__slider{appearance:none;margin:0;height:30px;overflow:hidden;cursor:pointer}.hs-input-range__slider:focus{outline:none}.hs-input-range__slider::-webkit-slider-runnable-track{width:100%;height:30px;background:linear-gradient(180deg,#0199ff,#0199ff) 100% 50%/100% 3px no-repeat transparent}.hs-input-range__slider::-webkit-slider-thumb{position:relative;appearance:none;height:13px;width:13px;background:#0199ff;border-radius:100%;border:0;top:50%;margin-top:-7.5px;box-shadow:1px 0 0 -5px #cfcfcf,2px 0 0 -5px #cfcfcf,3px 0 0 -5px #cfcfcf,4px 0 0 -5px #cfcfcf,5px 0 0 -5px #cfcfcf,6px 0 0 -5px #cfcfcf,7px 0 0 -5px #cfcfcf,8px 0 0 -5px #cfcfcf,9px 0 0 -5px #cfcfcf,10px 0 0 -5px #cfcfcf,11px 0 0 -5px #cfcfcf,12px 0 0 -5px #cfcfcf,13px 0 0 -5px #cfcfcf,14px 0 0 -5px #cfcfcf,15px 0 0 -5px #cfcfcf,16px 0 0 -5px #cfcfcf,17px 0 0 -5px #cfcfcf,18px 0 0 -5px #cfcfcf,19px 0 0 -5px #cfcfcf,20px 0 0 -5px #cfcfcf,21px 0 0 -5px #cfcfcf,22px 0 0 -5px #cfcfcf,23px 0 0 -5px #cfcfcf,24px 0 0 -5px #cfcfcf,25px 0 0 -5px #cfcfcf,26px 0 0 -5px #cfcfcf,27px 0 0 -5px #cfcfcf,28px 0 0 -5px #cfcfcf,29px 0 0 -5px #cfcfcf,30px 0 0 -5px #cfcfcf,31px 0 0 -5px #cfcfcf,32px 0 0 -5px #cfcfcf,33px 0 0 -5px #cfcfcf,34px 0 0 -5px #cfcfcf,35px 0 0 -5px #cfcfcf,36px 0 0 -5px #cfcfcf,37px 0 0 -5px #cfcfcf,38px 0 0 -5px #cfcfcf,39px 0 0 -5px #cfcfcf,40px 0 0 -5px #cfcfcf,41px 0 0 -5px #cfcfcf,42px 0 0 -5px #cfcfcf,43px 0 0 -5px #cfcfcf,44px 0 0 -5px #cfcfcf,45px 0 0 -5px #cfcfcf,46px 0 0 -5px #cfcfcf,47px 0 0 -5px #cfcfcf,48px 0 0 -5px #cfcfcf,49px 0 0 -5px #cfcfcf,50px 0 0 -5px #cfcfcf,51px 0 0 -5px #cfcfcf,52px 0 0 -5px #cfcfcf,53px 0 0 -5px #cfcfcf,54px 0 0 -5px #cfcfcf,55px 0 0 -5px #cfcfcf,56px 0 0 -5px #cfcfcf,57px 0 0 -5px #cfcfcf,58px 0 0 -5px #cfcfcf,59px 0 0 -5px #cfcfcf,60px 0 0 -5px #cfcfcf,61px 0 0 -5px #cfcfcf,62px 0 0 -5px #cfcfcf,63px 0 0 -5px #cfcfcf,64px 0 0 -5px #cfcfcf,65px 0 0 -5px #cfcfcf,66px 0 0 -5px #cfcfcf,67px 0 0 -5px #cfcfcf,68px 0 0 -5px #cfcfcf,69px 0 0 -5px #cfcfcf,70px 0 0 -5px #cfcfcf,71px 0 0 -5px #cfcfcf,72px 0 0 -5px #cfcfcf,73px 0 0 -5px #cfcfcf,74px 0 0 -5px #cfcfcf,75px 0 0 -5px #cfcfcf,76px 0 0 -5px #cfcfcf,77px 0 0 -5px #cfcfcf,78px 0 0 -5px #cfcfcf,79px 0 0 -5px #cfcfcf,80px 0 0 -5px #cfcfcf,81px 0 0 -5px #cfcfcf,82px 0 0 -5px #cfcfcf,83px 0 0 -5px #cfcfcf,84px 0 0 -5px #cfcfcf,85px 0 0 -5px #cfcfcf,86px 0 0 -5px #cfcfcf,87px 0 0 -5px #cfcfcf,88px 0 0 -5px #cfcfcf,89px 0 0 -5px #cfcfcf,90px 0 0 -5px #cfcfcf,91px 0 0 -5px #cfcfcf,92px 0 0 -5px #cfcfcf,93px 0 0 -5px #cfcfcf,94px 0 0 -5px #cfcfcf,95px 0 0 -5px #cfcfcf,96px 0 0 -5px #cfcfcf,97px 0 0 -5px #cfcfcf,98px 0 0 -5px #cfcfcf,99px 0 0 -5px #cfcfcf,100px 0 0 -5px #cfcfcf,101px 0 0 -5px #cfcfcf,102px 0 0 -5px #cfcfcf,103px 0 0 -5px #cfcfcf,104px 0 0 -5px #cfcfcf,105px 0 0 -5px #cfcfcf,106px 0 0 -5px #cfcfcf,107px 0 0 -5px #cfcfcf,108px 0 0 -5px #cfcfcf,109px 0 0 -5px #cfcfcf,110px 0 0 -5px #cfcfcf,111px 0 0 -5px #cfcfcf,112px 0 0 -5px #cfcfcf,113px 0 0 -5px #cfcfcf,114px 0 0 -5px #cfcfcf,115px 0 0 -5px #cfcfcf,116px 0 0 -5px #cfcfcf,117px 0 0 -5px #cfcfcf,118px 0 0 -5px #cfcfcf,119px 0 0 -5px #cfcfcf,120px 0 0 -5px #cfcfcf,121px 0 0 -5px #cfcfcf,122px 0 0 -5px #cfcfcf,123px 0 0 -5px #cfcfcf,124px 0 0 -5px #cfcfcf,125px 0 0 -5px #cfcfcf,126px 0 0 -5px #cfcfcf,127px 0 0 -5px #cfcfcf,128px 0 0 -5px #cfcfcf,129px 0 0 -5px #cfcfcf,130px 0 0 -5px #cfcfcf,131px 0 0 -5px #cfcfcf,132px 0 0 -5px #cfcfcf,133px 0 0 -5px #cfcfcf,134px 0 0 -5px #cfcfcf,135px 0 0 -5px #cfcfcf,136px 0 0 -5px #cfcfcf,137px 0 0 -5px #cfcfcf,138px 0 0 -5px #cfcfcf,139px 0 0 -5px #cfcfcf,140px 0 0 -5px #cfcfcf,141px 0 0 -5px #cfcfcf,142px 0 0 -5px #cfcfcf,143px 0 0 -5px #cfcfcf,144px 0 0 -5px #cfcfcf,145px 0 0 -5px #cfcfcf,146px 0 0 -5px #cfcfcf,147px 0 0 -5px #cfcfcf,148px 0 0 -5px #cfcfcf,149px 0 0 -5px #cfcfcf,150px 0 0 -5px #cfcfcf,151px 0 0 -5px #cfcfcf,152px 0 0 -5px #cfcfcf,153px 0 0 -5px #cfcfcf,154px 0 0 -5px #cfcfcf,155px 0 0 -5px #cfcfcf,156px 0 0 -5px #cfcfcf,157px 0 0 -5px #cfcfcf,158px 0 0 -5px #cfcfcf,159px 0 0 -5px #cfcfcf,160px 0 0 -5px #cfcfcf,161px 0 0 -5px #cfcfcf,162px 0 0 -5px #cfcfcf,163px 0 0 -5px #cfcfcf,164px 0 0 -5px #cfcfcf,165px 0 0 -5px #cfcfcf,166px 0 0 -5px #cfcfcf,167px 0 0 -5px #cfcfcf,168px 0 0 -5px #cfcfcf,169px 0 0 -5px #cfcfcf,170px 0 0 -5px #cfcfcf,171px 0 0 -5px #cfcfcf,172px 0 0 -5px #cfcfcf,173px 0 0 -5px #cfcfcf,174px 0 0 -5px #cfcfcf,175px 0 0 -5px #cfcfcf,176px 0 0 -5px #cfcfcf,177px 0 0 -5px #cfcfcf,178px 0 0 -5px #cfcfcf,179px 0 0 -5px #cfcfcf,180px 0 0 -5px #cfcfcf,181px 0 0 -5px #cfcfcf,182px 0 0 -5px #cfcfcf,183px 0 0 -5px #cfcfcf,184px 0 0 -5px #cfcfcf,185px 0 0 -5px #cfcfcf,186px 0 0 -5px #cfcfcf,187px 0 0 -5px #cfcfcf,188px 0 0 -5px #cfcfcf,189px 0 0 -5px #cfcfcf,190px 0 0 -5px #cfcfcf,191px 0 0 -5px #cfcfcf,192px 0 0 -5px #cfcfcf,193px 0 0 -5px #cfcfcf,194px 0 0 -5px #cfcfcf,195px 0 0 -5px #cfcfcf,196px 0 0 -5px #cfcfcf,197px 0 0 -5px #cfcfcf,198px 0 0 -5px #cfcfcf,199px 0 0 -5px #cfcfcf,200px 0 0 -5px #cfcfcf,201px 0 0 -5px #cfcfcf,202px 0 0 -5px #cfcfcf,203px 0 0 -5px #cfcfcf,204px 0 0 -5px #cfcfcf,205px 0 0 -5px #cfcfcf,206px 0 0 -5px #cfcfcf,207px 0 0 -5px #cfcfcf,208px 0 0 -5px #cfcfcf,209px 0 0 -5px #cfcfcf,210px 0 0 -5px #cfcfcf,211px 0 0 -5px #cfcfcf,212px 0 0 -5px #cfcfcf,213px 0 0 -5px #cfcfcf,214px 0 0 -5px #cfcfcf,215px 0 0 -5px #cfcfcf,216px 0 0 -5px #cfcfcf,217px 0 0 -5px #cfcfcf,218px 0 0 -5px #cfcfcf,219px 0 0 -5px #cfcfcf,220px 0 0 -5px #cfcfcf,221px 0 0 -5px #cfcfcf,222px 0 0 -5px #cfcfcf,223px 0 0 -5px #cfcfcf,224px 0 0 -5px #cfcfcf,225px 0 0 -5px #cfcfcf,226px 0 0 -5px #cfcfcf,227px 0 0 -5px #cfcfcf,228px 0 0 -5px #cfcfcf,229px 0 0 -5px #cfcfcf,230px 0 0 -5px #cfcfcf,231px 0 0 -5px #cfcfcf,232px 0 0 -5px #cfcfcf,233px 0 0 -5px #cfcfcf,234px 0 0 -5px #cfcfcf,235px 0 0 -5px #cfcfcf,236px 0 0 -5px #cfcfcf,237px 0 0 -5px #cfcfcf,238px 0 0 -5px #cfcfcf,239px 0 0 -5px #cfcfcf,240px 0 0 -5px #cfcfcf,241px 0 0 -5px #cfcfcf,242px 0 0 -5px #cfcfcf,243px 0 0 -5px #cfcfcf,244px 0 0 -5px #cfcfcf,245px 0 0 -5px #cfcfcf,246px 0 0 -5px #cfcfcf,247px 0 0 -5px #cfcfcf,248px 0 0 -5px #cfcfcf,249px 0 0 -5px #cfcfcf,250px 0 0 -5px #cfcfcf,251px 0 0 -5px #cfcfcf,252px 0 0 -5px #cfcfcf,253px 0 0 -5px #cfcfcf,254px 0 0 -5px #cfcfcf,255px 0 0 -5px #cfcfcf,256px 0 0 -5px #cfcfcf,257px 0 0 -5px #cfcfcf,258px 0 0 -5px #cfcfcf,259px 0 0 -5px #cfcfcf,260px 0 0 -5px #cfcfcf,261px 0 0 -5px #cfcfcf,262px 0 0 -5px #cfcfcf,263px 0 0 -5px #cfcfcf,264px 0 0 -5px #cfcfcf,265px 0 0 -5px #cfcfcf,266px 0 0 -5px #cfcfcf,267px 0 0 -5px #cfcfcf,268px 0 0 -5px #cfcfcf,269px 0 0 -5px #cfcfcf,270px 0 0 -5px #cfcfcf,271px 0 0 -5px #cfcfcf,272px 0 0 -5px #cfcfcf,273px 0 0 -5px #cfcfcf,274px 0 0 -5px #cfcfcf,275px 0 0 -5px #cfcfcf,276px 0 0 -5px #cfcfcf,277px 0 0 -5px #cfcfcf,278px 0 0 -5px #cfcfcf,279px 0 0 -5px #cfcfcf,280px 0 0 -5px #cfcfcf,281px 0 0 -5px #cfcfcf,282px 0 0 -5px #cfcfcf,283px 0 0 -5px #cfcfcf,284px 0 0 -5px #cfcfcf,285px 0 0 -5px #cfcfcf,286px 0 0 -5px #cfcfcf,287px 0 0 -5px #cfcfcf,288px 0 0 -5px #cfcfcf,289px 0 0 -5px #cfcfcf,290px 0 0 -5px #cfcfcf,291px 0 0 -5px #cfcfcf,292px 0 0 -5px #cfcfcf,293px 0 0 -5px #cfcfcf,294px 0 0 -5px #cfcfcf,295px 0 0 -5px #cfcfcf,296px 0 0 -5px #cfcfcf,297px 0 0 -5px #cfcfcf,298px 0 0 -5px #cfcfcf,299px 0 0 -5px #cfcfcf,300px 0 0 -5px #cfcfcf,301px 0 0 -5px #cfcfcf,302px 0 0 -5px #cfcfcf,303px 0 0 -5px #cfcfcf,304px 0 0 -5px #cfcfcf,305px 0 0 -5px #cfcfcf,306px 0 0 -5px #cfcfcf,307px 0 0 -5px #cfcfcf,308px 0 0 -5px #cfcfcf,309px 0 0 -5px #cfcfcf,310px 0 0 -5px #cfcfcf,311px 0 0 -5px #cfcfcf,312px 0 0 -5px #cfcfcf,313px 0 0 -5px #cfcfcf,314px 0 0 -5px #cfcfcf,315px 0 0 -5px #cfcfcf,316px 0 0 -5px #cfcfcf,317px 0 0 -5px #cfcfcf,318px 0 0 -5px #cfcfcf,319px 0 0 -5px #cfcfcf,320px 0 0 -5px #cfcfcf,321px 0 0 -5px #cfcfcf,322px 0 0 -5px #cfcfcf,323px 0 0 -5px #cfcfcf,324px 0 0 -5px #cfcfcf,325px 0 0 -5px #cfcfcf,326px 0 0 -5px #cfcfcf,327px 0 0 -5px #cfcfcf,328px 0 0 -5px #cfcfcf,329px 0 0 -5px #cfcfcf,330px 0 0 -5px #cfcfcf,331px 0 0 -5px #cfcfcf,332px 0 0 -5px #cfcfcf,333px 0 0 -5px #cfcfcf,334px 0 0 -5px #cfcfcf,335px 0 0 -5px #cfcfcf,336px 0 0 -5px #cfcfcf,337px 0 0 -5px #cfcfcf,338px 0 0 -5px #cfcfcf,339px 0 0 -5px #cfcfcf,340px 0 0 -5px #cfcfcf,341px 0 0 -5px #cfcfcf,342px 0 0 -5px #cfcfcf,343px 0 0 -5px #cfcfcf,344px 0 0 -5px #cfcfcf,345px 0 0 -5px #cfcfcf,346px 0 0 -5px #cfcfcf,347px 0 0 -5px #cfcfcf,348px 0 0 -5px #cfcfcf,349px 0 0 -5px #cfcfcf,350px 0 0 -5px #cfcfcf,351px 0 0 -5px #cfcfcf,352px 0 0 -5px #cfcfcf,353px 0 0 -5px #cfcfcf,354px 0 0 -5px #cfcfcf,355px 0 0 -5px #cfcfcf,356px 0 0 -5px #cfcfcf,357px 0 0 -5px #cfcfcf,358px 0 0 -5px #cfcfcf,359px 0 0 -5px #cfcfcf,360px 0 0 -5px #cfcfcf,361px 0 0 -5px #cfcfcf,362px 0 0 -5px #cfcfcf,363px 0 0 -5px #cfcfcf,364px 0 0 -5px #cfcfcf,365px 0 0 -5px #cfcfcf,366px 0 0 -5px #cfcfcf,367px 0 0 -5px #cfcfcf,368px 0 0 -5px #cfcfcf,369px 0 0 -5px #cfcfcf,370px 0 0 -5px #cfcfcf,371px 0 0 -5px #cfcfcf,372px 0 0 -5px #cfcfcf,373px 0 0 -5px #cfcfcf,374px 0 0 -5px #cfcfcf,375px 0 0 -5px #cfcfcf,376px 0 0 -5px #cfcfcf,377px 0 0 -5px #cfcfcf,378px 0 0 -5px #cfcfcf,379px 0 0 -5px #cfcfcf,380px 0 0 -5px #cfcfcf,381px 0 0 -5px #cfcfcf,382px 0 0 -5px #cfcfcf,383px 0 0 -5px #cfcfcf,384px 0 0 -5px #cfcfcf,385px 0 0 -5px #cfcfcf,386px 0 0 -5px #cfcfcf,387px 0 0 -5px #cfcfcf,388px 0 0 -5px #cfcfcf,389px 0 0 -5px #cfcfcf,390px 0 0 -5px #cfcfcf,391px 0 0 -5px #cfcfcf,392px 0 0 -5px #cfcfcf,393px 0 0 -5px #cfcfcf,394px 0 0 -5px #cfcfcf,395px 0 0 -5px #cfcfcf,396px 0 0 -5px #cfcfcf,397px 0 0 -5px #cfcfcf,398px 0 0 -5px #cfcfcf,399px 0 0 -5px #cfcfcf,400px 0 0 -5px #cfcfcf,401px 0 0 -5px #cfcfcf,402px 0 0 -5px #cfcfcf,403px 0 0 -5px #cfcfcf,404px 0 0 -5px #cfcfcf,405px 0 0 -5px #cfcfcf,406px 0 0 -5px #cfcfcf,407px 0 0 -5px #cfcfcf,408px 0 0 -5px #cfcfcf,409px 0 0 -5px #cfcfcf,410px 0 0 -5px #cfcfcf,411px 0 0 -5px #cfcfcf,412px 0 0 -5px #cfcfcf,413px 0 0 -5px #cfcfcf,414px 0 0 -5px #cfcfcf,415px 0 0 -5px #cfcfcf,416px 0 0 -5px #cfcfcf,417px 0 0 -5px #cfcfcf,418px 0 0 -5px #cfcfcf,419px 0 0 -5px #cfcfcf,420px 0 0 -5px #cfcfcf,421px 0 0 -5px #cfcfcf,422px 0 0 -5px #cfcfcf,423px 0 0 -5px #cfcfcf,424px 0 0 -5px #cfcfcf,425px 0 0 -5px #cfcfcf,426px 0 0 -5px #cfcfcf,427px 0 0 -5px #cfcfcf,428px 0 0 -5px #cfcfcf,429px 0 0 -5px #cfcfcf,430px 0 0 -5px #cfcfcf,431px 0 0 -5px #cfcfcf,432px 0 0 -5px #cfcfcf,433px 0 0 -5px #cfcfcf,434px 0 0 -5px #cfcfcf,435px 0 0 -5px #cfcfcf,436px 0 0 -5px #cfcfcf,437px 0 0 -5px #cfcfcf,438px 0 0 -5px #cfcfcf,439px 0 0 -5px #cfcfcf,440px 0 0 -5px #cfcfcf,441px 0 0 -5px #cfcfcf,442px 0 0 -5px #cfcfcf,443px 0 0 -5px #cfcfcf,444px 0 0 -5px #cfcfcf,445px 0 0 -5px #cfcfcf,446px 0 0 -5px #cfcfcf,447px 0 0 -5px #cfcfcf,448px 0 0 -5px #cfcfcf,449px 0 0 -5px #cfcfcf,450px 0 0 -5px #cfcfcf,451px 0 0 -5px #cfcfcf,452px 0 0 -5px #cfcfcf,453px 0 0 -5px #cfcfcf,454px 0 0 -5px #cfcfcf,455px 0 0 -5px #cfcfcf,456px 0 0 -5px #cfcfcf,457px 0 0 -5px #cfcfcf,458px 0 0 -5px #cfcfcf,459px 0 0 -5px #cfcfcf,460px 0 0 -5px #cfcfcf,461px 0 0 -5px #cfcfcf,462px 0 0 -5px #cfcfcf,463px 0 0 -5px #cfcfcf,464px 0 0 -5px #cfcfcf,465px 0 0 -5px #cfcfcf,466px 0 0 -5px #cfcfcf,467px 0 0 -5px #cfcfcf,468px 0 0 -5px #cfcfcf,469px 0 0 -5px #cfcfcf,470px 0 0 -5px #cfcfcf,471px 0 0 -5px #cfcfcf,472px 0 0 -5px #cfcfcf,473px 0 0 -5px #cfcfcf,474px 0 0 -5px #cfcfcf,475px 0 0 -5px #cfcfcf,476px 0 0 -5px #cfcfcf,477px 0 0 -5px #cfcfcf,478px 0 0 -5px #cfcfcf,479px 0 0 -5px #cfcfcf,480px 0 0 -5px #cfcfcf,481px 0 0 -5px #cfcfcf,482px 0 0 -5px #cfcfcf,483px 0 0 -5px #cfcfcf,484px 0 0 -5px #cfcfcf,485px 0 0 -5px #cfcfcf,486px 0 0 -5px #cfcfcf,487px 0 0 -5px #cfcfcf,488px 0 0 -5px #cfcfcf,489px 0 0 -5px #cfcfcf,490px 0 0 -5px #cfcfcf,491px 0 0 -5px #cfcfcf,492px 0 0 -5px #cfcfcf,493px 0 0 -5px #cfcfcf,494px 0 0 -5px #cfcfcf,495px 0 0 -5px #cfcfcf,496px 0 0 -5px #cfcfcf,497px 0 0 -5px #cfcfcf,498px 0 0 -5px #cfcfcf,499px 0 0 -5px #cfcfcf,500px 0 0 -5px #cfcfcf,501px 0 0 -5px #cfcfcf,502px 0 0 -5px #cfcfcf,503px 0 0 -5px #cfcfcf,504px 0 0 -5px #cfcfcf,505px 0 0 -5px #cfcfcf,506px 0 0 -5px #cfcfcf,507px 0 0 -5px #cfcfcf,508px 0 0 -5px #cfcfcf,509px 0 0 -5px #cfcfcf,510px 0 0 -5px #cfcfcf,511px 0 0 -5px #cfcfcf,512px 0 0 -5px #cfcfcf,513px 0 0 -5px #cfcfcf,514px 0 0 -5px #cfcfcf,515px 0 0 -5px #cfcfcf,516px 0 0 -5px #cfcfcf,517px 0 0 -5px #cfcfcf,518px 0 0 -5px #cfcfcf,519px 0 0 -5px #cfcfcf,520px 0 0 -5px #cfcfcf,521px 0 0 -5px #cfcfcf,522px 0 0 -5px #cfcfcf,523px 0 0 -5px #cfcfcf,524px 0 0 -5px #cfcfcf,525px 0 0 -5px #cfcfcf,526px 0 0 -5px #cfcfcf,527px 0 0 -5px #cfcfcf,528px 0 0 -5px #cfcfcf,529px 0 0 -5px #cfcfcf,530px 0 0 -5px #cfcfcf,531px 0 0 -5px #cfcfcf,532px 0 0 -5px #cfcfcf,533px 0 0 -5px #cfcfcf,534px 0 0 -5px #cfcfcf,535px 0 0 -5px #cfcfcf,536px 0 0 -5px #cfcfcf,537px 0 0 -5px #cfcfcf,538px 0 0 -5px #cfcfcf,539px 0 0 -5px #cfcfcf,540px 0 0 -5px #cfcfcf,541px 0 0 -5px #cfcfcf,542px 0 0 -5px #cfcfcf,543px 0 0 -5px #cfcfcf,544px 0 0 -5px #cfcfcf,545px 0 0 -5px #cfcfcf,546px 0 0 -5px #cfcfcf,547px 0 0 -5px #cfcfcf,548px 0 0 -5px #cfcfcf,549px 0 0 -5px #cfcfcf,550px 0 0 -5px #cfcfcf,551px 0 0 -5px #cfcfcf,552px 0 0 -5px #cfcfcf,553px 0 0 -5px #cfcfcf,554px 0 0 -5px #cfcfcf,555px 0 0 -5px #cfcfcf,556px 0 0 -5px #cfcfcf,557px 0 0 -5px #cfcfcf,558px 0 0 -5px #cfcfcf,559px 0 0 -5px #cfcfcf,560px 0 0 -5px #cfcfcf,561px 0 0 -5px #cfcfcf,562px 0 0 -5px #cfcfcf,563px 0 0 -5px #cfcfcf,564px 0 0 -5px #cfcfcf,565px 0 0 -5px #cfcfcf,566px 0 0 -5px #cfcfcf,567px 0 0 -5px #cfcfcf,568px 0 0 -5px #cfcfcf,569px 0 0 -5px #cfcfcf,570px 0 0 -5px #cfcfcf,571px 0 0 -5px #cfcfcf,572px 0 0 -5px #cfcfcf,573px 0 0 -5px #cfcfcf,574px 0 0 -5px #cfcfcf,575px 0 0 -5px #cfcfcf,576px 0 0 -5px #cfcfcf,577px 0 0 -5px #cfcfcf,578px 0 0 -5px #cfcfcf,579px 0 0 -5px #cfcfcf,580px 0 0 -5px #cfcfcf,581px 0 0 -5px #cfcfcf,582px 0 0 -5px #cfcfcf,583px 0 0 -5px #cfcfcf,584px 0 0 -5px #cfcfcf,585px 0 0 -5px #cfcfcf,586px 0 0 -5px #cfcfcf,587px 0 0 -5px #cfcfcf,588px 0 0 -5px #cfcfcf,589px 0 0 -5px #cfcfcf,590px 0 0 -5px #cfcfcf,591px 0 0 -5px #cfcfcf,592px 0 0 -5px #cfcfcf,593px 0 0 -5px #cfcfcf,594px 0 0 -5px #cfcfcf,595px 0 0 -5px #cfcfcf,596px 0 0 -5px #cfcfcf,597px 0 0 -5px #cfcfcf,598px 0 0 -5px #cfcfcf,599px 0 0 -5px #cfcfcf,600px 0 0 -5px #cfcfcf,601px 0 0 -5px #cfcfcf,602px 0 0 -5px #cfcfcf,603px 0 0 -5px #cfcfcf,604px 0 0 -5px #cfcfcf,605px 0 0 -5px #cfcfcf,606px 0 0 -5px #cfcfcf,607px 0 0 -5px #cfcfcf,608px 0 0 -5px #cfcfcf,609px 0 0 -5px #cfcfcf,610px 0 0 -5px #cfcfcf,611px 0 0 -5px #cfcfcf,612px 0 0 -5px #cfcfcf,613px 0 0 -5px #cfcfcf,614px 0 0 -5px #cfcfcf,615px 0 0 -5px #cfcfcf,616px 0 0 -5px #cfcfcf,617px 0 0 -5px #cfcfcf,618px 0 0 -5px #cfcfcf,619px 0 0 -5px #cfcfcf,620px 0 0 -5px #cfcfcf,621px 0 0 -5px #cfcfcf,622px 0 0 -5px #cfcfcf,623px 0 0 -5px #cfcfcf,624px 0 0 -5px #cfcfcf,625px 0 0 -5px #cfcfcf,626px 0 0 -5px #cfcfcf,627px 0 0 -5px #cfcfcf,628px 0 0 -5px #cfcfcf,629px 0 0 -5px #cfcfcf,630px 0 0 -5px #cfcfcf,631px 0 0 -5px #cfcfcf,632px 0 0 -5px #cfcfcf,633px 0 0 -5px #cfcfcf,634px 0 0 -5px #cfcfcf,635px 0 0 -5px #cfcfcf,636px 0 0 -5px #cfcfcf,637px 0 0 -5px #cfcfcf,638px 0 0 -5px #cfcfcf,639px 0 0 -5px #cfcfcf,640px 0 0 -5px #cfcfcf,641px 0 0 -5px #cfcfcf,642px 0 0 -5px #cfcfcf,643px 0 0 -5px #cfcfcf,644px 0 0 -5px #cfcfcf,645px 0 0 -5px #cfcfcf,646px 0 0 -5px #cfcfcf,647px 0 0 -5px #cfcfcf,648px 0 0 -5px #cfcfcf,649px 0 0 -5px #cfcfcf,650px 0 0 -5px #cfcfcf,651px 0 0 -5px #cfcfcf,652px 0 0 -5px #cfcfcf,653px 0 0 -5px #cfcfcf,654px 0 0 -5px #cfcfcf,655px 0 0 -5px #cfcfcf,656px 0 0 -5px #cfcfcf,657px 0 0 -5px #cfcfcf,658px 0 0 -5px #cfcfcf,659px 0 0 -5px #cfcfcf,660px 0 0 -5px #cfcfcf,661px 0 0 -5px #cfcfcf,662px 0 0 -5px #cfcfcf,663px 0 0 -5px #cfcfcf,664px 0 0 -5px #cfcfcf,665px 0 0 -5px #cfcfcf,666px 0 0 -5px #cfcfcf,667px 0 0 -5px #cfcfcf,668px 0 0 -5px #cfcfcf,669px 0 0 -5px #cfcfcf,670px 0 0 -5px #cfcfcf,671px 0 0 -5px #cfcfcf,672px 0 0 -5px #cfcfcf,673px 0 0 -5px #cfcfcf,674px 0 0 -5px #cfcfcf,675px 0 0 -5px #cfcfcf,676px 0 0 -5px #cfcfcf,677px 0 0 -5px #cfcfcf,678px 0 0 -5px #cfcfcf,679px 0 0 -5px #cfcfcf,680px 0 0 -5px #cfcfcf,681px 0 0 -5px #cfcfcf,682px 0 0 -5px #cfcfcf,683px 0 0 -5px #cfcfcf,684px 0 0 -5px #cfcfcf,685px 0 0 -5px #cfcfcf,686px 0 0 -5px #cfcfcf,687px 0 0 -5px #cfcfcf,688px 0 0 -5px #cfcfcf,689px 0 0 -5px #cfcfcf,690px 0 0 -5px #cfcfcf,691px 0 0 -5px #cfcfcf,692px 0 0 -5px #cfcfcf,693px 0 0 -5px #cfcfcf,694px 0 0 -5px #cfcfcf,695px 0 0 -5px #cfcfcf,696px 0 0 -5px #cfcfcf,697px 0 0 -5px #cfcfcf,698px 0 0 -5px #cfcfcf,699px 0 0 -5px #cfcfcf,700px 0 0 -5px #cfcfcf,701px 0 0 -5px #cfcfcf,702px 0 0 -5px #cfcfcf,703px 0 0 -5px #cfcfcf,704px 0 0 -5px #cfcfcf,705px 0 0 -5px #cfcfcf,706px 0 0 -5px #cfcfcf,707px 0 0 -5px #cfcfcf,708px 0 0 -5px #cfcfcf,709px 0 0 -5px #cfcfcf,710px 0 0 -5px #cfcfcf,711px 0 0 -5px #cfcfcf,712px 0 0 -5px #cfcfcf,713px 0 0 -5px #cfcfcf,714px 0 0 -5px #cfcfcf,715px 0 0 -5px #cfcfcf,716px 0 0 -5px #cfcfcf,717px 0 0 -5px #cfcfcf,718px 0 0 -5px #cfcfcf,719px 0 0 -5px #cfcfcf,720px 0 0 -5px #cfcfcf,721px 0 0 -5px #cfcfcf,722px 0 0 -5px #cfcfcf,723px 0 0 -5px #cfcfcf,724px 0 0 -5px #cfcfcf,725px 0 0 -5px #cfcfcf,726px 0 0 -5px #cfcfcf,727px 0 0 -5px #cfcfcf,728px 0 0 -5px #cfcfcf,729px 0 0 -5px #cfcfcf,730px 0 0 -5px #cfcfcf,731px 0 0 -5px #cfcfcf,732px 0 0 -5px #cfcfcf,733px 0 0 -5px #cfcfcf,734px 0 0 -5px #cfcfcf,735px 0 0 -5px #cfcfcf,736px 0 0 -5px #cfcfcf,737px 0 0 -5px #cfcfcf,738px 0 0 -5px #cfcfcf,739px 0 0 -5px #cfcfcf,740px 0 0 -5px #cfcfcf,741px 0 0 -5px #cfcfcf,742px 0 0 -5px #cfcfcf,743px 0 0 -5px #cfcfcf,744px 0 0 -5px #cfcfcf,745px 0 0 -5px #cfcfcf,746px 0 0 -5px #cfcfcf,747px 0 0 -5px #cfcfcf,748px 0 0 -5px #cfcfcf,749px 0 0 -5px #cfcfcf,750px 0 0 -5px #cfcfcf,751px 0 0 -5px #cfcfcf,752px 0 0 -5px #cfcfcf,753px 0 0 -5px #cfcfcf,754px 0 0 -5px #cfcfcf,755px 0 0 -5px #cfcfcf,756px 0 0 -5px #cfcfcf,757px 0 0 -5px #cfcfcf,758px 0 0 -5px #cfcfcf,759px 0 0 -5px #cfcfcf,760px 0 0 -5px #cfcfcf,761px 0 0 -5px #cfcfcf,762px 0 0 -5px #cfcfcf,763px 0 0 -5px #cfcfcf,764px 0 0 -5px #cfcfcf,765px 0 0 -5px #cfcfcf,766px 0 0 -5px #cfcfcf,767px 0 0 -5px #cfcfcf,768px 0 0 -5px #cfcfcf,769px 0 0 -5px #cfcfcf,770px 0 0 -5px #cfcfcf,771px 0 0 -5px #cfcfcf,772px 0 0 -5px #cfcfcf,773px 0 0 -5px #cfcfcf,774px 0 0 -5px #cfcfcf,775px 0 0 -5px #cfcfcf,776px 0 0 -5px #cfcfcf,777px 0 0 -5px #cfcfcf,778px 0 0 -5px #cfcfcf,779px 0 0 -5px #cfcfcf,780px 0 0 -5px #cfcfcf,781px 0 0 -5px #cfcfcf,782px 0 0 -5px #cfcfcf,783px 0 0 -5px #cfcfcf,784px 0 0 -5px #cfcfcf,785px 0 0 -5px #cfcfcf,786px 0 0 -5px #cfcfcf,787px 0 0 -5px #cfcfcf,788px 0 0 -5px #cfcfcf,789px 0 0 -5px #cfcfcf,790px 0 0 -5px #cfcfcf,791px 0 0 -5px #cfcfcf,792px 0 0 -5px #cfcfcf,793px 0 0 -5px #cfcfcf,794px 0 0 -5px #cfcfcf,795px 0 0 -5px #cfcfcf,796px 0 0 -5px #cfcfcf,797px 0 0 -5px #cfcfcf,798px 0 0 -5px #cfcfcf,799px 0 0 -5px #cfcfcf,800px 0 0 -5px #cfcfcf,801px 0 0 -5px #cfcfcf,802px 0 0 -5px #cfcfcf,803px 0 0 -5px #cfcfcf,804px 0 0 -5px #cfcfcf,805px 0 0 -5px #cfcfcf,806px 0 0 -5px #cfcfcf,807px 0 0 -5px #cfcfcf,808px 0 0 -5px #cfcfcf,809px 0 0 -5px #cfcfcf,810px 0 0 -5px #cfcfcf,811px 0 0 -5px #cfcfcf,812px 0 0 -5px #cfcfcf,813px 0 0 -5px #cfcfcf,814px 0 0 -5px #cfcfcf,815px 0 0 -5px #cfcfcf,816px 0 0 -5px #cfcfcf,817px 0 0 -5px #cfcfcf,818px 0 0 -5px #cfcfcf,819px 0 0 -5px #cfcfcf,820px 0 0 -5px #cfcfcf,821px 0 0 -5px #cfcfcf,822px 0 0 -5px #cfcfcf,823px 0 0 -5px #cfcfcf,824px 0 0 -5px #cfcfcf,825px 0 0 -5px #cfcfcf,826px 0 0 -5px #cfcfcf,827px 0 0 -5px #cfcfcf,828px 0 0 -5px #cfcfcf,829px 0 0 -5px #cfcfcf,830px 0 0 -5px #cfcfcf,831px 0 0 -5px #cfcfcf,832px 0 0 -5px #cfcfcf,833px 0 0 -5px #cfcfcf,834px 0 0 -5px #cfcfcf,835px 0 0 -5px #cfcfcf,836px 0 0 -5px #cfcfcf,837px 0 0 -5px #cfcfcf,838px 0 0 -5px #cfcfcf,839px 0 0 -5px #cfcfcf,840px 0 0 -5px #cfcfcf,841px 0 0 -5px #cfcfcf,842px 0 0 -5px #cfcfcf,843px 0 0 -5px #cfcfcf,844px 0 0 -5px #cfcfcf,845px 0 0 -5px #cfcfcf,846px 0 0 -5px #cfcfcf,847px 0 0 -5px #cfcfcf,848px 0 0 -5px #cfcfcf,849px 0 0 -5px #cfcfcf,850px 0 0 -5px #cfcfcf,851px 0 0 -5px #cfcfcf,852px 0 0 -5px #cfcfcf,853px 0 0 -5px #cfcfcf,854px 0 0 -5px #cfcfcf,855px 0 0 -5px #cfcfcf,856px 0 0 -5px #cfcfcf,857px 0 0 -5px #cfcfcf,858px 0 0 -5px #cfcfcf,859px 0 0 -5px #cfcfcf,860px 0 0 -5px #cfcfcf,861px 0 0 -5px #cfcfcf,862px 0 0 -5px #cfcfcf,863px 0 0 -5px #cfcfcf,864px 0 0 -5px #cfcfcf,865px 0 0 -5px #cfcfcf,866px 0 0 -5px #cfcfcf,867px 0 0 -5px #cfcfcf,868px 0 0 -5px #cfcfcf,869px 0 0 -5px #cfcfcf,870px 0 0 -5px #cfcfcf,871px 0 0 -5px #cfcfcf,872px 0 0 -5px #cfcfcf,873px 0 0 -5px #cfcfcf,874px 0 0 -5px #cfcfcf,875px 0 0 -5px #cfcfcf,876px 0 0 -5px #cfcfcf,877px 0 0 -5px #cfcfcf,878px 0 0 -5px #cfcfcf,879px 0 0 -5px #cfcfcf,880px 0 0 -5px #cfcfcf,881px 0 0 -5px #cfcfcf,882px 0 0 -5px #cfcfcf,883px 0 0 -5px #cfcfcf,884px 0 0 -5px #cfcfcf,885px 0 0 -5px #cfcfcf,886px 0 0 -5px #cfcfcf,887px 0 0 -5px #cfcfcf,888px 0 0 -5px #cfcfcf,889px 0 0 -5px #cfcfcf,890px 0 0 -5px #cfcfcf,891px 0 0 -5px #cfcfcf,892px 0 0 -5px #cfcfcf,893px 0 0 -5px #cfcfcf,894px 0 0 -5px #cfcfcf,895px 0 0 -5px #cfcfcf,896px 0 0 -5px #cfcfcf,897px 0 0 -5px #cfcfcf,898px 0 0 -5px #cfcfcf,899px 0 0 -5px #cfcfcf,900px 0 0 -5px #cfcfcf,901px 0 0 -5px #cfcfcf,902px 0 0 -5px #cfcfcf,903px 0 0 -5px #cfcfcf,904px 0 0 -5px #cfcfcf,905px 0 0 -5px #cfcfcf,906px 0 0 -5px #cfcfcf,907px 0 0 -5px #cfcfcf,908px 0 0 -5px #cfcfcf,909px 0 0 -5px #cfcfcf,910px 0 0 -5px #cfcfcf,911px 0 0 -5px #cfcfcf,912px 0 0 -5px #cfcfcf,913px 0 0 -5px #cfcfcf,914px 0 0 -5px #cfcfcf,915px 0 0 -5px #cfcfcf,916px 0 0 -5px #cfcfcf,917px 0 0 -5px #cfcfcf,918px 0 0 -5px #cfcfcf,919px 0 0 -5px #cfcfcf,920px 0 0 -5px #cfcfcf,921px 0 0 -5px #cfcfcf,922px 0 0 -5px #cfcfcf,923px 0 0 -5px #cfcfcf,924px 0 0 -5px #cfcfcf,925px 0 0 -5px #cfcfcf,926px 0 0 -5px #cfcfcf,927px 0 0 -5px #cfcfcf,928px 0 0 -5px #cfcfcf,929px 0 0 -5px #cfcfcf,930px 0 0 -5px #cfcfcf,931px 0 0 -5px #cfcfcf,932px 0 0 -5px #cfcfcf,933px 0 0 -5px #cfcfcf,934px 0 0 -5px #cfcfcf,935px 0 0 -5px #cfcfcf,936px 0 0 -5px #cfcfcf,937px 0 0 -5px #cfcfcf,938px 0 0 -5px #cfcfcf,939px 0 0 -5px #cfcfcf,940px 0 0 -5px #cfcfcf,941px 0 0 -5px #cfcfcf,942px 0 0 -5px #cfcfcf,943px 0 0 -5px #cfcfcf,944px 0 0 -5px #cfcfcf,945px 0 0 -5px #cfcfcf,946px 0 0 -5px #cfcfcf,947px 0 0 -5px #cfcfcf,948px 0 0 -5px #cfcfcf,949px 0 0 -5px #cfcfcf,950px 0 0 -5px #cfcfcf,951px 0 0 -5px #cfcfcf,952px 0 0 -5px #cfcfcf,953px 0 0 -5px #cfcfcf,954px 0 0 -5px #cfcfcf,955px 0 0 -5px #cfcfcf,956px 0 0 -5px #cfcfcf,957px 0 0 -5px #cfcfcf,958px 0 0 -5px #cfcfcf,959px 0 0 -5px #cfcfcf,960px 0 0 -5px #cfcfcf,961px 0 0 -5px #cfcfcf,962px 0 0 -5px #cfcfcf,963px 0 0 -5px #cfcfcf,964px 0 0 -5px #cfcfcf,965px 0 0 -5px #cfcfcf,966px 0 0 -5px #cfcfcf,967px 0 0 -5px #cfcfcf,968px 0 0 -5px #cfcfcf,969px 0 0 -5px #cfcfcf,970px 0 0 -5px #cfcfcf,971px 0 0 -5px #cfcfcf,972px 0 0 -5px #cfcfcf,973px 0 0 -5px #cfcfcf,974px 0 0 -5px #cfcfcf,975px 0 0 -5px #cfcfcf,976px 0 0 -5px #cfcfcf,977px 0 0 -5px #cfcfcf,978px 0 0 -5px #cfcfcf,979px 0 0 -5px #cfcfcf,980px 0 0 -5px #cfcfcf,981px 0 0 -5px #cfcfcf,982px 0 0 -5px #cfcfcf,983px 0 0 -5px #cfcfcf,984px 0 0 -5px #cfcfcf,985px 0 0 -5px #cfcfcf,986px 0 0 -5px #cfcfcf,987px 0 0 -5px #cfcfcf,988px 0 0 -5px #cfcfcf,989px 0 0 -5px #cfcfcf,990px 0 0 -5px #cfcfcf,991px 0 0 -5px #cfcfcf,992px 0 0 -5px #cfcfcf,993px 0 0 -5px #cfcfcf,994px 0 0 -5px #cfcfcf,995px 0 0 -5px #cfcfcf,996px 0 0 -5px #cfcfcf,997px 0 0 -5px #cfcfcf,998px 0 0 -5px #cfcfcf,999px 0 0 -5px #cfcfcf,1000px 0 0 -5px #cfcfcf;transition:background-color .15s}.hs-input-range__slider::-moz-range-progress,.hs-input-range__slider::-moz-range-track{width:100%;height:30px;background:linear-gradient(180deg,#cfcfcf,#cfcfcf) 100% 50%/100% 3px no-repeat transparent}.hs-input-range__slider::-moz-range-progress{background:linear-gradient(180deg,#0199ff,#0199ff) 100% 50%/100% 3px no-repeat transparent}.hs-input-range__slider::-moz-range-thumb{appearance:none;margin:0;height:13px;width:13px;background:#0199ff;border-radius:100%;border:0;transition:background-color .15s}.hs-input-range__slider::-ms-track{width:100%;height:30px;border:0;color:transparent;background:transparent}.hs-input-range__slider::-ms-fill-lower{background:linear-gradient(180deg,#0199ff,#0199ff) 100% 50%/100% 3px no-repeat transparent}.hs-input-range__slider::-ms-fill-upper{background:linear-gradient(180deg,#cfcfcf,#cfcfcf) 100% 50%/100% 3px no-repeat transparent}.hs-input-range__slider::-ms-thumb{appearance:none;height:13px;width:13px;background:#0199ff;border-radius:100%;border:0;transition:background-color .15s;top:0;margin:0;box-shadow:none}.hs-input-range__slider:focus::-webkit-slider-thumb,.hs-input-range__slider:hover::-webkit-slider-thumb{background-color:#55c2ff}.hs-input-range__slider:focus::-moz-range-thumb,.hs-input-range__slider:hover::-moz-range-thumb{background-color:#55c2ff}.hs-input-range__slider:focus::-ms-thumb,.hs-input-range__slider:hover::-ms-thumb{background-color:#55c2ff}.hs-input-rating__container{width:95%;margin-bottom:30px;display:table;table-layout:fixed}.hs-input-rating__container section{display:table-row}.hs-input-rating__label{position:relative;display:table-cell;vertical-align:middle;text-align:center}.hs-input-rating__label input,.hs-input-rating__label svg{position:absolute;top:20px;left:0;right:0;margin-left:auto;margin-right:auto;display:block;cursor:pointer}.hs-input-rating__label svg{position:absolute;width:45px;height:45px;fill:#fff;stroke:#ccc;transform:scale(.6);transition:transform .2s ease-in-out}.hs-input-rating__label path{transition:fill .2s ease-in-out,stroke .1s ease-in-out}.hs-input-rating__is-star input{display:none}.hs-input-rating__svg-is-selected{transform:scale(.7)}.hs-input-rating__svg-is-selected path{fill:#f7e31b;stroke:#d7c508}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .hs-button{white-space:pre-wrap}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .hs-richtext{word-break:break-word}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 fieldset{border:0;padding:0;margin:0;max-width:500px}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 fieldset.form-columns-1 .hs-input{width:95%}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 fieldset.form-columns-1 .input{margin-right:8px}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 fieldset.form-columns-1 input[type=checkbox],.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 fieldset.form-columns-1 input[type=radio]{width:auto}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 fieldset.form-columns-2 .hs-form-field{width:50%;float:left}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 fieldset.form-columns-2 .input{margin-right:8px}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 fieldset.form-columns-3 .hs-form-field{width:32.7%;float:left}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 fieldset.form-columns-3 .input{margin-right:8px}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 label.hs-hidden{visibility:hidden}.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990 .hs-field-desc{width:100%}.hs-custom-style .hs-input,.hs-custom-style fieldset{max-width:100%}.hs-custom-style>div.form-columns-3 .hs-form-field,.hs-custom-style fieldset.form-columns-3 .hs-form-field{width:33.3%}.hs-custom-style>div>div:last-of-type .hs-input:not([type=checkbox]):not([type=radio]),.hs-custom-style fieldset>div:last-of-type .hs-input:not([type=checkbox]):not([type=radio]){width:100%;max-width:100%}.hs-custom-style>div input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]),.hs-custom-style fieldset input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]){box-sizing:border-box;padding:0 15px;min-height:27px}.hs-custom-style>div textarea,.hs-custom-style fieldset textarea{padding:10px 15px}.hs-custom-style .hs-dependent-field>div .hs-input:not([type=checkbox]):not([type=radio]){width:100%}@media (max-width:400px),(min-device-width:320px) and (max-device-width:480px){.hs-custom-style .hs-input:not([type=checkbox]):not([type=radio]),.hs-custom-style fieldset{margin-right:0!important;width:100%!important}form.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990:not(.hs-video-form) .form-columns-2 .hs-form-field,form.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990:not(.hs-video-form) .form-columns-3 .hs-form-field{float:none;width:100%}form.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990:not(.hs-video-form) .form-columns-2 .hs-form-field .hs-input,form.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990:not(.hs-video-form) .form-columns-3 .hs-form-field .hs-input{width:95%}form.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990:not(.hs-video-form) .form-columns-2 .hs-form-field input[type=checkbox],form.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990:not(.hs-video-form) .form-columns-2 .hs-form-field input[type=radio],form.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990:not(.hs-video-form) .form-columns-3 .hs-form-field input[type=checkbox],form.hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990:not(.hs-video-form) .form-columns-3 .hs-form-field input[type=radio]{width:auto}}.legal-consent-container .field.hs-form-field{margin-bottom:8px}.legal-consent-container .hs-field-desc.checkbox-desc{margin:-12px 0 0 21px}.legal-consent-container .hs-form-booleancheckbox-display input{float:left}.legal-consent-container .hs-form-booleancheckbox-display>span{display:block;margin-left:20px}.legal-consent-container .hs-form-booleancheckbox-display p{margin:0;display:inline}.legal-consent-container .hs-error-msgs label{color:#f2545b}.legal-consent-container~.hs_recaptcha{margin-top:18px}.cookie-reset-container{font-size:14px;margin-bottom:10px;text-align:right}
+
+
+
+#hs-outer-captcha-target,#hs-outer-captcha-target *{display:none;height:0;width:0}.hubspot-link__container{font-size:14px;padding-bottom:40px;position:relative;color:#9fa0a2;font-family:Helvetica Neue,Helvetica,Arial,sans-serif}.hubspot-link-text{color:#00a4bd;font-weight:400}.hubspot-link__container.sproket{color:#9fa0a2}.hubspot-link{color:#9fa0a2}.hubspot-link,.hubspot-link:hover{text-decoration:none}.hubspot-link:hover .hubspot-link-text{text-decoration:underline}.hubspot-link__icon{margin-bottom:-1px;margin-right:5px}.hubspot-link__container.sproket .hubspot-link__icon{width:30px;margin-right:0;float:left;margin-top:-9px;margin-left:-5px}
+
+</style></head>
+<body id="blog-detail" class="gPerso -untouchable header-narrow moving-up">
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        
+    
+            <symbol id="ico-logo-path" viewBox="0 0 135 135">
+    <path style="stroke-width: 0;" d="M 0 0 L 0 134.973 L 67.352 134.973 C 104.551 134.973 134.705 104.759 134.705 67.489 L 134.705 67.487 C 134.705 30.214 104.551 0 67.352 0 L 0 0 Z"></path>
+</symbol>
+
+<symbol id="ico-logo-circle" viewBox="0 0 54 54">
+    <circle cx="26.889" cy="26.889" r="26.889"></circle>
+</symbol>
+<symbol id="ico-ball-bg" viewBox="0 0 58 58">
+    <circle cx="29" cy="29" r="26.889"></circle>
+    <rect width="58" height="58" style="fill: none;"></rect>
+</symbol>
+
+<symbol id="ico-logo-name" viewBox="0 0 875 200">
+    <path d="M 39.07 84.379 C 58.136 84.379 68.417 74.957 68.417 57.623 L 68.417 56.869 C 68.417 37.838 57.201 30.677 39.07 30.677 L 16.263 30.677 L 16.263 84.379 L 39.07 84.379 Z M 0 17.489 L 37.946 17.489 C 63.555 17.489 84.68 28.794 84.68 56.869 L 84.68 57.623 C 84.68 86.262 63.371 97.379 37.946 97.379 L 16.263 97.379 L 16.263 153.055 L 0 153.055 L 0 17.489 Z"></path>
+    <path d="M 161.524 118.236 L 161.524 105.988 L 148.066 105.988 C 128.439 105.988 114.048 110.888 114.048 125.397 C 114.048 135.571 118.907 141.976 132.552 141.976 C 149.001 141.976 161.524 133.498 161.524 118.236 M 98.531 125.397 C 98.531 102.599 122.457 94.871 147.506 94.871 L 161.524 94.871 L 161.524 87.712 C 161.524 72.073 155.543 65.476 140.592 65.476 C 127.131 65.476 119.654 71.131 118.159 83.19 L 102.644 83.19 C 104.7 60.768 122.457 52.476 141.338 52.476 C 160.03 52.476 177.04 60.202 177.04 87.712 L 177.04 152.759 L 161.524 152.759 L 161.524 140.282 C 154.237 149.514 145.451 154.412 131.058 154.412 C 112.924 154.412 98.531 145.558 98.531 125.397"></path>
+    <path d="M 204.266 52.209 L 219.781 52.209 L 219.781 71.378 C 225.95 60.259 234.363 52.535 251.933 51.969 L 251.933 66.666 C 232.304 67.608 219.781 73.827 219.781 98.134 L 219.781 153.787 L 204.266 153.787 L 204.266 52.209 Z"></path>
+    <path d="M 330.216 118.236 L 330.216 105.988 L 316.757 105.988 C 297.131 105.988 282.737 110.888 282.737 125.397 C 282.737 135.571 287.599 141.976 301.244 141.976 C 317.692 141.976 330.216 133.498 330.216 118.236 M 267.222 125.397 C 267.222 102.599 291.148 94.871 316.197 94.871 L 330.216 94.871 L 330.216 87.712 C 330.216 72.073 324.235 65.476 309.283 65.476 C 295.823 65.476 288.345 71.131 286.85 83.19 L 271.335 83.19 C 273.392 60.768 291.148 52.476 310.03 52.476 C 328.721 52.476 345.731 60.202 345.731 87.712 L 345.731 152.759 L 330.216 152.759 L 330.216 140.282 C 322.928 149.514 314.143 154.412 299.749 154.412 C 281.616 154.412 267.222 145.558 267.222 125.397"></path>
+    <path d="M 442.714 104.104 L 442.714 102.598 C 442.714 77.348 430.75 65.477 411.683 65.477 C 392.244 65.477 380.653 79.233 380.653 103.162 L 380.653 104.671 C 380.653 129.542 393.925 141.411 410.375 141.411 C 428.507 141.411 442.714 129.352 442.714 104.104 M 364.578 105.423 L 364.578 103.914 C 364.578 73.767 383.271 52.475 410.189 52.475 C 426.452 52.475 436.546 60.391 442.154 70.001 L 441.994 17.865 L 457.511 17.865 L 457.669 152.758 L 442.154 152.758 L 442.154 135.759 C 436.546 145.369 422.899 154.413 408.692 154.413 C 383.083 154.413 364.578 136.135 364.578 105.423"></path>
+    <path d="M 484.574 153.225 L 500.087 153.225 L 500.087 51.645 L 484.574 51.645 L 484.574 153.225 Z M 482.689 25.389 C 482.689 20.207 486.974 15.889 492.114 15.889 C 497.252 15.889 501.539 20.207 501.539 25.389 C 501.539 30.572 497.252 34.889 492.114 34.889 C 486.974 34.889 482.689 30.572 482.689 25.389 L 482.689 25.389 Z"></path>
+    <path d="M 596.844 100.585 L 596.844 99.266 C 596.844 77.22 584.881 64.408 565.814 64.408 C 546.374 64.408 534.784 78.917 534.784 99.642 L 534.784 101.151 C 534.784 122.63 548.429 135.442 564.881 135.442 C 583.013 135.442 596.844 122.63 596.844 100.585 M 520.765 157.3 L 536.654 157.3 C 538.897 168.605 548.242 174.446 564.881 174.446 C 584.134 174.446 596.285 165.213 596.285 144.11 L 596.285 129.79 C 590.677 139.4 577.405 148.442 563.198 148.442 C 537.589 148.442 518.709 128.849 518.709 101.715 L 518.709 100.395 C 518.709 73.641 537.402 51.407 564.319 51.407 C 580.583 51.407 590.677 59.32 596.285 68.931 L 596.285 51.644 L 611.8 51.644 L 611.8 145.051 C 611.613 173.693 592.358 187.634 565.068 187.634 C 536.094 187.634 523.382 173.881 520.765 157.3"></path>
+    <path d="M 638.181 51.644 L 653.696 51.644 L 653.696 68.176 C 658.182 58.944 668.84 51.407 682.859 51.407 C 695.384 51.407 706.411 56.681 711.457 69.873 C 718.187 57.059 732.771 51.407 744.919 51.407 C 762.489 51.407 777.817 61.96 777.817 90.598 L 777.817 153.225 L 762.304 153.225 L 762.304 89.468 C 762.304 72.132 755.013 64.975 741.554 64.975 C 728.844 64.975 715.757 73.641 715.757 91.351 L 715.757 153.225 L 700.244 153.225 L 700.244 89.468 C 700.244 72.132 692.954 64.975 679.494 64.975 C 666.782 64.975 653.696 73.641 653.696 91.351 L 653.696 153.225 L 638.181 153.225 L 638.181 51.644 Z"></path>
+    <path d="M 859.162 118.236 L 859.162 105.988 L 845.704 105.988 C 826.077 105.988 811.684 110.888 811.684 125.397 C 811.684 135.571 816.545 141.976 830.19 141.976 C 846.638 141.976 859.162 133.498 859.162 118.236 M 796.167 125.397 C 796.167 102.599 820.094 94.871 845.144 94.871 L 859.162 94.871 L 859.162 87.712 C 859.162 72.073 853.181 65.476 838.228 65.476 C 824.769 65.476 817.291 71.131 815.795 83.19 L 800.282 83.19 C 802.338 60.768 820.094 52.476 838.974 52.476 C 857.667 52.476 874.677 60.202 874.677 87.712 L 874.677 152.759 L 859.162 152.759 L 859.162 140.282 C 851.873 149.514 843.089 154.412 828.694 154.412 C 810.562 154.412 796.167 145.558 796.167 125.397"></path>
+</symbol>
+
+<symbol id="ico-social-youtube" viewBox="0 0 15 15">
+    <path d="M 9.778 7.721 L 5.676 9.748 C 5.567 9.803 5.441 9.72 5.441 9.594 L 5.441 5.413 C 5.441 5.286 5.57 5.203 5.68 5.261 L 9.781 7.415 C 9.903 7.479 9.901 7.66 9.778 7.721 M 11.885 2 L 3.115 2 C 1.395 2 0 3.445 0 5.229 L 0 9.772 C 0 11.555 1.395 13 3.115 13 L 11.885 13 C 13.605 13 15 11.555 15 9.772 L 15 5.229 C 15 3.445 13.605 2 11.885 2"></path>
+</symbol>
+<symbol id="ico-social-twitter" viewBox="0 0 15 15">
+    <path d="M 14.277 2.896 C 13.966 3.038 13.643 3.15 13.312 3.231 C 13.677 2.874 13.952 2.427 14.107 1.928 C 14.151 1.785 14 1.662 13.876 1.738 C 13.415 2.02 12.918 2.231 12.4 2.366 C 12.37 2.374 12.339 2.378 12.308 2.378 C 12.213 2.378 12.121 2.342 12.049 2.277 C 11.498 1.776 10.789 1.5 10.052 1.5 C 9.734 1.5 9.412 1.551 9.096 1.652 C 8.117 1.965 7.362 2.797 7.125 3.823 C 7.036 4.208 7.012 4.593 7.054 4.968 C 7.058 5.011 7.039 5.041 7.026 5.056 C 7.005 5.08 6.975 5.094 6.943 5.094 C 6.94 5.094 6.936 5.094 6.932 5.094 C 4.79 4.889 2.858 3.825 1.493 2.099 C 1.423 2.011 1.29 2.022 1.234 2.12 C 0.967 2.593 0.825 3.134 0.825 3.684 C 0.825 4.527 1.154 5.322 1.725 5.901 C 1.485 5.842 1.253 5.75 1.037 5.626 C 0.932 5.566 0.804 5.643 0.802 5.766 C 0.787 7.019 1.499 8.134 2.565 8.635 C 2.544 8.636 2.522 8.636 2.501 8.636 C 2.332 8.636 2.161 8.619 1.992 8.586 C 1.875 8.563 1.776 8.678 1.812 8.795 C 2.158 9.909 3.089 10.729 4.202 10.916 C 3.278 11.555 2.202 11.892 1.082 11.892 L 0.733 11.891 C 0.626 11.891 0.535 11.964 0.507 12.071 C 0.48 12.177 0.53 12.288 0.622 12.343 C 1.884 13.1 3.323 13.5 4.785 13.5 C 6.064 13.5 7.261 13.238 8.342 12.722 C 9.333 12.249 10.209 11.573 10.945 10.712 C 11.631 9.911 12.167 8.985 12.538 7.962 C 12.893 6.986 13.08 5.945 13.08 4.952 L 13.08 4.904 C 13.08 4.745 13.15 4.595 13.272 4.492 C 13.736 4.104 14.14 3.648 14.473 3.135 C 14.56 2.999 14.422 2.83 14.277 2.896"></path>
+</symbol>
+<symbol id="ico-social-linkedin" viewBox="0 0 15 15">
+    <path d="M 14.137 8.533 L 14.137 13.17 L 11.311 13.17 L 11.311 8.843 C 11.311 7.756 10.902 7.015 9.88 7.015 C 9.099 7.015 8.634 7.514 8.43 7.998 C 8.355 8.171 8.336 8.411 8.336 8.653 L 8.336 13.17 L 5.51 13.17 C 5.51 13.17 5.548 5.842 5.51 5.083 L 8.336 5.083 L 8.336 6.229 C 8.33 6.238 8.323 6.247 8.317 6.255 L 8.336 6.255 L 8.336 6.229 C 8.711 5.679 9.382 4.893 10.883 4.893 C 12.743 4.893 14.137 6.049 14.137 8.533 Z M 2.553 1.185 C 1.586 1.185 0.954 1.788 0.954 2.582 C 0.954 3.358 1.568 3.98 2.515 3.98 L 2.534 3.98 C 3.52 3.98 4.133 3.358 4.133 2.582 C 4.114 1.788 3.52 1.185 2.553 1.185 Z M 1.121 13.17 L 3.947 13.17 L 3.947 5.083 L 1.121 5.083 L 1.121 13.17 Z"></path>
+</symbol>
+<symbol id="ico-social-instagram" viewBox="0 0 15 15">
+    <path d="M 10.125 0.5 C 12.541 0.5 14.5 2.459 14.5 4.875 L 14.5 10.125 C 14.5 12.541 12.541 14.5 10.125 14.5 L 4.875 14.5 C 2.459 14.5 0.5 12.541 0.5 10.125 L 0.5 4.875 C 0.5 2.459 2.459 0.5 4.875 0.5 L 10.125 0.5 Z M 13.188 10.125 L 13.188 4.875 C 13.188 3.186 11.814 1.813 10.125 1.813 L 4.875 1.813 C 3.186 1.813 1.813 3.186 1.813 4.875 L 1.813 10.125 C 1.813 11.814 3.186 13.188 4.875 13.188 L 10.125 13.188 C 11.814 13.188 13.188 11.814 13.188 10.125 Z M 7.5 4 C 9.433 4 11 5.567 11 7.5 C 11 9.433 9.433 11 7.5 11 C 5.567 11 4 9.433 4 7.5 C 4 5.567 5.567 4 7.5 4 Z M 7.5 9.688 C 8.706 9.688 9.688 8.706 9.688 7.5 C 9.688 6.293 8.706 5.313 7.5 5.313 C 6.294 5.313 5.313 6.293 5.313 7.5 C 5.313 8.706 6.294 9.688 7.5 9.688 Z M 11.263 4.204 C 11.005 4.204 10.796 3.995 10.796 3.738 C 10.796 3.48 11.005 3.271 11.263 3.271 C 11.52 3.271 11.729 3.48 11.729 3.738 C 11.729 3.995 11.52 4.204 11.263 4.204 Z"></path>
+</symbol>
+<symbol id="ico-social-ivoox" viewBox="0 0 15 15">
+    <path xmlns="http://www.w3.org/2000/svg" d="M7.68519 12.9725V12.6489C7.68958 10.1973 7.69382 7.74566 7.6979 5.29405C7.6979 5.17542 7.6979 5.0568 7.68849 4.93865C7.64708 4.50637 7.38078 4.23543 6.95121 4.18371C6.87308 4.17531 6.79452 4.17167 6.71596 4.1728C5.67301 4.1728 4.63006 4.1728 3.58711 4.1728C3.49301 4.1728 3.40173 4.18229 3.29116 4.18798V6.47367H5.32327V13.0014C4.16487 12.801 3.08616 12.2746 2.21136 11.483C0.888776 10.3001 0.141147 8.8125 0.016934 7.03643C-0.0488461 6.16488 0.0592843 5.28888 0.334934 4.46019C0.610584 3.63151 1.04816 2.86696 1.6218 2.21174C2.19544 1.55652 2.8935 1.02392 3.67472 0.645419C4.45595 0.266919 5.30448 0.0502014 6.17017 0.00807404C9.83633 -0.17034 12.9195 2.67479 12.9986 6.39443C13.0823 10.3376 10.0217 12.6593 7.68519 12.9725ZM5.14777 2.33172C5.14777 3.07195 5.70955 3.65132 6.42942 3.65132C6.77458 3.65012 7.10512 3.5107 7.34835 3.26371C7.59157 3.01673 7.72755 2.68242 7.72636 2.33433C7.72518 1.98624 7.58693 1.65288 7.34203 1.40759C7.09713 1.1623 6.76564 1.02516 6.42048 1.02636C6.25183 1.02748 6.08506 1.06216 5.92974 1.12842C5.77441 1.19469 5.63359 1.29123 5.51535 1.41251C5.3971 1.53379 5.30376 1.67741 5.24068 1.83516C5.17761 1.9929 5.14603 2.16164 5.14777 2.33172Z" fill="white"></path>
+</symbol>
+
+<symbol id="ico-search" viewBox="0 0 18 18">
+    <path d="M 7.639 3.167 C 10.116 3.167 12.111 5.162 12.111 7.639 C 12.111 10.115 10.116 12.111 7.639 12.111 C 5.162 12.111 3.167 10.115 3.167 7.639 C 3.167 5.162 5.162 3.167 7.639 3.167 L 7.639 3.167 Z M 7.639 2 C 4.531 2 2 4.531 2 7.639 C 2 10.746 4.531 13.277 7.639 13.277 C 8.983 13.277 10.217 12.802 11.187 12.014 L 15.003 15.829 C 15.231 16.057 15.602 16.057 15.829 15.829 C 16.057 15.601 16.057 15.237 15.829 15.009 L 12.014 11.193 C 12.804 10.222 13.277 8.984 13.277 7.639 C 13.277 4.531 10.746 2 7.639 2 Z"></path>
+</symbol>
+
+        
+    <symbol id="ico-star" viewBox="0 0 18 18">
+    <path d="M 0.44 7.229 L 6.357 6.367 L 9.026 1 L 11.637 6.367 L 17.56 7.242 L 13.296 11.402 L 14.294 17.281 L 9.019 14.493 L 3.725 17.281 L 4.704 11.408 L 0.44 7.229 Z"></path>
+</symbol>
+
+    </svg>
+
+    
+    
+        
+        
+    
+
+    
+
+    <article id="logoContextMenu" class="hidden overlay">
+    <div class="modal">
+        <p class="title medium-txt">¿Buscas nuestro logo?</p>
+        <p class="description">Aquí te dejamos una copia, pero si necesitas más opciones o quieres conocer más, visita <a href="https://www.paradigmadigital.com/brand/">nuestra área de marca</a>.</p>
+        <img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/paradigma_digital_logo_default.svg">
+        <a class="bt" href="https://www.paradigmadigital.com/brand/">Conoce nuestra marca.</a>
+    </div>
+</article>
+
+
+    
+
+
+
+
+
+
+
+<header id="pd-header" class="-no-bg -header-links-as-tags ">
+    
+        
+    
+
+    
+
+
+    <div id="header-top">
+        <a id="header-logo" class="pd-logo init" aria-label="Go to home" href="https://www.paradigmadigital.com/" pd-anim="slideUp" pd-anim-delay="100" style="null; animation-delay: 100ms;">
+            
+    <span class="pd-isotype">
+        
+            <svg class="logo-path" viewBox="0 0 122 135">
+                <use xlink:href="#ico-logo-path"></use>
+            </svg>
+        
+        
+            <svg class="logo-circle" viewBox="0 0 58 58">
+                <use xlink:href="#ico-logo-circle"></use>
+            </svg>
+        
+    </span>
+
+            <svg id="logo-name" viewBox="0 0 840 200">
+                <use xlink:href="#ico-logo-name"></use>
+            </svg>
+        </a>
+
+        <ul id="header-sections">
+                
+                <li id="hsec-offering" pd-anim="slideUp" pd-anim-delay="250" style="null; animation-delay: 250ms;" class="init">
+                    <a href="https://www.paradigmadigital.com/lineas-servicio/">
+                        
+                        Nuestra fórmula
+                    </a>
+                </li>
+            
+                
+                <li id="hsec-about" pd-anim="slideUp" pd-anim-delay="300" style="null; animation-delay: 300ms;" class="init">
+                    <a href="https://www.paradigmadigital.com/quienes-somos/">
+                        
+                        Nosotros
+                    </a>
+                </li>
+            
+                
+                <li id="hsec-projects" pd-anim="slideUp" pd-anim-delay="350" style="null; animation-delay: 350ms;" class="init">
+                    <a href="https://www.paradigmadigital.com/proyectos/">
+                        
+                        Proyectos
+                    </a>
+                </li>
+            
+                
+                <li id="hsec-careers" pd-anim="slideUp" pd-anim-delay="400" style="null; animation-delay: 400ms;" class="init">
+                    <a href="https://www.paradigmadigital.com/empleo/">
+                        
+                        Talento
+                    </a>
+                </li>
+            
+                
+                <li id="hsec-blog" pd-anim="slideUp" pd-anim-delay="450" style="null; animation-delay: 450ms;" class="init">
+                    <a href="https://www.paradigmadigital.com/blog/">
+                        
+                        Blog
+                    </a>
+                </li>
+            
+                
+                <li id="hsec-events" pd-anim="slideUp" pd-anim-delay="500" style="null; animation-delay: 500ms;" class="init">
+                    <a href="https://www.paradigmadigital.com/eventos/">
+                        
+                        Eventos
+                    </a>
+                </li>
+            
+                
+                <li id="hsec-cases-resp" pd-anim="slideUp" pd-anim-delay="550">
+                    <a href="https://www.paradigmadigital.com/proyectos/">
+                        
+                        Casos de éxito
+                    </a>
+                </li>
+            </ul>
+    <div id="header-active-section-flag" style="left: 484.91668701171875px"></div>
+
+        
+    <section id="header-cases">
+            <a href="https://www.paradigmadigital.com/proyectos/" class="line-connect init" pd-anim="slideUp" pd-anim-delay="500" style="null; animation-delay: 500ms;">
+                
+                <span>Casos de éxito</span>
+                <span>
+                    <em class="squaresToMerge">
+                        <i></i><i></i><i></i>
+                    </em>
+                </span>
+            </a>
+            </section>
+    <article id="header-cases-detail" class="panel-release-bottom coral-panel">
+        <div id="allCasesList" class="custom-scroll">
+            <section id="casesList">
+                
+                
+                    
+                        <p>
+                            <a href="https://www.paradigmadigital.com/proyectos/nueva-telefonica/">
+                                <span class="name waitingToBeAnim">Telefonica.com</span>
+                                <span class="tag waitingToBeAnim">
+                                    La nueva Telefónica.com
+                                </span>
+                            </a>
+                        </p>
+                        
+                    
+                
+                    
+                        <p>
+                            <a href="https://www.paradigmadigital.com/proyectos/mapfre-yip-yop/">
+                                <span class="name waitingToBeAnim">MAPFRE Yip Yop.</span>
+                                <span class="tag waitingToBeAnim">
+                                    MAPFRE Yip Yop, la nueva manera de proteger tus objetos de valor
+                                </span>
+                            </a>
+                        </p>
+                        
+                    
+                
+                    
+                        <p>
+                            <a href="https://www.paradigmadigital.com/proyectos/tuenti-o2/">
+                                <span class="name waitingToBeAnim">Tuenti/O2.</span>
+                                <span class="tag waitingToBeAnim">
+                                    La gran apuesta por la transformación online
+                                </span>
+                            </a>
+                        </p>
+                        
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </section>
+            <p id="viewAllProjects">
+              <a href="https://www.paradigmadigital.com/proyectos/" class="waitingToBeAnim bt">
+                  Conócelos todos.
+              </a>
+            </p>
+            
+        </div>
+    </article>
+
+        <button id="header-toogle-menu" aria-hidden="true" pd-anim="slideUp" pd-anim-delay="200"><span></span></button>
+    </div>
+    <div id="header-content">
+        
+
+        
+            
+    <ol id="breadcrumb" pd-anim="slideUp" pd-anim-delay="400" class="line-connect level3 init" style="null; animation-delay: 400ms;">
+        <li id="bc-home">
+            <a href="https://www.paradigmadigital.com/" title="Inicio">
+                <span>Inicio</span>
+            </a>
+        </li>
+        
+            <li>
+                <a class="bt" href="https://www.paradigmadigital.com/blog" title="Blog">Blog</a>
+            </li>
+        
+            <li>
+                <a class="bt" href="https://www.paradigmadigital.com/blog/topic/data-intelligence/">Data Intelligence</a>
+            </li>
+        
+            <li>
+                <a class="bt" href="https://www.paradigmadigital.com/blog/subtopic/gobierno-de-datos/">Gobierno de Datos</a>
+            </li>
+        
+    </ol>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "https://www.paradigmadigital.com/",
+              "name": "Inicio"
+            }
+          }
+          
+          ,{
+             "@type": "ListItem",
+             "position": 2,
+             "item": {
+               "@id": "Blog",
+               "name": "Blog"
+             }
+          }
+          
+          ,{
+             "@type": "ListItem",
+             "position": 3,
+             "item": {
+               "@id": "Data Intelligence",
+               "name": "Data Intelligence"
+             }
+          }
+          
+          ,{
+             "@type": "ListItem",
+             "position": 4,
+             "item": {
+               "@id": "Gobierno de Datos",
+               "name": "Gobierno de Datos"
+             }
+          }
+          
+        ]
+      }
+    </script>
+
+        
+
+        
+            
+            
+
+
+            
+            <div id="header-title-wrap">
+                
+                
+                    <p id="header-pretitle" class="micro-title init" pd-anim="slideUp" pd-anim-delay="750" style="null; animation-delay: 750ms;">dev</p>
+                
+                
+                  <h1 id="header-title" class="title header-title bigger-txt longer-title add-last-dot init" pd-anim="slideUpLetters" pd-anim-delay="800" content="MapStruct, simplificando mapeos." aria-label="MapStruct, simplificando mapeos."><w aria-hidden="true"><l style="animation-delay: 860ms">M</l><l style="animation-delay: 890ms">a</l><l style="animation-delay: 920ms">p</l><l style="animation-delay: 950ms">S</l><l style="animation-delay: 980ms">t</l><l style="animation-delay: 1010ms">r</l><l style="animation-delay: 1040ms">u</l><l style="animation-delay: 1070ms">c</l><l style="animation-delay: 1100ms">t</l><l style="animation-delay: 1130ms">,</l></w><w class="space" aria-hidden="true">&nbsp;</w><w aria-hidden="true"><l style="animation-delay: 1190ms">s</l><l style="animation-delay: 1220ms">i</l><l style="animation-delay: 1250ms">m</l><l style="animation-delay: 1280ms">p</l><l style="animation-delay: 1310ms">l</l><l style="animation-delay: 1340ms">i</l><l style="animation-delay: 1370ms">f</l><l style="animation-delay: 1400ms">i</l><l style="animation-delay: 1430ms">c</l><l style="animation-delay: 1460ms">a</l><l style="animation-delay: 1490ms">n</l><l style="animation-delay: 1520ms">d</l><l style="animation-delay: 1550ms">o</l></w><w class="space" aria-hidden="true">&nbsp;</w><w aria-hidden="true"><l style="animation-delay: 1610ms">m</l><l style="animation-delay: 1640ms">a</l><l style="animation-delay: 1670ms">p</l><l style="animation-delay: 1700ms">e</l><l style="animation-delay: 1730ms">o</l><l style="animation-delay: 1760ms">s</l><l style="animation-delay: 1790ms">.</l></w></h1>
+                
+
+                
+                <p class="title-tags init" pd-anim="slideUp" pd-anim-delay="650" style="null; animation-delay: 650ms;"><a href="https://www.paradigmadigital.com/blog/tag/desarrollo-software/">Desarrollo de software</a></p>
+                
+            </div>
+            
+
+            
+
+            
+
+            
+    
+        <p class="links">
+            
+                
+
+                
+                
+
+                
+                    
+                
+
+                
+                    
+                    
+
+                    <a title="Raúl Martínez" rel="nofollow" href="#authorsInfo" target="_self" pd-anim="slideUp" pd-anim-delay="650" class="bt init" style="null; animation-delay: 650ms;">Raúl Martínez</a>
+                
+
+            
+                
+
+                
+                
+
+                
+                    
+                
+
+                
+                    <span title="27/5/2019" pd-anim="slideUp" pd-anim-delay="750" style="null; animation-delay: 750ms;" class="init">
+                        Hace 3 años
+                    </span>
+                
+
+            
+                
+
+                
+                
+
+                
+                    
+                
+
+                
+                    
+                    
+
+                    <a title="Cargando comentarios…" id="commentsAmount" rel="nofollow" href="#comments-wrap" target="_self" pd-anim="slideUp" pd-anim-delay="850" class="bt init" style="null; animation-delay: 850ms;">1 comentario</a>
+                
+
+            
+        </p>
+    
+
+
+            
+
+
+        
+
+        
+    
+
+        
+    <script type="text/html" id="blogItemTmpl">
+        <article class="blog-item blog-item-in-list <%= itemClass %> <% if (highlighted) { %>highlighted<% } %>">
+            <a href="<%= sitePath %>/<%= category %>/<%= slug %>/">
+                <% if (highlighted) { %>
+                    <svg class="star-icon" viewBox="0 0 18 18">
+                        <use xlink:href="#ico-star"></use>
+                    </svg>
+                <% } %>
+                <% if (ods !== '0.Ninguno') { %>
+                    <img title="ODS: <%= ods %>" alt="ODS: <%= ods %>"
+                      class="ods-icon lazy-img"
+                      pd-anim="slideUp" pd-anim-delay="200"
+                      width="70px" height="70px"
+                      src="https://www.paradigmadigital.com/assets/img/defaults/lazy-load.svg"
+                      data-src="https://www.paradigmadigital.com/assets/img/en-accion/ods/<%= ods_slugify %>.jpg">
+                <% } %>
+                <<%= titleTag %> class="title medium-txt" pd-anim="slideUp" pd-anim-delay="100"><%= title %><%= titleDot %></<%= titleTag %>>
+                <ul class="meta-info small-txt line-connect <%=(authorsToShow ? '' : 'line-on-left')%>">
+                    <% if (authorsToShow) { %>
+                        <li pd-anim="slideUp">
+                            Por
+                            <%= authorsToShow %>
+                        </li>
+                    <% } %>
+
+                    <li class="hide-on-phone" pd-anim="slideUp" pd-anim-delay="100">
+                        <span class="timeago" title="<%= publish_date %>" datetime="<%= publish_date %>"></span>
+                    </li>
+                </ul>
+                <% if (image) { %>
+                    <div class="imgWrap">
+                        <%= image %>
+                    </div>
+                <% } %>
+            </a>
+        </article>
+    </script>
+    <script type="text/html" id="filterNoResultTmpl">
+        <div class="error-msg no-records">
+            <p class="title">
+                ¡Vaya! Parece que no tenemos nada...
+            </p>
+            <img class="dummy" src="<%= assetsPath %>img/layout/dummies/empty.svg">
+        </div>
+    </script>
+
+    </div>
+</header>
+
+
+    
+
+
+<article id="blog-detail-content" class="mainContent nbp" data-post-id="5dbc6f9014466d3944a0328f" data-gperso-fetch="https://recommendation-api-defqxwqbpq-ew.a.run.app/post/">
+    <section class="cms-content cms-content--editors-picks">
+        
+        <div id="sharePost" class="share-icons -like-text-width">
+    
+        
+        <a href="https://twitter.com/share?url=https://www.paradigmadigital.com/dev/mapstruct/&amp;text=MapStruct,%20simplificando%20mapeos&amp;via=paradigmate&amp;lang=es" class="tw" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Compartir en Twitter" data-show-count="false">
+            <svg id="twitter-icon" viewBox="0 0 96 96">
+                <use xlink:href="#ico-social-twitter"></use>
+            </svg>
+        </a>
+
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.paradigmadigital.com/dev/mapstruct/&amp;title=MapStruct,%20simplificando%20mapeos&amp;summary=%C2%BFA%20qu%C3%A9%20debe%20su%20fama%20MapStruct?%20Esta%20herramienta%20facilita%20el%20mapeo%20de%20objetos%20entre%20s%C3%AD%20ahorr%C3%A1ndonos%20codificarlos%20a%20mano.%20Te%20contamos%20c%C3%B3mo%20funciona%20en%20el%20blog&amp;source=Paradigma" class="in" title="Compartir en Linkedin" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=835');return false;">
+                <svg id="linkedin-icon" viewBox="0 0 96 96">
+                    <use xlink:href="#ico-social-linkedin"></use>
+                </svg>
+        </a>
+    
+</div>
+        
+            <section class="editors-picks js__editors-picks editors-picks--active">
+  <div class="editors-picks__inner">
+
+    <div class="editors-picks__card">
+      <header class="editors-picks__card-header">
+        <h3 class="editors-picks__card-title">Editor's Picks</h3>
+      </header>
+      <div class="editors-picks__card-main">
+        <ol class="editors-picks__card-items js__editors-picks-list">
+        <li class="editors-picks__card-item">
+            <a href="https://www.paradigmadigital.com/dev/desarrollo-formularios-react/?prs=1" class="editors-picks__card-item-link">
+                <div class="editors-picks__card-item-category">dev</div>
+                <h4 class="editors-picks__card-item-title">Agilizando el desarrollo de formularios en React</h4>
+            </a>
+        </li>
+    
+        <li class="editors-picks__card-item">
+            <a href="https://www.paradigmadigital.com/dev/introduccion-javers/?prs=1" class="editors-picks__card-item-link">
+                <div class="editors-picks__card-item-category">dev</div>
+                <h4 class="editors-picks__card-item-title">Javers, ¿qué ha pasado con mis datos?</h4>
+            </a>
+        </li>
+    </ol>
+      </div>
+    </div>
+
+  </div>
+</section>
+        
+        <p>En los últimos tiempos han ido saliendo iniciativas que nos ayudan con nuestras tareas del día a día como desarrolladores.</p>
+<p>Una de ellas, y de la que hablaremos en este post, es lo que se conoce como <a href="http://mapstruct.org/" target="_blank">“MapStruct”</a>, que es un procesador de anotaciones, rápido, seguro y fácil de entender.</p>
+<article class="block block-image  -inside-grid "><img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/mapstruct.png" data-src="https://www.paradigmadigital.com/wp-content/uploads/2019/05/mapstruct.png" data-srcset="https://www.paradigmadigital.com/wp-content/uploads/2019/05/mapstruct.png 1920w,https://www.paradigmadigital.com/wp-content/uploads/2019/05/mapstruct.png 1280w,https://www.paradigmadigital.com/wp-content/uploads/2019/05/mapstruct.png 910w,https://www.paradigmadigital.com/wp-content/uploads/2019/05/mapstruct.png 455w" class="lazy-img init" sizes="(max-width: 767px) 80vw, 75vw" alt="" srcset="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/mapstruct.png 1920w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/mapstruct.png 1280w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/mapstruct.png 910w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/mapstruct.png 455w"></article>
+<h2 class="block block-header h--h30-15-400 left  ">¿Qué nos ofrece MapStruct?</h2>
+<p>MapStruct es un proyecto que nació en el año 2013, que no tuvo su 
+versión estable hasta el año 2015. Últimamente ha adquirido cierta fama 
+debido a su simplicidad de uso ya que, mediante anotaciones, somos 
+capaces de <strong>generar mapeos entre diferentes objetos en tiempo de compilación</strong>.</p>
+<p><strong>MapStruct nos proporcciona una forma rápida y segura de mapear objetos entre sí ahorrándonos codificarlos a mano</strong>, lo cual suele ser un tarea tediosa y engorrosa.</p>
+<p><strong>Utiliza invocaciones de métodos en vez de reflexión</strong>, <strong>no tiene dependencias en tiempo de ejecución</strong> (código autocontenido) y <strong>nos informa en tiempo de compilación de posibles errores en los mapeos</strong> y es <strong>fácilmente debuggeable</strong>.</p>
+<h2 class="block block-header h--h30-15-400 left  add-last-dot">Configuración</h2>
+<p>MapStruct requiere de al menos <strong>Java 1.6 o posterior</strong>. Funciona en tiempo de <strong>compilación</strong> ya sea con <strong>Maven, Gradle, Ant</strong> etc.</p>
+<h3 class="block block-header h--h30-15-400 left  add-last-dot">Configuración para Maven</h3>
+<p>Si nuestro gestor de construcción de proyecto es Maven, debemos importar la dependencia MapStruct de la siguiente manera:</p>
+<div class="code-toolbar"><pre class=" language-undefined"><code class=" language-undefined">&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.mapstruct&lt;/groupId&gt;
+        &lt;artifactId&gt;mapstruct&lt;/artifactId&gt; &lt;!-- OR use this with Java 8 and beyond: &lt;artifactId&gt;mapstruct-jdk8&lt;/artifactId&gt; --&gt;
+        &lt;version&gt;${org.mapstruct.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy.</button></div></div></div>
+<p>Adicionalmente debemos saber que, como MapStruct realiza los mapeos 
+en tiempo de compilación, el goal que utiliza para ello es el <strong>generate-sources</strong> de Maven, que es el que genera las clases de forma automática.</p>
+<div class="code-toolbar"><pre class=" language-undefined"><code class=" language-undefined">&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.5.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;source&gt;1.6&lt;/source&gt; &lt;!-- or 1.7 or 1.8, .. --&gt;
+                &lt;target&gt;1.6&lt;/target&gt;
+                &lt;annotationProcessorPaths&gt;
+                    &lt;path&gt;
+                        &lt;groupId&gt;org.mapstruct&lt;/groupId&gt;
+                        &lt;artifactId&gt;mapstruct-processor&lt;/artifactId&gt;
+                        &lt;version&gt;${org.mapstruct.version}&lt;/version&gt;
+                    &lt;/path&gt;
+                &lt;/annotationProcessorPaths&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy.</button></div></div></div>
+<h3 class="block block-header h--h20-175-500 left  add-last-dot">Configuración para Gradle</h3>
+<p>Si nuestro gestor de construcción de proyecto es Gradle debemos de importar la dependencia MapStruct de la siguiente manera:</p>
+<div class="code-toolbar"><pre class=" language-undefined"><code class=" language-undefined">dependencies {
+    ...
+    compile 'org.mapstruct:mapstruct:1.3.0.Final' // OR use this with Java 8 and beyond: org.mapstruct:mapstruct-jdk8:...
+
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.3.0.Final'
+    testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.3.0.Final' // if you are using mapstruct in test code
+}
+
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy.</button></div></div></div>
+<h3 class="block block-header h--h20-175-500 left  add-last-dot">Configuración para IDE’s</h3>
+<p>Para los distintos IDE’s tenemos plugins que nos dan soporte sobre dicha librería:</p>
+<ul>
+<li>En el caso de <strong>Eclipse</strong> simplemente tenemos que asegurarnos que tenemos el plugin <a href="https://marketplace.eclipse.org/content/m2e-apt" target="_blank">m2e_apt</a>.</li>
+<li>Para <strong>IntelliJ</strong> tenemos que tener instalada al menos la versión <strong>2018.2</strong> y para activarlo debemos de activar la siguiente opción: Build, Execution, Deployment &gt; Compiler &gt; Annotation Processors.</li>
+</ul>
+<h2 class="block block-header h--h30-15-400 left  add-last-dot">Propósito y ejemplo</h2>
+<p>En muchos proyectos se usan los llamados <strong>DTO’s</strong> para aislar lo que es un objeto de negocio de un objeto que solo va a almacenar los datos.</p>
+<p>En proyectos donde esa transformación se hace de una capa a otra para aislar el tratamiento de dichos datos, es <strong>interesante utilizar esta librería</strong>.</p>
+<p>Para mostrar cómo se utiliza nada mejor que <strong>un ejemplo:</strong></p>
+<div class="code-toolbar"><pre class=" language-undefined"><code class=" language-undefined">@Mapper
+public interface InventoryServiceMapper {
+
+   PersistenceMongoFindInventoryIDTO toPersistenceMongoFindInventoryIDTO(InventoryGetServiceIDTO idto);
+
+}
+
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy.</button></div></div></div>
+<p>En tiempo de <strong>compilación</strong> MapStruct <strong>genera la implementación</strong>
+ de esta interfaz. La implementación generada utiliza invocaciones a 
+método sencillas para la asignación entre los objetos de origen y 
+destino.</p>
+<p>De forma predeterminada, las propiedades se asignan si tienen el 
+mismo nombre en origen y destino. En el caso de que no sea así tenemos 
+un puñado de anotaciones que nos permiten realizan estos mapeos de forma
+ personalizada.</p>
+<p>Vamos a ver antes de entrar más a fondo con las anotaciones qué es lo que generaría una vez compilada esta interfaz:</p>
+<div class="code-toolbar"><pre class=" language-undefined"><code class=" language-undefined">@Generated(
+   value = "org.mapstruct.ap.MappingProcessor"
+)
+@Component
+public class InventoryServiceMapperImpl implements InventoryServiceMapper {
+
+   @Override
+   public PersistenceMongoFindInventoryIDTO toPersistenceMongoFindInventoryIDTO(InventoryGetServiceIDTO idto) {
+       if ( idto == null ) {
+           return null;
+       }
+
+       PersistenceMongoFindInventoryIDTO persistenceMongoFindInventoryIDTO = new PersistenceMongoFindInventoryIDTO();
+
+       persistenceMongoFindInventoryIDTO.setItemId( idto.getItemId() );
+       persistenceMongoFindInventoryIDTO.setProvider( idto.getProvider() );
+       persistenceMongoFindInventoryIDTO.setShipNode( idto.getShipNode() );
+       persistenceMongoFindInventoryIDTO.setSupplyType( idto.getSupplyType() );
+       persistenceMongoFindInventoryIDTO.setPublished( idto.getPublished() );
+       persistenceMongoFindInventoryIDTO.setOrganizationCode( idto.getOrganizationCode() );
+
+       return persistenceMongoFindInventoryIDTO;
+   }
+}
+
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy.</button></div></div></div>
+<p>En este caso, el ejemplo era sencillo, ya que tanto los objetos de 
+entrada como de salida comparten el mismo nombre y tipo de dato.</p>
+<p>¿Pero qué ocurre cuando esto no es así? MapStruct nos provee de una anotación <strong>@Mappings</strong> que nos da diversas posibilidades.</p>
+<article class="block block-image  -inside-grid "><img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/anotacion-mapstruct.png" data-src="https://www.paradigmadigital.com/wp-content/uploads/2019/05/anotacion-mapstruct.png" data-srcset="https://www.paradigmadigital.com/wp-content/uploads/2019/05/anotacion-mapstruct.png 1920w,https://www.paradigmadigital.com/wp-content/uploads/2019/05/anotacion-mapstruct.png 1280w,https://www.paradigmadigital.com/wp-content/uploads/2019/05/anotacion-mapstruct.png 910w,https://www.paradigmadigital.com/wp-content/uploads/2019/05/anotacion-mapstruct.png 455w" class="lazy-img init" sizes="(max-width: 767px) 80vw, 75vw" alt="" srcset="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/anotacion-mapstruct.png 1920w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/anotacion-mapstruct.png 1280w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/anotacion-mapstruct.png 910w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/anotacion-mapstruct.png 455w"></article>
+<p>Fundamentalmente utilizaremos las key <strong>“source” y “target”</strong> para definir qué campo se mapea y cuál es su correspondencia en el objeto destino.</p>
+<p>Pero, además, tenemos diversas posibilidades para definir si un 
+determinado campo depende de otro, para indicar si ignoramos en el mapeo
+ ciertos campos que no nos interesen o definir un formato o un valor por
+ defecto:</p>
+<div class="code-toolbar"><pre class=" language-undefined"><code class=" language-undefined">@Mappings({
+       @Mapping(source = "itemId", target = "persistenceItemId"),
+       @Mapping(target = "supplyType", ignore = true),
+       @Mapping(target = "size", defaultValue = "10")
+})
+PersistenceMongoFindInventoryIDTO toPersistenceMongoFindInventoryIDTO(InventoryGetServiceIDTO idto);
+
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy.</button></div></div></div>
+<p>Siguiendo la misma filosofía es muy interesante saber que MapStruct también nos provee de <strong>mapeos entre enumerados:</strong></p>
+<div class="code-toolbar"><pre class=" language-undefined"><code class=" language-undefined">@ValueMappings({
+       @ValueMapping(source = "EXTRA", target = "SPECIAL"),
+       @ValueMapping(source = "STANDARD", target = "DEFAULT"),
+       @ValueMapping(source = "NORMAL", target = "DEFAULT")
+})
+ExternalOrderType orderTypeToExternalOrderType(OrderType orderType);
+
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy.</button></div></div></div>
+<p>También es interesante saber que, a nivel de componente, tenemos diversas posibilidades de cómo declarar nuestro <strong>@Mapper</strong>.</p>
+<p>Por ejemplo, podemos definir el <strong>“component model”</strong> para determinar quién genera la implementación:</p>
+<ul>
+<li><strong>default</strong>: no utiliza el modelo de componente, son instanciados a través de <a href="http://mapstruct.org/documentation/1.1/api/org/mapstruct/factory/Mappers.html#getMapper-java.lang.Class-" target="_blank">Mappers.getMapper(Class).</a></li>
+<li><strong>cdi</strong>: el mapper generado es un CDI de ámbito de aplicación que se obtiene a través de la anotación @Inject.</li>
+<li><strong>spring</strong>: el mapper generado es un bean de spring que se obtiene a través de la anotación @Autowired.</li>
+<li><strong>jsr330</strong>: el mapper generado es anotado con @javax.inject.Named y@Singleton, y puede ser recuperado a través de @Inject.</li>
+</ul>
+<p>Me gustaría destacar otra opción que a personalmente me ha resultado 
+útil en algún proyecto, especialmente cuando necesitamos un pre o post 
+procesado del bean a mapear con las anotaciones <strong>@BeforeMapping</strong> y <strong>@AfterMapping</strong>:</p>
+<div class="code-toolbar"><pre class=" language-undefined"><code class=" language-undefined">@AfterMapping
+void fillShippingMethod(LineItemRQRType lineItemRQ, @MappingTarget SplitLine splitLine) {
+   splitLine.getSplitKey().setShippingMethod(shippingMethodType.getByCode(lineItemRQ.getShippingMethod()));
+}
+
+</code></pre><div class="toolbar"><div class="toolbar-item"><button>Copy.</button></div></div></div>
+<p>También podemos establecer <strong>estrategias de nulos</strong>, <strong>manejo de excepciones, mapeos de listas</strong>, y diversas opciones muy interesantes. Podemos profundizar en esto <a href="http://mapstruct.org/documentation/stable/reference/html/" target="_blank">en este enlace</a>.</p>
+<p>Por último, también hay que destacar que en la versión 1.2 se ha establecido compatibilidad con <a href="https://www.paradigmadigital.com/dev/proyecto-lombok-facilitame-la-vida/" target="_blank">Lombok</a>, de forma <em>out of the box</em> y con Streams de Java 1.8.</p>
+<h2 class="block block-header h--h30-15-400 left  add-last-dot">Conclusiones</h2>
+<p>Como vemos, <strong>MapStruct es una librería fácil de usar,</strong> <strong>nos provee de anotaciones sencillas y complementarias entre sí</strong> para establecer el comportamiento que queremos en cada caso, y tiene una <strong>amplia contribución</strong> <strong>por parte de la</strong> <strong>comunidad</strong> que va añadiendo nuevas funcionalidades y utilidades a esta librería tan útil.</p>
+<p>Nos <strong>permite que nuestro código sea más legible</strong>, menos engorroso en mapeos entre clases, nos <strong>ahorra</strong> <strong>tiempo de codificación</strong> y además contiene funciones lo suficientemente potentes como para llevar a cabo estrategias de <strong>transformación</strong> de objetos a tener en cuenta en futuros proyectos.</p>
+<p>Para obtener el código fuente y que podáis profundizar y contribuir, <a href="https://github.com/mapstruct/mapstruct" target="_blank">podéis acceder al repositorio en github</a>.</p>
+
+        <div id="sharePost" class="share-icons -like-text-width">
+    
+        
+        <a href="https://twitter.com/share?url=https://www.paradigmadigital.com/dev/mapstruct/&amp;text=MapStruct,%20simplificando%20mapeos&amp;via=paradigmate&amp;lang=es" class="tw" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" title="Compartir en Twitter" data-show-count="false">
+            <svg id="twitter-icon" viewBox="0 0 96 96">
+                <use xlink:href="#ico-social-twitter"></use>
+            </svg>
+        </a>
+
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.paradigmadigital.com/dev/mapstruct/&amp;title=MapStruct,%20simplificando%20mapeos&amp;summary=%C2%BFA%20qu%C3%A9%20debe%20su%20fama%20MapStruct?%20Esta%20herramienta%20facilita%20el%20mapeo%20de%20objetos%20entre%20s%C3%AD%20ahorr%C3%A1ndonos%20codificarlos%20a%20mano.%20Te%20contamos%20c%C3%B3mo%20funciona%20en%20el%20blog&amp;source=Paradigma" class="in" title="Compartir en Linkedin" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=835');return false;">
+                <svg id="linkedin-icon" viewBox="0 0 96 96">
+                    <use xlink:href="#ico-social-linkedin"></use>
+                </svg>
+        </a>
+    
+</div>
+    </section>
+
+    <section id="authorsInfo" class="authors-intro -link -like-cms-text-width "><div class="author">
+                
+                
+                
+                
+
+
+                <div class="block block-person -logo-dark">
+<div class="bouncing-isotype" aria-hidden="true">
+    <svg class="logo-path" viewBox="0 0 122 135">
+        <use xlink:href="#ico-logo-path"></use>
+    </svg>
+</div><div class="person">
+<a href="https://www.paradigmadigital.com/author/raulmartinez/" target=""><img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384a.jpg" data-src="https://www.paradigmadigital.com/profilePics/300/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384af713.jpg" data-srcset="https://www.paradigmadigital.com/profilePics/300/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384af713.jpg 1920w,https://www.paradigmadigital.com/profilePics/300/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384af713.jpg 1280w,https://www.paradigmadigital.com/profilePics/300/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384af713.jpg 910w,https://www.paradigmadigital.com/profilePics/300/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384af713.jpg 455w" class="lazy-img init" sizes="100px" alt="" srcset="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384a.jpg 1920w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384a.jpg 1280w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384a.jpg 910w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/cc96e78bfb484aea34c7562d1e894bd6ab21925f51cdd8558d7487b8384a.jpg 455w">
+</a>
+</div></div>
+
+                <p class="medium-txt">Raúl Martínez</p>
+                <p class="bio small-txt">Ingeniero Informático con 11 
+años de experiencia en el desarrollo de aplicaciones web en entornos 
+J2EE. Después de 8 años en Indra, donde trabajó en proyectos para el 
+Ministerio de Educación, DGT (Dirección General de Tráfico), RFEF (Real 
+Federación Española de Fútbol) y SELAE (Loterías y Apuestas del Estado),
+ vio en Paradigma una oportunidad de seguir creciendo. Con gran 
+experiencia en frameworks Spring (Spring 4, Spring Boot, Spring Webflow,
+ Spring Data, etc.), actualmente inmerso en proyectos de eCommerce con 
+ATG 10.2 para El Corte Inglés.</p><a class="bt" href="https://www.paradigmadigital.com/author/raulmartinez/">
+                        Ver más contenido de Raúl.
+                    </a></div></section>
+
+    <section id="relatedPosts" class="">
+        <h3 class="title ac big-txt">Más contenido sobre esto.</h3>
+        <p class="parallax-title parallax-init parallax-started" style="transform: translate3d(5%, 0%, 0); -webkit-transform: translate3d(5%, 0%, 0)">Leer más.</p>
+        <div id="relatedPostsList" class="list-cols parallax-wrap" data-related-fetch="https://bridge.paradigmadigital.com/search/es/posts/related/4/" data-related-title="MapStruct, simplificando mapeos---Data Intelligence---Gobierno de Datos">         <article class="blog-item blog-item-in-list col left-col ">             <a href="https://www.paradigmadigital.com/dev/caches-por-donde-empezar/">                                                   <h4 class="title medium-txt init" pd-anim="slideUp" pd-anim-delay="100" style="null; animation-delay: 100ms;">Cachés, ¿por dónde empezar?</h4>                 <ul class="meta-info small-txt line-connect ">                                              <li pd-anim="slideUp" style="null; animation-delay: 0ms;" class="init">                             Por                             María Dolores Monedero                         </li>                                           <li class="hide-on-phone init" pd-anim="slideUp" pd-anim-delay="100" style="null; animation-delay: 100ms;">                         <span class="timeago" title="2018-07-04T07:32:00.000Z" datetime="2018-07-04T07:32:00.000Z">Hace 3 años</span>                     </li>                 </ul>                                      <div class="imgWrap">                         <img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/post.svg" data-src="https://www.paradigmadigital.com/assets/img/defaults/post.svg" data-srcset="https://www.paradigmadigital.com/assets/img/defaults/post.svg 1920w,https://www.paradigmadigital.com/assets/img/defaults/post.svg 1280w,https://www.paradigmadigital.com/assets/img/defaults/post.svg 910w,https://www.paradigmadigital.com/assets/img/defaults/post.svg 455w" class="lazy-img init" sizes="(min-width: 768px) 40vw, 100vw" alt="Cachés, ¿por dónde empezar?" srcset="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/post.svg 1920w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/post.svg 1280w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/post.svg 910w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/post.svg 455w">                      </div>                              </a>         </article>              <article class="blog-item blog-item-in-list col right-col ">             <a href="https://www.paradigmadigital.com/dev/podcast-paradigma-gobierno-del-dato/">                                                   <h4 class="title medium-txt init" pd-anim="slideUp" pd-anim-delay="100" style="null; animation-delay: 100ms;">Podcast - Gobierno del dato.</h4>                 <ul class="meta-info small-txt line-connect ">                                              <li pd-anim="slideUp" style="null; animation-delay: 0ms;" class="init">                             Por                             Alberto Serrano                         </li>                                           <li class="hide-on-phone init" pd-anim="slideUp" pd-anim-delay="100" style="null; animation-delay: 100ms;">                         <span class="timeago" title="2020-11-17T08:00:00.000Z" datetime="2020-11-17T08:00:00.000Z">Hace 1 año</span>                     </li>                 </ul>                                      <div class="imgWrap">                         <img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/98daae5241e5485fb55981a3aa14bca8_002.jpg" data-src="https://www.paradigmadigital.com/assets/img/resize/cropped-small/98daae5241e5485fb55981a3aa14bca8.jpg" data-srcset="https://www.paradigmadigital.com/assets/img/resize/huge/98daae5241e5485fb55981a3aa14bca8.jpg 1920w,https://www.paradigmadigital.com/assets/img/resize/big/98daae5241e5485fb55981a3aa14bca8.jpg 1280w,https://www.paradigmadigital.com/assets/img/resize/cropped-medium/98daae5241e5485fb55981a3aa14bca8.jpg 910w,https://www.paradigmadigital.com/assets/img/resize/cropped-small/98daae5241e5485fb55981a3aa14bca8.jpg 455w" class="lazy-img init" sizes="(min-width: 768px) 40vw, 100vw" alt="Podcast - Gobierno del dato" srcset="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/98daae5241e5485fb55981a3aa14bca8_003.jpg 1920w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/98daae5241e5485fb55981a3aa14bca8_004.jpg 1280w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/98daae5241e5485fb55981a3aa14bca8.jpg 910w, MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/98daae5241e5485fb55981a3aa14bca8_002.jpg 455w">                      </div>                              </a>         </article>              <article class="blog-item blog-item-in-list col left-col ">             <a href="https://www.paradigmadigital.com/techbiz/gobierno-del-dato-modelos-herramientas/">                                                   <h4 class="title medium-txt" pd-anim="slideUp" pd-anim-delay="100">Gobierno del dato: modelos y herramientas.</h4>                 <ul class="meta-info small-txt line-connect ">                                              <li pd-anim="slideUp">                             Por                             Alberto Serrano                         </li>                                           <li class="hide-on-phone" pd-anim="slideUp" pd-anim-delay="100">                         <span class="timeago" title="2021-06-03T07:00:00.000Z" datetime="2021-06-03T07:00:00.000Z">Hace 1 año</span>                     </li>                 </ul>                                      <div class="imgWrap">                         <img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/lazy-load.svg" data-src="https://www.paradigmadigital.com/assets/img/resize/cropped-small/cf9b7d4549924547963aa9ef65a2a715.jpg" data-srcset="https://www.paradigmadigital.com/assets/img/resize/huge/cf9b7d4549924547963aa9ef65a2a715.jpg 1920w,https://www.paradigmadigital.com/assets/img/resize/big/cf9b7d4549924547963aa9ef65a2a715.jpg 1280w,https://www.paradigmadigital.com/assets/img/resize/cropped-medium/cf9b7d4549924547963aa9ef65a2a715.jpg 910w,https://www.paradigmadigital.com/assets/img/resize/cropped-small/cf9b7d4549924547963aa9ef65a2a715.jpg 455w" class="lazy-img" sizes="(min-width: 768px) 40vw, 100vw" alt="Gobierno del dato: modelos y herramientas">                      </div>                              </a>         </article>              <article class="blog-item blog-item-in-list col right-col ">             <a href="https://www.paradigmadigital.com/techbiz/podcast-modelos-agiles-gobierno-dato/">                                                   <h4 class="title medium-txt" pd-anim="slideUp" pd-anim-delay="100">Podcast - Modelos ágiles del gobierno del dato.</h4>                 <ul class="meta-info small-txt line-connect ">                                              <li pd-anim="slideUp">                             Por                             Alberto y Diego                         </li>                                           <li class="hide-on-phone" pd-anim="slideUp" pd-anim-delay="100">                         <span class="timeago" title="2021-09-14T07:00:00.000Z" datetime="2021-09-14T07:00:00.000Z">Hace 8 meses</span>                     </li>                 </ul>                                      <div class="imgWrap">                         <img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/lazy-load.svg" data-src="https://www.paradigmadigital.com/assets/img/resize/cropped-small/5e993717848346a898e4da43bcb8430f.jpg" data-srcset="https://www.paradigmadigital.com/assets/img/resize/huge/5e993717848346a898e4da43bcb8430f.jpg 1920w,https://www.paradigmadigital.com/assets/img/resize/big/5e993717848346a898e4da43bcb8430f.jpg 1280w,https://www.paradigmadigital.com/assets/img/resize/cropped-medium/5e993717848346a898e4da43bcb8430f.jpg 910w,https://www.paradigmadigital.com/assets/img/resize/cropped-small/5e993717848346a898e4da43bcb8430f.jpg 455w" class="lazy-img" sizes="(min-width: 768px) 40vw, 100vw" alt="Podcast - Modelos ágiles del gobierno del dato">                      </div>                              </a>         </article>     </div>
+    </section>
+    
+    
+
+
+    
+    <article id="comments-wrap" data-post-id="5dbc6f9014466d3944a0328f" data-post-slug="dev/mapstruct" data-notify="U2FsdGVkX19Ikwc5MYfFgawQ2ADZwROF0iC9X499G0DbeSrmR7pDeh9P7KILm/jP">
+        <section id="commets-status-message">
+        </section>
+        <section id="commets-form-wrap">
+            <div class="comments-title">
+                <h2 class="title bigger-txt" pd-anim="slideUp">Cuéntanos qué te parece.</h2>
+            </div>
+            <div class="loading"></div>
+            <div class="form">
+                <input type="hidden" name="parent">
+                <div class="line-input name" pd-anim="slideUp" pd-anim-delay="300">
+                    <input type="text" name="name" placeholder="¿Cómo te llamas?" required="required" minlength="3">
+                    <span class="line"></span>
+                    <small class="error-type micro-txt"></small>
+                </div>
+                <div class="line-input email" pd-anim="slideUp" pd-anim-delay="300">
+                    <input type="email" name="email" placeholder="Mail (no saldrá en el comentario)" required="required">
+                    <span class="line"></span>
+                    <small class="error-type micro-txt"></small>
+                </div>
+                <div class="line-input comment" pd-anim="slideUp" pd-anim-delay="300">
+                    <textarea name="comment" placeholder="¿Qué opinas?" placeholder-reply="Tu respuesta para" minlength="3" required="required"></textarea>
+                    <span class="line"></span>
+                    <small class="error-type micro-txt"></small>
+                </div>
+                <button class="bt comment-submit" pd-anim="slideUp" pd-anim-delay="300" data-tracking="true">Enviar.</button>
+                <p class="disclaimer micro-txt" pd-anim="slideUp" pd-anim-delay="300">Los
+ comentarios serán moderados. Serán visibles si aportan un argumento 
+constructivo. Si no estás de acuerdo con algún punto, por favor, muestra
+ tus opiniones de manera educada.</p>
+            </div>
+        </section>
+        <section id="comments-list"></section>
+    </article>
+    <a name="comments"></a>
+
+    
+    <script type="text/html" id="commentsAmountTmpl">
+        <% if (total >= 1) { %>
+        <h3 class="comments-amount">
+            <%= total %>
+            <% if (total > 1) { %>
+                comentarios
+            <% } else { %>
+                comentario
+            <% } %>
+        </h3>
+         <% } %>
+    </script>
+    <script type="text/html" id="commentTmpl">
+        <div class="item <%=(comment.parent ? 'reply' : '')%>">
+            <ul class="meta-info line-connect">
+                <li><%= comment.name %> <%=(comment.parent ? 'contesta a ' + comment.parent_name : '')%></li>
+                <li datetime="<%= comment.date %>" title="<%= comment.date %>" class="timeago"></li>
+            </ul>
+            <p class="comment-item small-txt"><%= comment.comment %></p>
+            <p><a class="bt comment-reply" data-reply-to-id="<%= comment.id %>" data-reply-to-name="<%= comment.name %>">Contestar.</a></p>
+        </div>
+    </script>
+    <script type="text/html" id="noCommentsTmpl">
+        <div class="error-msg full-width no-comments">
+            <p class="title">
+                ¡Nada por aquí!
+            </p>
+            <img class="dummy" src="<%= assetsPath %>img/layout/dummies/empty.svg">
+            <p class="subtitle big-txt">
+                ¡Todavía no hay comentarios!
+            </p>
+            <p class="medium-txt strong">
+                Venga... ¡anímate!, ¡sé el primero en comentar!
+            </p>
+        </div>
+    </script>
+    <script type="text/html" id="successCommentSentTmpl">
+        <div class="success-msg full-width success-comments-sent">
+            <img class="dummy-bg" src="<%= assetsPath %>img/layout/dummies/bg-sail.svg"  pd-anim="fadeIn">
+            <p class="title bigger-txt" pd-anim="slideUp">
+                ¡Recibido!<br>¡Gracias!
+            </p>
+            <img class="dummy" src="<%= assetsPath %>img/layout/dummies/skate-girl.svg" pd-anim="fadeIn">
+            <p class="description small-txt strong" pd-anim="slideUp" pd-anim-delay="300">
+                Validaremos tu mensaje antes de publicarlo.
+            </p>
+            <p class="ac" pd-anim="slideUp" pd-anim-delay="500">
+                <button id="send-another-comment" class="bt">Mandar un nuevo mensaje.</button>
+            </p>
+        </div>
+    </script>
+    <script type="text/html" id="errorCommentSentTmpl">
+        <div class="error-msg full-width error-comments-sent">
+            <p class="title">
+                Upps
+            </p>
+            <img class="dummy" alt="" src="<%= assetsPath %>img/layout/dummies/tarzan.svg">
+            <p class="subtitle big-txt">
+                ¡Algo ha ido mal!
+            </p>
+            <p class="medium-txt strong">
+                <%= msg %>
+            </p>
+            <p class="ac" pd-anim="slideUp" pd-anim-delay="500">
+                <button id="send-another-comment" class="bt">Inténtalo otra vez.</button>
+            </p>
+        </div>
+    </script>
+
+
+
+    <a href="https://www.paradigmadigital.com/newsletter/" class="fix-tag --right coral-panel">
+        <span>Suscríbete</span>
+        <img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/imagotype_white.svg" aria-label="Paradigma" alt="Paradigma" class="logo" width="20px" height="20px">
+    </a>
+</article>
+
+
+
+    
+    <article class="bcorp-banner" onclick="location.href='https://www.paradigmadigital.com/techbiz/somos-b-corp/'">
+  <p class="title">Estamos comprometidos.</p>
+  <p class="description">Tecnología, personas e impacto positivo.</p>
+</article>
+    <footer id="pd-footer" class="black-panel">
+        <p id="footer-logo">
+            <a class="pd-logo" aria-label="Go to home" href="https://www.paradigmadigital.com/" pd-anim="slideUp">
+                <img src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/imagotype_inv.svg" aria-label="Paradigma" alt="Paradigma" width="22px" height="24px">
+            </a>
+        </p>
+        <div id="footer-location">
+            <p class="title" pd-anim="slideUp">Think Big.</p>
+            <p class="address-place-title" pd-anim="slideUp">
+              <button class="js__change-address-place active" data-place="madrid">Madrid</button>
+              <button class="js__change-address-place" data-place="bcn">Barcelona</button>
+            </p>
+            <div id="address-place__madrid" class="address-place-content js__address-place active">
+              <p class="address" pd-anim="slideUp">Vía de las Dos Castillas, 33 - Ática 2
+28224 Pozuelo de Alarcón - Madrid</p>
+              <p class="phone" pd-anim="slideUp">Tlf. 91 352 59 42</p>
+            </div>
+            <div id="address-place__bcn" class="address-place-content js__address-place">
+              <p class="address" pd-anim="slideUp">Carrer Ramón Turró, 23, 4ª planta
+08005 - Barcelona</p>
+              <p class="phone" pd-anim="slideUp">Tlf. 91 352 59 42</p>
+            </div>
+            <p class="social">
+                <a href="https://www.youtube.com/user/ParadigmaTe?feature=watch" pd-anim="slideUp" rel="noopener" class="yt" title="YouTube" aria-label="YouTube" target="_blank">
+                    <svg id="youtube-icon" viewBox="0 0 96 96">
+                        <use xlink:href="#ico-social-youtube"></use>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/paradigmate" pd-anim="slideUp" rel="noopener" class="tw" title="Twitter" aria-label="Twitter" target="_blank">
+                    <svg id="twitter-icon" viewBox="0 0 96 96">
+                        <use xlink:href="#ico-social-twitter"></use>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/paradigma_digital/" pd-anim="slideUp" rel="noopener" class="in" title="Instagram" aria-label="Instagram" target="_blank">
+                    <svg id="instagram-icon" viewBox="0 0 96 96">
+                        <use xlink:href="#ico-social-instagram"></use>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/paradigma-digital/" pd-anim="slideUp" rel="noopener" class="in" title="LinkedIn" aria-label="LinkedIn" target="_blank">
+                    <svg id="linkedin-icon" viewBox="0 0 96 96">
+                        <use xlink:href="#ico-social-linkedin"></use>
+                    </svg>
+                </a>
+                <a href="https://www.ivoox.com/podcast-apasionados-tecnologia_sq_f11031082_1.html" pd-anim="slideUp" rel="noopener" class="in" title="Ivoox" aria-label="Ivoox" target="_blank">
+                    <svg id="ivoox-icon" viewBox="0 0 96 96">
+                        <use xlink:href="#ico-social-ivoox"></use>
+                    </svg>
+                </a>
+            </p>
+            <p id="footer-hsec-contact" pd-anim="slideUp">
+                <a href="https://www.paradigmadigital.com/contacto/" class="bt  ">
+                    Contáctanos.
+                </a>
+            </p>
+            <ul id="footer-legal-resp">
+                <li pd-anim="slideUp" pd-anim-delay="200">
+                    <a href="https://www.paradigmadigital.com/legal/">
+                        Aviso  Legal
+                    </a>
+                </li>
+                <li pd-anim="slideUp" pd-anim-delay="250">
+                    <a href="https://www.paradigmadigital.com/politica-de-privacidad/">
+                        Cookies
+                    </a>
+                </li>
+                <li pd-anim="slideUp" pd-anim-delay="300">
+                    <a href="https://en.paradigmadigital.com/">
+                        English
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="footer-newsletter">
+            <p class="title" pd-anim="slideUp">
+                Novedades.
+            </p>
+
+            <div id="newsletter-footer-wrap" name="newsletter-footer-wrap" hubspot-portal="2189055" hubspot-form="3602b7ea-9553-4144-a962-84bfbfbd38f3" class="vendor-form hubspot-form newsletter-form init">
+                
+            <script data-hubspot-rendered="true">hbspt.forms.create({
+          portalId: "2189055",
+          formId: "3602b7ea-9553-4144-a962-84bfbfbd38f3"
+        });</script><div class="hbspt-form" id="hbspt-form-1654329430146-2054917646"><form novalidate="" accept-charset="UTF-8" action="https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/2189055/3602b7ea-9553-4144-a962-84bfbfbd38f3" enctype="multipart/form-data" id="hsForm_3602b7ea-9553-4144-a962-84bfbfbd38f3" method="POST" class="hs-form stacked hs-form-private hsForm_3602b7ea-9553-4144-a962-84bfbfbd38f3 hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3 hs-form-3602b7ea-9553-4144-a962-84bfbfbd38f3_f57dd60e-ce90-4034-a817-22689d115990" data-form-id="3602b7ea-9553-4144-a962-84bfbfbd38f3" data-portal-id="2189055" target="target_iframe_3602b7ea-9553-4144-a962-84bfbfbd38f3" data-reactid=".hbspt-forms-0"><div class="hs_email hs-email hs-fieldtype-text field hs-form-field labelsPosition_init" data-reactid=".hbspt-forms-0.1:$0"><label id="label-email-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="" placeholder="Enter your Tu email" for="email-3602b7ea-9553-4144-a962-84bfbfbd38f3" data-reactid=".hbspt-forms-0.1:$0.0"><span data-reactid=".hbspt-forms-0.1:$0.0.0">Tu email</span><span class="hs-form-required" data-reactid=".hbspt-forms-0.1:$0.0.1">*</span></label><legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.1:$0.1"></legend><div class="input" data-reactid=".hbspt-forms-0.1:$0.$email"><input id="email-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="hs-input" type="email" name="email" required="" placeholder="Tu email" autocomplete="email" data-reactid=".hbspt-forms-0.1:$0.$email.0" inputmode="email"></div></div><div class="hs_desarrollo hs-desarrollo hs-fieldtype-checkbox field hs-form-field" data-reactid=".hbspt-forms-0.1:$1"><label id="label-desarrollo-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="" placeholder="Enter your " for="desarrollo-3602b7ea-9553-4144-a962-84bfbfbd38f3" data-reactid=".hbspt-forms-0.1:$1.0"><span data-reactid=".hbspt-forms-0.1:$1.0.0"></span></label><legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.1:$1.1"></legend><div class="input" data-reactid=".hbspt-forms-0.1:$1.$desarrollo"><ul role="checkbox" class="inputs-list multi-container" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0"><li class="hs-form-checkbox" role="checkbox" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Tecnología para Desarrollo"><label for="desarrollo0-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="hs-form-checkbox-display" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Tecnología para Desarrollo.0"><input id="desarrollo0-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="hs-input " type="checkbox" name="desarrollo" value="Tecnología para Desarrollo" aria-labelledby="label-desarrollo-3602b7ea-9553-4144-a962-84bfbfbd38f3" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Tecnología para Desarrollo.0.0"><span data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Tecnología para Desarrollo.0.1">Tecnología</span></label></li><li class="hs-form-checkbox" role="checkbox" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Tecnología para Negocio"><label for="desarrollo1-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="hs-form-checkbox-display" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Tecnología para Negocio.0"><input id="desarrollo1-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="hs-input " type="checkbox" name="desarrollo" value="Tecnología para Negocio" aria-labelledby="label-desarrollo-3602b7ea-9553-4144-a962-84bfbfbd38f3" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Tecnología para Negocio.0.0"><span data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Tecnología para Negocio.0.1">Negocio</span></label></li><li class="hs-form-checkbox" role="checkbox" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Eventos y Seminarios"><label for="desarrollo2-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="hs-form-checkbox-display" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Eventos y Seminarios.0"><input id="desarrollo2-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="hs-input " type="checkbox" name="desarrollo" value="Eventos y Seminarios" aria-labelledby="label-desarrollo-3602b7ea-9553-4144-a962-84bfbfbd38f3" data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Eventos y Seminarios.0.0"><span data-reactid=".hbspt-forms-0.1:$1.$desarrollo.0.$Eventos y Seminarios.0.1">Eventos</span></label></li></ul></div></div><div class="hs_consentimiento_legal_gdpr hs-consentimiento_legal_gdpr hs-fieldtype-booleancheckbox field hs-form-field" data-reactid=".hbspt-forms-0.1:$2"><legend class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.1:$2.1"></legend><div class="input" data-reactid=".hbspt-forms-0.1:$2.$consentimiento_legal_gdpr"><ul class="inputs-list" required="" data-reactid=".hbspt-forms-0.1:$2.$consentimiento_legal_gdpr.0"><li class="hs-form-booleancheckbox" data-reactid=".hbspt-forms-0.1:$2.$consentimiento_legal_gdpr.0.0"><label for="consentimiento_legal_gdpr-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="hs-form-booleancheckbox-display" data-reactid=".hbspt-forms-0.1:$2.$consentimiento_legal_gdpr.0.0.0"><input id="consentimiento_legal_gdpr-3602b7ea-9553-4144-a962-84bfbfbd38f3" class="hs-input" type="checkbox" name="consentimiento_legal_gdpr" value="true" data-reactid=".hbspt-forms-0.1:$2.$consentimiento_legal_gdpr.0.0.0.0"><span data-reactid=".hbspt-forms-0.1:$2.$consentimiento_legal_gdpr.0.0.0.1">Acepto los tratamientos de datos indicados en la <a href="https://www.paradigmadigital.com/legal/" target="_blank" rel="noopener">Política de Privacidad</a><span class="hs-form-required">*</span></span></label></li></ul></div></div><div data-reactid=".hbspt-forms-0.1:$3" class="gdpr-modal-outer-wrap"><a class="gdpr-legal-note-open">+ info</a><div class="gdpr-legal-note js__gdpr-modal-wrap hidden"><div class="hs-richtext hs-main-font-element" data-reactid=".hbspt-forms-0.1:$3.0"><p class="js__legal-info-text">Utilizaremos
+ la información que nos facilitas para suscribirte a nuestro envío 
+periódico de newsletters así como mandarte otras publicaciones de 
+Paradigma que puedan ser de tu interés. Nuestra legitimación es tu 
+consentimiento. Tus datos no se cederán a terceros, y puedes 
+modificarlos, darte de baja o eliminarlos cuando quieras. <a href="https://www.paradigmadigital.com/legal" rel="noopener" target="_blank">Aquí encontrarás toda la información sobre nuestra política de privacidad.</a></p></div><a class="gdpr-legal-note-close">✕</a></div></div><noscript data-reactid=".hbspt-forms-0.2"></noscript><div class="hs_submit hs-submit" data-reactid=".hbspt-forms-0.5"><div class="hs-field-desc" style="display:none;" data-reactid=".hbspt-forms-0.5.0"></div><div class="actions" data-reactid=".hbspt-forms-0.5.1"><input type="submit" value="Sí, quiero estar al día." class="hs-button primary large" data-reactid=".hbspt-forms-0.5.1.0"></div></div><noscript data-reactid=".hbspt-forms-0.6"></noscript><input name="hs_context" type="hidden" value="{&quot;rumScriptExecuteTime&quot;:4159,&quot;rumServiceResponseTime&quot;:4800,&quot;rumFormRenderTime&quot;:3,&quot;rumTotalRenderTime&quot;:4803,&quot;rumTotalRequestTime&quot;:589,&quot;lang&quot;:&quot;esES&quot;,&quot;renderRawHtml&quot;:&quot;true&quot;,&quot;embedAtTimestamp&quot;:&quot;1654329430974&quot;,&quot;formDefinitionUpdatedAt&quot;:&quot;1612787365498&quot;,&quot;pageUrl&quot;:&quot;https://www.paradigmadigital.com/dev/mapstruct/&quot;,&quot;pageTitle&quot;:&quot;MapStruct, simplificando mapeos - Paradigma&quot;,&quot;source&quot;:&quot;FormsNext-static-5.502&quot;,&quot;sourceName&quot;:&quot;FormsNext&quot;,&quot;sourceVersion&quot;:&quot;5.502&quot;,&quot;sourceVersionMajor&quot;:&quot;5&quot;,&quot;sourceVersionMinor&quot;:&quot;502&quot;,&quot;timestamp&quot;:1654329430974,&quot;userAgent&quot;:&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0&quot;,&quot;referrer&quot;:&quot;https://www.arquitecturajava.com/&quot;,&quot;originalEmbedContext&quot;:{&quot;portalId&quot;:&quot;2189055&quot;,&quot;formId&quot;:&quot;3602b7ea-9553-4144-a962-84bfbfbd38f3&quot;,&quot;target&quot;:&quot;#hbspt-form-1654329430146-2054917646&quot;},&quot;renderedFieldsIds&quot;:[&quot;email&quot;,&quot;desarrollo&quot;,&quot;consentimiento_legal_gdpr&quot;],&quot;formTarget&quot;:&quot;#hbspt-form-1654329430146-2054917646&quot;,&quot;correlationId&quot;:&quot;4676e188-b4f6-4e88-8e96-cc2ae0ef7c8a&quot;,&quot;captchaStatus&quot;:&quot;NOT_APPLICABLE&quot;}" data-reactid=".hbspt-forms-0.7"><iframe name="target_iframe_3602b7ea-9553-4144-a962-84bfbfbd38f3" style="display:none;" data-reactid=".hbspt-forms-0.8"></iframe></form></div></div>
+        </div>
+        <nav id="footer-nav">
+            <div id="footer-sitemap">
+                
+                        
+                        <div class="nav-group" pd-anim="slideUp" pd-anim-delay="50">
+                            <div class="main-section">
+                                <a href="https://www.paradigmadigital.com/lineas-servicio/">
+                                    
+                                    Nuestra fórmula
+                                </a>
+                            </div>
+                            
+                                <ul>
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/lineas-servicio/digital-dna/">
+                                                Digital DNA
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/lineas-servicio/data/">
+                                                Data Intelligence
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/lineas-servicio/digital-strategy/">
+                                                Strategic Design
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/lineas-servicio/cloud/">
+                                                Cloud Native
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/lineas-servicio/partners/">
+                                                Partners
+                                            </a>
+                                        </li>
+                                    
+                                
+                                </ul>
+                            
+                        </div>
+                    
+                        
+                        <div class="nav-group" pd-anim="slideUp" pd-anim-delay="100">
+                            <div class="main-section">
+                                <a href="https://www.paradigmadigital.com/quienes-somos/">
+                                    
+                                    Nosotros
+                                </a>
+                            </div>
+                            
+                                <ul>
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/quienes-somos/team/">
+                                                Equipo
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/quienes-somos/manifiesto/">
+                                                Manifiesto
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/quienes-somos/en-accion/">
+                                                En acción
+                                            </a>
+                                        </li>
+                                    
+                                
+                                </ul>
+                            
+                        </div>
+                    
+                        
+                        <div class="nav-group" pd-anim="slideUp" pd-anim-delay="150">
+                            <div class="main-section">
+                                <a href="https://www.paradigmadigital.com/proyectos/">
+                                    
+                                    Proyectos
+                                </a>
+                            </div>
+                            
+                                <ul>
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/proyectos/nueva-telefonica/">
+                                                Telefónica
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/proyectos/mapfre-yip-yop/">
+                                                MAPFRE
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/proyectos/santalucia-revolucionando-papel-asistentes-de-voz/">
+                                                Santalucía
+                                            </a>
+                                        </li>
+                                    
+                                
+                                </ul>
+                            
+                        </div>
+                    
+                        
+                        <div class="nav-group" pd-anim="slideUp" pd-anim-delay="200">
+                            <div class="main-section">
+                                <a href="https://www.paradigmadigital.com/empleo/">
+                                    
+                                    Talento
+                                </a>
+                            </div>
+                            
+                                <ul>
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/empleo/ofertas/">
+                                                Ofertas abiertas
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/empleo/#send-cv">
+                                                Envía tu CV.
+                                            </a>
+                                        </li>
+                                    
+                                
+                                </ul>
+                            
+                        </div>
+                    
+                        
+                        <div class="nav-group" pd-anim="slideUp" pd-anim-delay="250">
+                            <div class="main-section">
+                                <a href="https://www.paradigmadigital.com/blog/">
+                                    
+                                    Blog
+                                </a>
+                            </div>
+                            
+                                <ul>
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/blog/topic/cloud-native/">
+                                                Cloud Native
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/blog/topic/data-intelligence/">
+                                                Data Intelligence
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/blog/topic/strategic-design/">
+                                                Strategic Design
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/blog/topic/back-end/">
+                                                Back-end
+                                            </a>
+                                        </li>
+                                    
+                                
+                                        <li>
+                                            <a href="https://www.paradigmadigital.com/blog/topic/front-end/">
+                                                Front-end
+                                            </a>
+                                        </li>
+                                    
+                                
+                                </ul>
+                            
+                        </div>
+                    
+                        
+                        <div class="nav-group" pd-anim="slideUp" pd-anim-delay="300">
+                            <div class="main-section">
+                                <a href="https://www.paradigmadigital.com/eventos/">
+                                    
+                                    Eventos
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+            <ul id="footer-legal">
+                <li pd-anim="slideUp" pd-anim-delay="200">
+                    <a href="https://www.paradigmadigital.com/legal/">
+                        Aviso  Legal
+                    </a>
+                </li>
+                <li pd-anim="slideUp" pd-anim-delay="250">
+                    <a href="https://www.paradigmadigital.com/politica-de-privacidad/">
+                        Cookies
+                    </a>
+                </li>
+                <li pd-anim="slideUp" pd-anim-delay="300">
+                    <a href="https://en.paradigmadigital.com/">
+                        English
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+
+
+    <div id="overlay" aria-hidden="true" class="invisible"></div>
+
+
+    <div id="cursor">
+    <i></i>
+</div>
+
+    <script>const pd = {};</script>
+
+    <div id="loadedScripts" aria-hidden="true"><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/utils.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/cssrelpreload.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/header-active-section.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-anim.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-lazy-load.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-scroll.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/header-cases.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-overlay.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-forms-vendor.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-swipe.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-accordion.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-collapse.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-columns.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-video.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-parallax.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-resp-menu.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-gdpr.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-footer.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-track.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-timeago.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-gperso.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/tmpl.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-comments.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-iframes.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-embeds.js"></script><script src="MapStruct,%20simplificando%20mapeos%20-%20Paradigma_files/pd-highlight.js"></script></div>
+    <script>
+        PdLoadScript('utils.js?v=220412');
+
+
+        function isIE() {
+            var ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object
+            var msie = ua.indexOf('MSIE '); // IE 10 or older
+            var trident = ua.indexOf('Trident/'); //IE 11
+
+            return (msie > 0 || trident > 0);
+        }
+
+        var isIE = isIE();
+
+        if(isIE){
+            PdLoadScript('pd-ie.js?v=220412');
+        } else {
+            PdLoadScript('polyfills/cssrelpreload.js?v=220412');
+        }
+
+    </script>
+
+    
+    <script>PdLoadScript('header-active-section.js?v=220412');</script>
+    <script>PdLoadScript('pd-anim.js?v=220412');</script>
+    <script>PdLoadScript('pd-lazy-load.js?v=220412');</script>
+    <script>PdLoadScript('pd-scroll.js?v=220412');</script>
+    <script>PdLoadScript('header-cases.js?v=220412', 'desktop');</script>
+    
+    <script>PdLoadScript('pd-overlay.js?v=220412');</script>
+    <script>PdLoadScript('pd-forms-vendor.js?v=220412');</script>
+    <script>PdLoadScript('pd-swipe.js?v=220412');</script>
+    <script>PdLoadScript('pd-accordion.js?v=220412');</script>
+    <script>PdLoadScript('pd-collapse.js?v=220412');</script>
+    <script>PdLoadScript('pd-columns.js?v=220412');</script>
+    <script>PdLoadScript('pd-video.js?v=220412');</script>
+    <script>PdLoadScript('pd-parallax.js?v=220412', 'desktop');</script>
+    <script>PdLoadScript('pd-resp-menu.js?v=220412');</script>
+    <script>PdLoadScript('pd-gdpr.js?v=220412');</script>
+    <script>PdLoadScript('pd-footer.js?v=220412');</script>
+
+    
+
+    
+        <script>PdLoadScript('pd-track.js?v=220412');</script>
+    
+    
+    
+    
+    
+    <script>PdLoadScript('pd-timeago.js?v=220412');</script>
+    <script>PdLoadScript('pd-gperso.js?v=220412');</script>
+    
+    
+        <script>PdLoadScript('libs/tmpl.js?v=220412');</script>
+        <script>PdLoadScript('pd-comments.js?v=220412');</script>
+        <script>PdLoadScript('pd-iframes.js?v=220412');</script>
+        <script>PdLoadScript('pd-embeds.js?v=220412');</script>
+        <script>PdLoadScript('pd-highlight.js?v=220412');</script>
+        <script>
+            /* global pd, tmpl, _env, utils */
+/* eslint no-undef: "error" */
+/* eslint no-unused-vars: 0 */
+
+if ('IntersectionObserver' in window) {
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1.0,
+    };
+    const observer = new IntersectionObserver((entries, _observer) => {
+        entries.forEach((entry) => {
+            getRelatedPosts();
+            _observer.disconnect();
+        });
+    }, options);
+
+    const target = document.querySelector('#blog-detail-content');
+    observer.observe(target);
+} else {
+    getRelatedPosts();
+}
+
+function getRelatedPosts() {
+    if (typeof tmpl === 'undefined' || typeof pd.ago === 'undefined') {
+        setTimeout(() => getRelatedPosts(), 100);
+        return;
+    }
+
+    const outerWrap = document.querySelector('#relatedPosts');
+    const wrap = outerWrap.querySelector('#relatedPostsList');
+    if (!wrap) { return; }
+
+    const fetchUrl = wrap.dataset.relatedFetch;
+    const title = encodeURIComponent(wrap.dataset.relatedTitle);
+    let html = '';
+
+    fetch(`${fetchUrl}${title}`)
+        .then(response => response.json())
+        .then((response) => {
+            // ocultar panel si no hay relacionados
+            if (!response.results.length) {
+                outerWrap.classList.add('hidden');
+            }
+
+            response.results.forEach((item, index) => {
+                const theItem = item;
+
+                theItem.titleTag = 'h4';
+                // para evitar que se muestren nombres de autores muy largos
+                theItem.authors = theItem.authorsToShow;
+                theItem.sitePath = _env.sitePath;
+                theItem.itemClass = 'col left-col';
+                theItem.titleDot = utils.checkLastDot(theItem.title) ? '.' : '';
+                if (index % 2) {
+                    theItem.itemClass = 'col right-col';
+                }
+                html += tmpl('blogItemTmpl', theItem);
+            });
+
+            wrap.innerHTML = html;
+            outerWrap.classList.remove('loading');
+
+            pd.anim.init(wrap);
+            pd.lazy.init();
+            pd.ago.init(wrap);
+            if (pd.parallax) pd.parallax.init(wrap);
+        })
+        .catch((error) => {
+            console.error(`Hubo un problema con la petición getRelated: ${error.message}`);
+            outerWrap.classList.add('hidden');
+        });
+}
+
+
+        </script>
+    
+
+
+
+
+<button id="scroll-top-top-trigger" class=""></button><div id="gdpr" class="fixed-bottom-msg">
+            <p class="small-txt">
+                <span>Usamos cookies propias y de terceros con fines analíticos y de personalización. Las puedes activar, configurar o rechazar.</span>
+                <button class="bt bt-small bt-inverse js__cookies-accept-gdpr" id="accept-gdpr">Activar todas.</button>
+                <a class="bt bt-small" href="https://www.paradigmadigital.com/politica-de-privacidad/#cookies-selection">Configurar o rechazar.</a>
+            </p>
+            </div></body></html>

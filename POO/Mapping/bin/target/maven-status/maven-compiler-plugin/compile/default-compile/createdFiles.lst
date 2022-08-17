@@ -1,0 +1,7 @@
+com\mapper\service\IPersonMapperImpl.class
+com\mapper\entity\Person.class
+com\mapper\test\MapStructTest.class
+com\mapper\service\PersonMapperImp.class
+com\mapper\dto\PersonDTO.class
+com\mapper\service\IPersonMapper.class
+com\mapper\test\MapStructMain.class
