@@ -1,4 +1,4 @@
-package exercicies;
+package codes.exercicies;
 
 /**
  * Tabla de conversión de pulgadas a metro

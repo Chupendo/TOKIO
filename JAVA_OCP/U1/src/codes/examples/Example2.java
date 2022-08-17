@@ -1,4 +1,4 @@
-package examples;
+package codes.examples;
 /*
  * Ejemplo de variable.
  * Asigne el nombre Example2.java a este archivo.

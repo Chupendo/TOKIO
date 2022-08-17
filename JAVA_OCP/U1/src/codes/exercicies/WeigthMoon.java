@@ -1,4 +1,4 @@
-package exercicies;
+package codes.exercicies;
 
 /**
  * Calcula el peso de Luna

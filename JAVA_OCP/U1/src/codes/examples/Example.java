@@ -1,4 +1,4 @@
-package examples;
+package codes.examples;
 /*
  * Un sencillo programa de Java.
  * 

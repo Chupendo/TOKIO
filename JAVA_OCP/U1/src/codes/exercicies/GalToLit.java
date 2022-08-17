@@ -1,4 +1,4 @@
-package exercicies;
+package codes.exercicies;
 
 /**
  * Convierte Galones en litros

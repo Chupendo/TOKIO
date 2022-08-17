@@ -1,4 +1,4 @@
-package examples;
+package codes.examples;
 /*
  * Programa que ilustra las diferncias entre int y double
  * Asigne el nombre Example3.java a este archivo.

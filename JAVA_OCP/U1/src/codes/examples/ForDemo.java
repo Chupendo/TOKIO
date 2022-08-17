@@ -1,4 +1,4 @@
-package examples;
+package codes.examples;
 
 /*
  * Uso de if
