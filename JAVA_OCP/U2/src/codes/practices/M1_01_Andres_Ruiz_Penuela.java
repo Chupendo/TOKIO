@@ -21,9 +21,9 @@ import java.util.Scanner;
 public class M1_01_Andres_Ruiz_Penuela {
 
 	public static void main(String[] args) {
-		double m = 30; // Masa del objeto > kg
+		double masa = 30; // Masa del objeto > kg
 
 		// Muestra el resultado
-		System.out.println("Un peso de "+m+" kilos en la Tierra equivalen a "+m/1.17+" kilos en la Luna");
+		System.out.println("Un peso de "+masa+" kilos en la Tierra equivalen a "+masa/1.17+" kilos en la Luna");
 	}
 }
