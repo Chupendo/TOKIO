@@ -12,6 +12,7 @@ public class Guess2 {
 		ch = (char) System.in.read(); // obtener read
 		
 		if(ch==answer) System.out.println("+++ Right +++");
+		else System.out.println("...Sorry, you are wrong.");
 	}
 
 }
