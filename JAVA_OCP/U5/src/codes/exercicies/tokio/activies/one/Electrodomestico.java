@@ -1,4 +1,4 @@
-package codes.exercicies.tokio.one;
+package codes.exercicies.tokio.activies.one;
 
 import java.util.Date;
 
