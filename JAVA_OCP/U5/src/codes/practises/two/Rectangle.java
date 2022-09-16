@@ -1,5 +1,13 @@
 package codes.practises.two;
 
+/**
+ * Clase que modela una Rectangulo
+ * 
+ * @author Andrés Ruiz Peñuela
+ * @version 1.0
+ * @see Object
+ * @see Math
+ */
 public class Rectangle {
 	/** Base de la figura**/
 	private double base;
@@ -20,7 +28,7 @@ public class Rectangle {
 	 * Inicializa un nuevo rectángulo con los valores pasados por parámetro
 	 * 
 	 * Si se intenta dar valor negativo a alguna de las dimensiones , lo corrige al valor positivo usando 
-	 * @{link {@link codes.practises.two.Rectangle#absDouble(double) absDouble}
+	 * {@link codes.practises.two.Rectangle#absDouble(double) absDouble}
 	 * 
 	 * @param base
 	 * 		double, base de la figura
