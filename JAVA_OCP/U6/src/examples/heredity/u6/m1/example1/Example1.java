@@ -1,4 +1,4 @@
-package examples.heredity.u6.m1;
+package examples.heredity.u6.m1.example1;
 /**
  * Ejemplo 1 de Herencia, explicación de relación entre el clase base y la clase hereditaria
  * 
