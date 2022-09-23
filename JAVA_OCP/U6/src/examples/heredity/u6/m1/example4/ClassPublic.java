@@ -1,7 +1,7 @@
 package examples.heredity.u6.m1.example4;
 
 public class ClassPublic {
-	int varPublic;
+	public int varPublic;
 	
 	public ClassPublic() {
 		

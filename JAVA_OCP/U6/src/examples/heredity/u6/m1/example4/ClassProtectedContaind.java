@@ -2,7 +2,7 @@ package examples.heredity.u6.m1.example4;
 
 
 public class ClassProtectedContaind {
-	ClassProtected objClasProtected = new ClassProtected();
+	protected ClassProtected objClasProtected = new ClassProtected();
 
 	public ClassProtectedContaind() {
 		objClasProtected = new ClassProtected();
