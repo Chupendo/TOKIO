@@ -34,7 +34,7 @@ public class Cuenta {
 	 * 		Saldo de lacuenta actualizao, 0 si no se puede retirar
 	 */
 	public float retirarDinero(float dinero ) {
-		if(dinero<this.saldo) {
+		if(dinero<=this.saldo) {
 			this.saldo=this.saldo-(dinero);
 			this.numeroRetiros++;
 			calcularComisionMensual();
