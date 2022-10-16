@@ -7,10 +7,12 @@ public class Universidad {
 
 	public static void imprimirNominas(Personal[] listaPersonal) {
 		Stream.of(listaPersonal).forEach(personal -> {
-			if (personal instanceof PAS) {
-				System.out.println(personal.toString() + ", nomina: " + ((PAS) personal).calcularSueldoSinReset());
-			} else {
-				System.out.println(personal.toString() + ", nomina: " + ((PDI) personal).calcularSueldo());
+			if(personal!=null) {
+				if (personal instanceof PAS) {
+					System.out.println(personal.toString() + ", nomina: " + ((PAS) personal).calcularSueldoSinReset()+" Euros");
+				} else {
+					System.out.println(personal.toString() + ", nomina: " + ((PDI) personal).calcularSueldo()+" Euros");
+				}
 			}
 
 		});
