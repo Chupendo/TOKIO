@@ -1,10 +1,16 @@
 package M1_T06_P25;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class OrdPalNumDec extends AlgoritmoOrdenacion {
 
+	/**
+	 * Metodo que ordernad por palo en orde natural (menor a mayor alfanumericamente) y por numero de carta
+	 * decreciente (de ayor a menor
+	 * 
+	 * @param listaCartas:List<Carta>
+	 * 		Lista de cartas a ordernadar
+	 */
 	@Override
 	public void ordena(List listaCartas) {
 		// Algoritmos de1 ordenacion
@@ -39,6 +45,20 @@ public class OrdPalNumDec extends AlgoritmoOrdenacion {
 		}
 	}
 
+	/**
+	 * Metodo que intercambia dos objetos de una lista
+	 * 
+	 * @param listaCartas:List<Carta>
+	 * 		Lista de elementos
+	 * @param c1:Carta
+	 * 		Objeto 1 a intercambiar
+	 * @param c2:Carta
+	 * 		Objeto 2 a intercambiar
+	 * @param i:int
+	 * 		Posicion del objeto 1
+	 * @param j:int
+	 * 		Posicion del objeto 2
+	 */
 	public static void swap(List listaCartas,Carta c1, Carta c2,int i, int j) {
 		Carta pivote = new Carta(c1.getNumero(), c1.getPalo());
 		listaCartas.remove(c1);
@@ -47,6 +67,22 @@ public class OrdPalNumDec extends AlgoritmoOrdenacion {
 		listaCartas.remove(j);
 		listaCartas.add(j, pivote);
 	}
+	
+	/**
+	 * Metodo que compara dos cartas {c1,c2} y devuelve:
+	 * <ul>
+	 * <li>-2: si el palo de c1 es menor que el palo de c2</li>
+	 * <li>-1: si el numero de c1 es mayor que el numero de c2</li>
+	 * <li>0: resto de los casos</li>
+	 * </ul>
+	 *  
+	 * , 
+	 * @param c1:Carta
+	 * @param c2:Carta
+	 * 
+	 * @return int
+	 * 		Resutlado de compara el atributo "palo" y "numero" de ambas cartas
+	 */
 	public static int comparadorCarta(Carta c1, Carta c2) {
 		// Comparador de cartas usado en el algoritmo de ordenaci�n
 		//Comparacion por Palo alfanumerico orden natural +  Numero de mayor a menor
