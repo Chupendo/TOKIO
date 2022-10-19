@@ -7,19 +7,23 @@ public class Main {
 		Baraja baraja = new Baraja();
         Mazo mazo = baraja.getMazo();
         System.out.println(mazo.toString());
-/*
+
+
+        System.out.println("OrdPalNumInc");
         mazo.setAlgoritmo(new OrdPalNumInc());
         mazo.ordena();
         System.out.println(mazo.toString());
-*/
+
+        System.out.println("OrdPalNumDec");
         mazo.setAlgoritmo(new OrdPalNumDec());
         mazo.ordena();
         System.out.println(mazo.toString());
-/*      
+
+        System.out.println("OrdNumIncPal");
         mazo.setAlgoritmo(new OrdNumIncPal());
         mazo.ordena();
         System.out.println(mazo.toString());
-*/       
+       
 	}
 
 }
