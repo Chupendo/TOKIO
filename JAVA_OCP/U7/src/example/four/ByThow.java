@@ -8,6 +8,4 @@ public class ByThow implements Series {
 	public ByThow(){
 		a = b = z= 0;
 	}
-	
-	
 }

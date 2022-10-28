@@ -7,6 +7,6 @@ public class UseByThow {
 		System.out.println("Series.PI = "+Series.PI);
 		System.out.println("ByThow.PI = "+ByThow.PI);
 		System.out.println("obj.PI = "+obj.PI);
+		//obj.PI = 3; //Error, la variable statci PI es final
 	}
-
 }
