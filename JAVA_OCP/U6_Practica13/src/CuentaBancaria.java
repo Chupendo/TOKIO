@@ -18,13 +18,20 @@ public class CuentaBancaria extends Cuenta {
 	 * @see Cuenta#retirarDinero(float)
 	 */
 	@Override
-	public float retirarDinero(float dinero) {
-		if(dinero>this.saldo) {
-			this.sobregiro += (dinero-this.saldo);
-			return super.retirarDinero(this.saldo);
+	public void retirarDinero(float dinero) {
+		if(this.saldo<=0) {
+			this.sobregiro += dinero;
+		}else{
+			if(dinero>this.saldo) {
+				float aux = dinero - this.saldo;
+				this.sobregiro += aux;
+				super.retirarDinero(dinero-aux);
+			}else {
+				super.retirarDinero(dinero);
+			}	
 		}
-		
-		return super.retirarDinero(dinero);
+			
+			
 	}
 	
 	/**
@@ -41,8 +48,9 @@ public class CuentaBancaria extends Cuenta {
 			if(this.sobregiro>dinero){
 				this.sobregiro = this.sobregiro-dinero;
 			}else {
-				this.sobregiro = dinero - this.sobregiro;
-				super.ingresarCantidad(dinero-this.sobregiro);
+				float aux = dinero - this.sobregiro;
+				this.sobregiro = 0;
+				super.ingresarCantidad(aux);
 			}
 		}else {
 			super.ingresarCantidad(dinero);
@@ -54,31 +62,12 @@ public class CuentaBancaria extends Cuenta {
 	 * @see CuentaBancaria#calcularInteresMensual()
 	 */
 	@Override
-	public float extractoMensual() {
-		return this.saldo-this.calcularInteresMensual();
+	public void extractoMensual() {
+		super.extractoMensual();
+		this.saldo -= this.sobregiro;
+		this.sobregiro = 0;
 	}
 	
-	/**
-	 * Intereses de la cuenta correinte mensual
-	 * Operacion: (saldo*tasaAnual/100)
-	 * return float
-	 * 	interes
-	 */
-	public float calcularInteresMensual() {
-		float interes = ((this.saldo+this.sobregiro)*this.tasaAnual/100);
-		return interes;
-	}
-	
-	
-	/**
-	 * Restablce los campos para un nuevo mes
-	 */
-	public void nuevoMes() {
-		this.saldo = this.extractoMensual()<0?0:this.extractoMensual();
-		this.sobregiro = this.extractoMensual()<0?(this.sobregiro-this.extractoMensual()) :0;
-		this.numeroIngresos = 0;
-		this.numeroRetiros = 0;
-	}
 	
 	/**
 	 * Muestra por pantalla una serie de atributos:
@@ -91,12 +80,8 @@ public class CuentaBancaria extends Cuenta {
 	 * @return String
 	 * 		mensaje por mantalla
 	 */
-	public String Imprimir() {
-		return "Cuenta de ahorros: \n"+
-				"Saldo de la cuenta: "+this.saldo+
-				" Eur., comision mensual: "+this.comisionMensual+
-				" Eur., transaciones realizadas: "+(this.numeroIngresos+this.numeroRetiros)+
-				" , sobregiro: "+this.sobregiro;
+	public String toString() {
+		return "Cuenta de ahorros: [ "+super.toString()+", sobregiro: "+this.sobregiro+"]";
 	}
 
 }

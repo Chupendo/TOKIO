@@ -7,7 +7,7 @@
 public class M1_13_Andres_Ruiz_Penuela {
 
 	public static void main(String[] args) {
-		//testCuentaAhorros();  // Comprueba el uso de la clase CuentaAhorros
+		testCuentaAhorros();  // Comprueba el uso de la clase CuentaAhorros
 		//testCuentaBancaria(); // Comprueba el uso de la clase CuentaBancaria
 	}
 	
@@ -49,19 +49,13 @@ public class M1_13_Andres_Ruiz_Penuela {
 		System.out.println(caa200.Imprimir());
 		
 		//
-		System.out.println("extracto mensual de caa200: "+caa200.extractoMensual()+ " Eur.");
-		System.out.println("extracto mensual de caa100: "+caa100.extractoMensual()+ " Eur.");
-		System.out.println("extracto mensual de caa90: "+caa90.extractoMensual()+ " Eur.");
+		caa200.extractoMensual();
+		caa100.extractoMensual();
+		caa90.extractoMensual();
+		System.out.println("extracto mensual de caa200: "+caa200.Imprimir()+ " Eur.");
+		System.out.println("extracto mensual de caa100: "+caa100.Imprimir()+ " Eur.");
+		System.out.println("extracto mensual de caa90: "+caa90.Imprimir()+ " Eur.");
 		
-		//
-		System.out.println("Nuevo mes");
-		caa200.nuevoMes();	
-		caa100.nuevoMes();
-		caa90.nuevoMes();
-		mostrarCCAA(caa200,caa100,caa90);
-		System.out.println("extracto mensual de caa200: "+caa200.extractoMensual()+ " Eur.");
-		System.out.println("extracto mensual de caa100: "+caa100.extractoMensual()+ " Eur.");
-		System.out.println("extracto mensual de caa90: "+caa90.extractoMensual()+ " Eur.");
 		
 		//
 		System.out.println("Seteo de saldo de todas las cuentas a 200 Eur.");
@@ -87,23 +81,31 @@ public class M1_13_Andres_Ruiz_Penuela {
 		cb90.retirarDinero(100F);
 		mostrarCCB(cb200,cb100,cb90);
 		
+				
 		//
-		System.out.println(cb200.Imprimir());
+		cb200.extractoMensual();
+		cb100.extractoMensual();
+		cb90.extractoMensual();
+		System.out.println("extracto mensual de cb 200: "+cb200.toString()+ " Eur.");
+		System.out.println("extracto mensual de cb 100: "+cb100.toString()+ " Eur.");
+		System.out.println("extracto mensual de cb 90: "+cb90.toString()+ " Eur.");
 		
 		//
-		System.out.println("extracto mensual de cb 200: "+cb200.extractoMensual()+ " Eur.");
-		System.out.println("extracto mensual de cb 100: "+cb100.extractoMensual()+ " Eur.");
-		System.out.println("extracto mensual de cb 90: "+cb90.extractoMensual()+ " Eur.");
+		System.out.println("Retiro de 50 Eur.:");
+		cb200.retirarDinero(50F);
+		cb100.retirarDinero(50F);
+		cb90.retirarDinero(50F);
+		mostrarCCB(cb200,cb100,cb90);
 		
 		//
-		System.out.println("Nuevo mes: ");
-		cb200.nuevoMes();
-		cb100.nuevoMes();
-		cb90.nuevoMes();
-		System.out.println(cb200.Imprimir());// Interes en saldo
-		System.out.println(cb100.Imprimir());// Sin interes, cuenta vacia
-		System.out.println(cb90.Imprimir()); // Tiene intereses en sobregiro
-		mostrarCCB(cb200,cb100,cb90); // Muestra el resutlado del objeto, en un nuevo mes
+		System.out.println("Inreos de 100 Eur.:");
+		cb200.ingresarCantidad(100F);
+		cb100.ingresarCantidad(100F);
+		cb90.ingresarCantidad(100F);
+		System.out.println(cb200.toString());// Interes en saldo
+		System.out.println(cb100.toString());// Sin interes, cuenta vacia
+		System.out.println(cb90.toString()); // Tiene intereses en sobregiro
+
 	}
 	public static void mostrarCCAA(CuentaAhorros...cuenta) {
 		for (CuentaAhorros cuentaAhorros : cuenta) {
@@ -113,7 +115,7 @@ public class M1_13_Andres_Ruiz_Penuela {
 	
 	public static void mostrarCCB(CuentaBancaria...cuenta) {
 		for (CuentaBancaria cuentaBancaria : cuenta) {
-			System.out.println("caa: "+cuentaBancaria.toString()+", sobregiro: "+cuentaBancaria.sobregiro);
+			System.out.println("cb: "+cuentaBancaria.toString()+", sobregiro: "+cuentaBancaria.sobregiro);
 		}
 	}
 }

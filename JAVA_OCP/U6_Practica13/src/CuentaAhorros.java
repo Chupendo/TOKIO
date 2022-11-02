@@ -15,7 +15,8 @@ public class CuentaAhorros extends Cuenta {
 	 * 		true si esta activa, false en otro caso
 	 */
 	public boolean isActive() {
-		this.activa = this.saldo<100?false:true;
+		//this.activa = this.saldo<100?false:true;
+		this.activa = this.saldo>100;
 		return this.activa;
 	}
 	
@@ -36,26 +37,28 @@ public class CuentaAhorros extends Cuenta {
 	 *
 	 * @param float
 	 * 		dinero
-	 * @return float
-	 * 		Saldo de lacuenta actualizao, 0 si no se puede retirar
+
 	 * @see Cuenta#retirarDinero(float)
 	 */
-	public float retirarDinero(float saldo) {
-		float result = 0F;
-		if(!this.activa)
-			return result;
+	public void retirarDinero(float saldo) {
 		
-		result = super.retirarDinero(saldo);
-		isActive();
-		return result;
+		if(this.activa)
+			super.retirarDinero(saldo);
 		
+		isActive();	
 	}
+	
 	/**
 	 * Obitene el extracto mensual de la cuenta
+	 * Comision mensual se incrementa 1,5€ por cada retiro de dinero una vez superado los 4 retiros
+	 * 
 	 * @see Cuenta#extractoMensual()
 	 */
-	public float extractoMensual() {
-		return super.extractoMensual();
+	public void extractoMensual() {
+		if(this.numeroRetiros>4) {
+			this.comisionMensual = (this.numeroRetiros-4)*1.5F;
+		}
+		super.extractoMensual();
 	}
 	
 	/**
