@@ -6,8 +6,8 @@ public class PDI extends Personal{
 	private static final byte INCREMENTOPORSENIO = 100; 
 	protected byte seniosReconocidos;
 
-	public PDI(String nombre, String dni, byte horasSemena,float precioHora,byte seniosReconocidos,byte idCategoria) {
-		super(nombre, dni, horasSemena, precioHora,idCategoria);
+	public PDI(String nombre, String dni, byte horasSemena,int precioHora,byte seniosReconocidos, CATEGORIA cat /*byte idCategoria*/) {
+		super(nombre, dni, horasSemena, precioHora, cat /*idCategoria*/);
 		this.seniosReconocidos = (seniosReconocidos>=0?(seniosReconocidos>NSENIOSMAXIMOS?NSENIOSMAXIMOS:seniosReconocidos):0);
 	}
 		

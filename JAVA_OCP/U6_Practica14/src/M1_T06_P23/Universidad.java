@@ -9,9 +9,9 @@ public class Universidad {
 		Stream.of(listaPersonal).forEach(personal -> {
 			if(personal!=null) {
 				if (personal instanceof PAS) {
-					System.out.println(personal.toString() + ", nomina: " + ((PAS) personal).calcularSueldoSinReset()+" Euros");
+					System.out.println(personal.toString() + ", nomina: " + ((PAS) personal).calcularSueldoSinReset()/(float)100 +" Euros");
 				} else {
-					System.out.println(personal.toString() + ", nomina: " + ((PDI) personal).calcularSueldo()+" Euros");
+					System.out.println(personal.toString() + ", nomina: " + ((PDI) personal).calcularSueldo()/(float)100 +" Euros");
 				}
 			}
 

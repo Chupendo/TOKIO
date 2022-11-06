@@ -27,14 +27,18 @@ public class M1_14_Andres_Ruiz_Penuela {
 		if (lPersonal != null && !isEmpaty(lPersonal)) {
 			// Muestra las persnas de la lista
 			System.out.println("Lista de personal:");
-			Stream.of(lPersonal).forEach(System.out::println);
+			Stream.of(lPersonal).forEach(person->{
+				if(person!=null) {
+					System.out.println(person);
+				}
+			});
 
 			// Muestra las nominas de las personas en la lista
 			System.out.println("Nominas: ");
 			uni.imprimirNominas(lPersonal);
 			
 			// Muestra el prespueso de la univiersiad & restablce las horas extras a cero
-			System.out.println("Presupuesto: "+uni.obtenerPresupuestoTotal(lPersonal)+" Euros");
+			System.out.println("Presupuesto: "+uni.obtenerPresupuestoTotal(lPersonal)/(float)100+" Euros");
  
 		} else {
 			System.out.println("Lista de personal vacia");
@@ -55,7 +59,7 @@ public class M1_14_Andres_Ruiz_Penuela {
 				cont++;
 			}
 		}
-		return cont<NPERSONAL?true:false;
+		return cont==0?true:false;
 	}
 
 	public static void addPersonal(Personal[] lPersonal) {

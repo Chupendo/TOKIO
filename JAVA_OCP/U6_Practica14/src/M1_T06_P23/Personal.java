@@ -5,9 +5,10 @@ public class Personal {
 	// constantes de clase
 	private static final byte NSemenas = 4;
 
-	private static enum CATEGORIA {
+	protected static enum CATEGORIA {
 		INFORMATICO, ADMINISTRATIVO, PROFESORES, INVESTIGADORES;
-
+		// NO es necesario, lo dejo como ejemplo de mapeo
+		/*
 		private static CATEGORIA getCategoria(byte id) {
 			CATEGORIA isCategoria;
 			switch (id) {
@@ -28,21 +29,23 @@ public class Personal {
 				break;
 			}
 			return isCategoria;
-		}
+		}*/
 	};
 
 	// atributos de clase
 	protected String nombre;
 	protected String dni;
-	protected float salario;
+	protected int salario;
 	protected CATEGORIA categoria;
+	
+	//salario
 
 	// �constructor
-	public Personal(String nombre, String dni, byte horasSemena, float precioHora, byte idCategoria) {
+	public Personal(String nombre, String dni, byte horasSemena, int precioHora, CATEGORIA cat /*byte idCategoria*/) {
 		this.nombre = nombre;
 		this.dni = dni;
 		this.salario = horasSemena * precioHora * NSemenas;
-		this.categoria = CATEGORIA.getCategoria(idCategoria);
+		this.categoria = cat; //CATEGORIA.getCategoria(idCategoria);
 
 	}
 
@@ -53,7 +56,7 @@ public class Personal {
 	 * 	mensaje con el nombre, salario y cateogira de la instancia de tipo persona
 	 */
 	public String toString() {
-		return "nombre: " + nombre + ", salario: " + salario + " Eur., categoria: " + categoria;
+		return "nombre: " + nombre + ", salario: " + salario/(float)100 + " Eur., categoria: " + categoria;
 	}
 
 	/**

@@ -9,8 +9,8 @@ public class PAS extends Personal{
 	protected byte nHorasExtras;
 	
 	//Constructores
-	public PAS(String nombre, String dni, byte horasSemena, float precioHora,byte nHorasExtras,byte idCategoria) {
-		super(nombre, dni, horasSemena, precioHora,idCategoria);
+	public PAS(String nombre, String dni, byte horasSemena, int precioHora,byte nHorasExtras,CATEGORIA cat /*byte idCategoria*/) {
+		super(nombre, dni, horasSemena, precioHora, cat /*idCategoria*/);
 		this.nHorasExtras = nHorasExtras;
 	}
 	
