@@ -79,8 +79,14 @@ public class M1_14_Andres_Ruiz_Penuela {
 					if (type == 0) {
 						System.out.println("Adios, Personal añadidos: " + nPersonal);
 						break;
+					}else {
+						if(type <1 || type > 4) {
+							System.out.println("Opcion no contempalda");
+						}else {
+							lPersonal[nPersonal] = addPerson(type);
+						}
 					}
-					lPersonal[nPersonal] = addPerson(type);
+					
 				} catch (Exception e) {
 					System.err.println("Error con el dato insertado " + e);
 					sc.next();
