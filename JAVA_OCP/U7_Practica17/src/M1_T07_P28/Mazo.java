@@ -2,21 +2,29 @@ package M1_T07_P28;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class Mazo {
 	
 	 	List cartas;
-	    private AlgoritmoOrdenacion algoritmo;
 
-	    public void setAlgoritmo(AlgoritmoOrdenacion algoritmo) {
-	        // Establece el algoritmo de ordenaci�n
-	    	this.algoritmo = algoritmo;
-	    }
-
-	    public void ordena() {
+	    public void ordena( ) {
 	        // Le pide al algoritmo que ordene
-	    	algoritmo.ordena(cartas);
+	    	Collections.sort(cartas);
+	    	
+	    	//algoritmo.ordena(cartas);
+	    }
+	    
+	    public void ordena(Comparator<Carta> com) {
+	        // Le pide al algoritmo que ordene
+	    	int i =0;
+	    	do {
+	    		Collections.sort(cartas,com);
+	    		i++;
+	    	}while(i<=1);
+	    	
 	    }
 
 	    /**

@@ -3,7 +3,7 @@ package M1_T07_P27;
 import java.util.Arrays;
 
 public class ArrayCharSequenceTokio implements CharSequenceTokio {
-	private CharSequenceTokio data = null;
+
 	protected char[] matriz = null;
 	public ArrayCharSequenceTokio(char... matriz ) {
 		this.matriz = matriz;
@@ -16,15 +16,15 @@ public class ArrayCharSequenceTokio implements CharSequenceTokio {
 
 	@Override
 	public char charAt(int index) {
-		if(this.matriz==null || index>=0 || this.matriz.length<index) {
+		if(this.matriz==null || index<=0 || index> this.matriz.length) {
 			return 0;
 		}
-		return this.matriz[index];
+		return this.matriz[index-1];
 	}
 
 	@Override
 	public CharSequenceTokio subSequence(int start, int end) {
-		if(this.matriz==null || start<0 || start>end || end>this.length() ) {
+		if(this.matriz==null || start<0 || start>end || end>=this.length() ) {
 			return this;
 		}
 		
@@ -33,8 +33,11 @@ public class ArrayCharSequenceTokio implements CharSequenceTokio {
 		}
 		
 		char[] aux = new char[end-start];
+		int j = 0;
 		for(int i = start;i<end;i++) {
-			aux[i] = this.charAt(i);
+			aux[j] = this.charAt(i);
+			j++;
+			
 		}
 		return new ArrayCharSequenceTokio(aux);
 	}

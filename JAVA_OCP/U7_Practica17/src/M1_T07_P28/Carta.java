@@ -1,6 +1,5 @@
 package M1_T07_P28;
 
-import java.util.Comparator;
 
 public class Carta implements Comparable<Carta> {
 	
@@ -61,58 +60,22 @@ public class Carta implements Comparable<Carta> {
         return numero + " " + palo;
     }
 
-	public static int transcript(String numero) {
-		int resultado = 0;
-		switch (numero.toUpperCase()) {
-		case "AS":
-			resultado = 1;
-			break;
-		case "DOS":
-			resultado = 2;
-			break;
-		case "TRES":
-			resultado = 3;
-			break;
-		case "CUATRO":
-			resultado = 4;
-			break;
-		case "CINCO":
-			resultado = 5;
-			break;
-		case "SEIS":
-			resultado = 6;
-			break;
-		case "SIETE":
-			resultado = 7;
-			break;
-		case "OCHO":
-			resultado = 8;
-			break;
-		case "NUEVE":
-			resultado = 9;
-			break;
-		case "SOTA":
-			resultado = 10;
-			break;
-		case "CABALLO":
-			resultado = 11;
-			break;
-		case "REY":
-			resultado = 12;
-			break;
-		}
-		return resultado;
-	}
-
+	
 	/**
 	 * Medodo sobrescrito de la clase Comparalbe
-	 * compara el vlaor del objeto con el valor del objeto pasado como parametro de entrada
+	 * compara el valor del objeto con el valor del objeto pasado como parametro de entrada
 	 */
 	@Override
 	public int compareTo(Carta c) {
-		return transcript(this.getNumero())-transcript(c.getNumero());
+		if(this.getPalo().compareToIgnoreCase(c.getPalo())<0) {
+			return -1;
+		}else {
+			if(this.getPalo().compareToIgnoreCase(c.getPalo())==0) {
+				return CartaUtils.transcript(this.getNumero())-CartaUtils.transcript(c.getNumero());
+			}
+		}
+		return 0;
 	}
 }
-
 
 

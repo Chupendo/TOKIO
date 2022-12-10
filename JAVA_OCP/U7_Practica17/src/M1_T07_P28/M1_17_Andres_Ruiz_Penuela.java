@@ -17,10 +17,15 @@ public class M1_17_Andres_Ruiz_Penuela {
         do {
         	System.out.print("Operacione disponibles:"
         			+"\n1. Mostrar Baraja"
-        			+"\n2. Ordenacion: Palo - Numero Incremento."
-        			+"\n3. Ordenacion: Numero Incremento - Palo."
-        			+"\n4. Ordenacion: Palo - Numero Decreciente."
-        			+"\n5. Ordenacion nautal: Palo - Numero Ascendente."
+        			+"\n2. Ordenacion: Palo Inceremento - Numero Incremento."
+        			+"\n3. Ordenacion: Palo Inceremento - Numero Decremento."
+        			+"\n4. Ordenacion: Palo Decremento - Numero Incremento."
+        			+"\n5. Ordenacion: Palo Decremento - Numero Decremento."
+        			+"\n6. Ordenacion: Numero Incremento - Palo Incremento."
+        			+"\n7. Ordenacion: Numero Incremento - Palo Decremento."
+        			+"\n8. Ordenacion: Numero Decremento - Palo Incremento."
+        			+"\n9. Ordenacion: Numero Decremento - Palo Decremento."
+        			+"\n10. Ordenacion nautal: Palo - Numero Ascendente."
         			+"\nOperacion a relizar (0 salir): ");
         	try {
         		op = sc.nextShort();
@@ -34,17 +39,32 @@ public class M1_17_Andres_Ruiz_Penuela {
 	        			mostrar();
 						break;
 	        		case 2:
-	        			OrdPalNumInc();
+	        			OrdPalIncNumInc();
 						break;
 	        		case 3:
-	        			OrdNumIncPal();
+	        			OrdPalIncNumDec();
 						break;
 	        		case 4:
-	        			OrdPalNumDec();
+	        			OrdPalDecNumInc();
 						break;
 	        		case 5:
-	        			OrdNal();
+	        			OrdPalDecNumDec();
 						break;
+	        		case 6:
+	        			OrdNumIncPalInc();
+						break;
+	        		case 7:
+	        			OrdNumIncPalDec();
+						break;
+	        		case 8:
+	        			OrdNumDecPalInc();
+						break;
+	        		case 9:
+	        			OrdNumDecPalDec();
+						break;
+	        		case 10:
+	        			OrdNat();
+	        			break;
 					default:
 						System.err.println("Operacion no permitida");
 				}
@@ -58,25 +78,50 @@ public class M1_17_Andres_Ruiz_Penuela {
 	public static void mostrar() {
 		System.out.println(mazo.toString());
 	}
-
-	public static void OrdPalNumDec() {
-		System.out.println("OrdPalNumDec");
-        mazo.setAlgoritmo(new OrdPalNumDec());
-        mazo.ordena();
+	
+	public static void OrdPalIncNumInc() {
+		System.out.println("OrdPalIndNumInc");
+		mazo.ordena(new  ComOrdPalDecNumInc());
+        mostrar();
+	}
+	public static void OrdPalIncNumDec() {
+		System.out.println("OrdPalIndNumDec");
+		mazo.ordena(new  ComOrdPalDecNumDec());
+        mostrar();
+	}
+	public static void OrdPalDecNumInc() {
+		System.out.println("OrdPalDecNumInc");
+		mazo.ordena(new  ComOrdPalDecNumInc());
+        mostrar();
+	}
+	public static void OrdPalDecNumDec() {
+		System.out.println("OrdPalDecNumDec");
+		mazo.ordena(new  ComOrdPalDecNumDec());
         mostrar();
 	}
 	
-	public static void OrdPalNumInc() {
-		System.out.println("OrdPalNumInc");
-        mazo.setAlgoritmo(new OrdPalNumInc());
-        mazo.ordena();
+	public static void OrdNumIncPalInc() {
+		System.out.println("OrdNumIncPalInc");
+        //Oredna numero menor a mayor y luego palo de menor a mayro
+        mazo.ordena(new  ComOrdNumIncPalInc());
         mostrar();
 	}
-	
-	public static void OrdNumIncPal() {
-		System.out.println("OrdNumIncPal");
-        mazo.setAlgoritmo(new OrdNumIncPal());
-        mazo.ordena();
+	public static void OrdNumIncPalDec() {
+		System.out.println("OrdNumIncPalDec");
+        //Oredna numero menor a mayor y luego palo de menor a mayro
+        mazo.ordena(new  ComOrdNumIncPalDec());
+        mostrar();
+	}
+	public static void OrdNumDecPalInc() {
+		System.out.println("OrdNumDecPalInc");
+        //Oredna numero menor a mayor y luego palo de menor a mayro
+        mazo.ordena(new  ComOrdNumDecPalInc());
+        mostrar();
+	}
+	public static void OrdNumDecPalDec() {
+		System.out.println("OrdNumDecPalDec");
+        //Oredna numero menor a mayor y luego palo de menor a mayro
+        mazo.ordena(new  ComOrdNumDecPalDec());
         mostrar();
 	}
 	
@@ -85,18 +130,9 @@ public class M1_17_Andres_Ruiz_Penuela {
 	 * primero por palos (por orden de lista) 
 	 * y luego por números (de forma ascendente)
 	 */
-	public static void OrdNal() {
+	public static void OrdNat() {
 		System.out.println("OrdNature");
-		Comparator<Carta> com1 = (c1,c2) -> c1.getPalo().compareTo(c2.getPalo());
-		Comparator<Carta> com2 = (c1,c2) -> {
-			if(c1.getPalo().compareTo(c2.getPalo())==0) {
-				return c1.compareTo(c2);
-			}
-			return 0;
-		};
-		
-		Collections.sort(mazo.cartas,com1);//ord palo
-		Collections.sort(mazo.cartas,com2);//ord number asc
+		mazo.ordena();
 		mostrar();
 	}
 }

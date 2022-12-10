@@ -1,6 +1,6 @@
 package M1_T07_P27;
 
-import java.util.stream.Stream;
+import java.util.Arrays;
 
 public class BackwardsStringCharSequenceTokio implements CharSequenceTokio {
 	public String data;
@@ -18,23 +18,21 @@ public class BackwardsStringCharSequenceTokio implements CharSequenceTokio {
 
 	@Override
 	public char charAt(int index) {
-		if(data==null || index<0 || index >= length()) {
+		if(data==null || index<=0 || index > length()) {
 			return 0;
 		}
-		return data.charAt(index);
+		return data.charAt(index-1);
 	}
 
 	@Override
 	public CharSequenceTokio subSequence(int start, int end) {
-		if(data==null || start<0 || end<0 || end >= length()|| start>end ) {
+		if(data==null || start<=0 || end<=0 || end > length()+1|| start>end ) {
 			return null;
 		}
 		
-		char[] chars = this.data.toCharArray();
-		StringBuilder auxiliar = new StringBuilder();
-		Stream.of(chars).forEach(c -> auxiliar.append(c));
-		
-		return new BackwardsStringCharSequenceTokio(auxiliar.toString());
+		char[] chars = Arrays.copyOfRange(data.toCharArray(), start-1, end-1);
+		String aux = new String(chars);		
+		return new BackwardsStringCharSequenceTokio(invertir(aux));
 	}
 	
 	public String toString() {
