@@ -3,26 +3,41 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class M1_18_Andres_Ruiz_Penuela {
+	// vairalbe para capturar datos por consola
 	private static final Scanner SC = new Scanner(System.in);
 	
+	/**
+	 * Metodo principal de la aplicacion
+	 * @param args
+	 * @see M1_18_Andres_Ruiz_Penuela#getByte(String)
+	 * @see #getDouble(String)
+	 * @see Operaciones
+	 * @see IMsg
+	 */
 	public static void main(String[] args) {
+		// variables
 		byte oper = 0;
 		double data = 0.0;
 		
 		do {
+			// Solitud de la operacion a realizar
 			oper = getByte(IMsg.MENU);
-			if(oper==0) {
+			
+			//Control de salida del programa
+			if(oper==0) { //Es 0 la operaicon
 				System.out.println(IMsg.EXIT);
-				break;				
+				break;	//Se sale del programa
 			}
 			
+			// Solitud del parametro del programa
 			data = getDouble(IMsg.DATA);
 			
+			// Ejecucion de la operacion con cotntrol de opciones
 			try {
 				System.out.println(IMsg.RETURN+Operaciones.oper(data, oper));
-			} catch (ArithmeticException | IOException e) {
+			} catch (ArithmeticException | IOException e) {//Caputra de excepcion multiple
 				e.printStackTrace();
-			}/*finally { 
+			}/*finally { //Aseguramos que continue con la ejecuion del bule
 				continue;	
 			}*/
 			System.out.println(IMsg.SPLIT);
@@ -31,6 +46,12 @@ public class M1_18_Andres_Ruiz_Penuela {
 		}while(true);
 	}
 	
+	/**
+	 * Captura un double por consola
+	 * @param msg cadea de caracteres con el mensaje 
+	 * @return valor numerio de tipo double
+	 * @see Scanner
+	 */
 	public static double getDouble(String msg) {
 		double opt = 0.0;
 		do {
@@ -49,6 +70,12 @@ public class M1_18_Andres_Ruiz_Penuela {
 		return opt;
 	}
 	
+	/**
+	 * Captura un double por consola
+	 * @param msg cadea de caracteres con el mensaje 
+	 * @return valor numerio de tipo double
+	 * @see M1_18_Andres_Ruiz_Penuela#getDouble(String)
+	 */
 	public static byte getByte(String msg) {			
 		return (byte) getDouble(msg);
 	}
