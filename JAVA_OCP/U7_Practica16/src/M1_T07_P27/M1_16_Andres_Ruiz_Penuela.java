@@ -17,10 +17,10 @@ public class M1_16_Andres_Ruiz_Penuela {
 		System.out.println("toString(): "+charSequenceTokioService.toString()+".");
 		
 		sub = charSequenceTokioService.subSequence(0, 12);
-		System.out.println("subSequence(0,12): "+(sub==null?"":sub.toString())+".");
+		System.out.println("subSequence(0,12): "+(sub==null?"null":sub.toString())+".");
 		
-		sub = charSequenceTokioService.subSequence(1, 2);
-		System.out.println("subSequence(0,42: "+(sub==null?"":sub.toString())+".");
+		sub = charSequenceTokioService.subSequence(0, 3);
+		System.out.println("subSequence(0,4): "+(sub==null?"null":sub.toString())+".");
 	}
 	
 	public static void testBackwardsStringCharSequenceTokio() {
@@ -35,10 +35,10 @@ public class M1_16_Andres_Ruiz_Penuela {
 		System.out.println("toString(): "+charSequenceTokioService.toString()+".");
 		
 		sub = charSequenceTokioService.subSequence(0, 12);
-		System.out.println("subSequence(0,12): "+(sub==null?"":sub.toString())+".");
+		System.out.println("subSequence(0,12): "+(sub==null?"null":sub.toString())+".");
 		
-		sub = charSequenceTokioService.subSequence(1, 5);
-		System.out.println("subSequence(0,4): "+(sub==null?"":sub.toString())+".");
+		sub = charSequenceTokioService.subSequence(0, 5);
+		System.out.println("subSequence(0,5): "+(sub==null?"null":sub.toString())+".");
 	}
 
 }

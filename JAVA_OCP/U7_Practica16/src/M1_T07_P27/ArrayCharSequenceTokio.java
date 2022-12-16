@@ -16,16 +16,16 @@ public class ArrayCharSequenceTokio implements CharSequenceTokio {
 
 	@Override
 	public char charAt(int index) {
-		if(this.matriz==null || index<=0 || index> this.matriz.length) {
+		if(this.matriz==null || index<0 || index> this.matriz.length-1) {
 			return 0;
 		}
-		return this.matriz[index-1];
+		return this.matriz[index];
 	}
 
 	@Override
 	public CharSequenceTokio subSequence(int start, int end) {
 		if(this.matriz==null || start<0 || start>end || end>=this.length() ) {
-			return this;
+			return null;
 		}
 		
 		if(start==end) {
