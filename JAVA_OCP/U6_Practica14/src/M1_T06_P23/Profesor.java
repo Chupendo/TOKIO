@@ -8,7 +8,12 @@ public class Profesor extends PDI{
 	private static final int PRECIOHORA = 800;
 	
     public Profesor(String nombre, String dni,byte seniosReconocidos) {
-    	super(nombre, dni, HORASSEMANALES, PRECIOHORA, seniosReconocidos, CATEGORIA.PROFESORES/*IDCATEOGIRA*/);
+    	super(nombre, dni, HORASSEMANALES, PRECIOHORA, seniosReconocidos);
+    }
+    
+    @Override
+    public String toString() {
+    	return super.toString()+", categoria= "+CATEGORIA.PROFESORES;
     }
 
 }

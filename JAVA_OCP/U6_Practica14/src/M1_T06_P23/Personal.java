@@ -1,6 +1,6 @@
 package M1_T06_P23;
 
-public class Personal {
+public abstract class Personal {
 
 	// constantes de clase
 	private static final byte NSemenas = 4;
@@ -36,16 +36,14 @@ public class Personal {
 	protected String nombre;
 	protected String dni;
 	protected int salario;
-	protected CATEGORIA categoria;
 	
 	//salario
 
 	// �constructor
-	public Personal(String nombre, String dni, byte horasSemena, int precioHora, CATEGORIA cat /*byte idCategoria*/) {
+	public Personal(String nombre, String dni, byte horasSemena, int precioHora) {
 		this.nombre = nombre;
 		this.dni = dni;
-		this.salario = horasSemena * precioHora * NSemenas;
-		this.categoria = cat; //CATEGORIA.getCategoria(idCategoria);
+		this.salario = horasSemena * precioHora * NSemenas;;
 
 	}
 
@@ -56,7 +54,7 @@ public class Personal {
 	 * 	mensaje con el nombre, salario y cateogira de la instancia de tipo persona
 	 */
 	public String toString() {
-		return "nombre: " + nombre + ", salario: " + salario/(float)100 + " Eur., categoria: " + categoria;
+		return "nombre: " + nombre + ", salario: " + salario/(float)100 + " Eur. " ;
 	}
 
 	/**

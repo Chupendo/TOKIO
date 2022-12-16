@@ -1,6 +1,6 @@
 package M1_T06_P23;
 
-public class PAS extends Personal{
+public abstract class PAS extends Personal{
 	
 	//Constantes de clase
 	private static final byte PRECIOHORAEXTRA = 6;
@@ -9,8 +9,8 @@ public class PAS extends Personal{
 	protected byte nHorasExtras;
 	
 	//Constructores
-	public PAS(String nombre, String dni, byte horasSemena, int precioHora,byte nHorasExtras,CATEGORIA cat /*byte idCategoria*/) {
-		super(nombre, dni, horasSemena, precioHora, cat /*idCategoria*/);
+	public PAS(String nombre, String dni, byte horasSemena, int precioHora,byte nHorasExtras) {
+		super(nombre, dni, horasSemena, precioHora);
 		this.nHorasExtras = nHorasExtras;
 	}
 	
@@ -42,6 +42,11 @@ public class PAS extends Personal{
 		float complemento = (nHorasExtras*PRECIOHORAEXTRA);
 		
 		return this.salario+complemento;
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString()+", nHorasExtras= "+nHorasExtras ;
 	}
 
 }

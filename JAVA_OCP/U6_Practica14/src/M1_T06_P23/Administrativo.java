@@ -6,8 +6,12 @@ public class Administrativo extends PAS{
 	private static int PRECIOHORA = 750;
 	
     public Administrativo(String nombre, String dni,byte horasExtra) {
-    	super(nombre, dni, HORASSEMANALES, PRECIOHORA, horasExtra, CATEGORIA.ADMINISTRATIVO /*IDCATEOGIRA*/);
-
+    	super(nombre, dni, HORASSEMANALES, PRECIOHORA, horasExtra);
+    }
+    
+    @Override
+    public String toString() {
+    	return super.toString()+", categoria= "+CATEGORIA.ADMINISTRATIVO;
     }
 
 }

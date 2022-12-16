@@ -136,14 +136,14 @@ public class M1_14_Andres_Ruiz_Penuela {
 						break;
 					}
 				} catch (Exception e) {
-					System.err.print("Error al isnertar el dato: " + e);
+					System.err.print("Error al insertar el dato: " + e);
 					sc.next();
 				}
 			} while (true);
 		}
 
 		// Senios reconocidos
-		if (type == 3 || type == 4) {
+		if (type == 3) {
 			do {
 				System.out.print("Indique los senios reconocidos: ");
 				try {
@@ -170,7 +170,7 @@ public class M1_14_Andres_Ruiz_Penuela {
 			person = new Profesor(nombre, dni, seniosReconocidos);
 			break;
 		case 4:
-			person = new Investigador(nombre, dni, seniosReconocidos);
+			person = new Investigador(nombre, dni);
 			break;
 		}
 
