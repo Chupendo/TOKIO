@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/andre/eclipse-workspace/TOKIO/Linux/04_Saludo_libs/libs/commons-lang3-3.12.0/commons-lang3-3.12.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

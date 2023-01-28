@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Created-By: 11.0.17 (Ubuntu)
+Specification-Version: 1.9
+Main-Class: com.tokio.main.Main
+Class-Path: libs/commons-lang3-3.12.0/commons-lang3-3.12.0.jar bin/
+
