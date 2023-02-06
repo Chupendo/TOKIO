@@ -1,25 +1,15 @@
 package m2.p2.tokio.utils;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Clase para el procesamiento de ficheros
- * 
- * @author Andres Ruiz Peñuela
- *
- */
 public class FileUtils {
 
 	/**
@@ -29,55 +19,21 @@ public class FileUtils {
 	 * @return Flujo de caracteres leido del fichero o null
 	 */
 	public static List<String> read(String pathAbsFile) {
-		if (pathAbsFile == null)
-			return null;
-
-		File f = null;
-		InputStream fis = null;
-		BufferedReader br = null;
-		String aux = "";
 		List<String> info = new ArrayList<>();
-		InputStreamReader isr = null;
-		try {
-			// Open el fichero
-			f = new File(pathAbsFile);
-			if (!f.exists())
-				return null;
-			;
 
-			// Flujo E/S de caracteres
-			fis = new FileInputStream(f);
-			isr = new InputStreamReader(fis, StandardCharsets.ISO_8859_1);
-
-			// Buffer de entrada
-			br = new BufferedReader(isr);
-
-			// Lee el documento liena a liena
-			while ((aux = br.readLine()) != null) {
-				info.add(aux);
+		// FileReader fr = new FileReader(pathAbsFile, StandardCharsets.ISO_8859_1);
+		try (final FileReader fr = new FileReader(pathAbsFile); final BufferedReader br = new BufferedReader(fr)) {
+			String line;
+			while ((line = br.readLine()) != null) {
+				// Set enconding
+				info.add(new String(line.getBytes(), StandardCharsets.ISO_8859_1));
 			}
-
-			// devuelve el resultado
 			return info;
-
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			// cerramos los ficheros
-			try {
-				if (fis != null) {
-					fis.close();
-				}
-				if (br != null) {
-					br.close();
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			return null;
 		}
-		
-		//erro al leer el fichero
-		return null;
 	}
 
 	/**
@@ -88,10 +44,7 @@ public class FileUtils {
 	 * @return Flujo de caractres sin espaicos
 	 */
 	public static List<String> deleteSpace(List<String> info) {
-		if (info == null)
-			return null;
-
-		return info.stream().map((d) -> d.replace(' ', '-')).collect(Collectors.toList());
+		return info.stream().map(line -> line.replace(' ', '-')).collect(Collectors.toList());
 	}
 
 	/**
@@ -103,31 +56,19 @@ public class FileUtils {
 	 * 		Ruta absoluta del fichero donde se aloja el contenido
 	 * @throws IOException,  NullPointerException
 	 */
-	public static void copy(List<String> info, String pathAbsFile) throws IOException {
-		if(info==null||pathAbsFile==null)
-				throw new NullPointerException("No se puede crear el fichero");
-		
-		OutputStream os = null;
-		OutputStreamWriter osw = null;
-		try {
-			os = new FileOutputStream(pathAbsFile, false);
-			osw = new OutputStreamWriter(os, StandardCharsets.ISO_8859_1);
+	public static void copy(List<String> info, String pathAbsFile) {
 
-			for (String i : info) {
-				osw.write(i + "\n");
+		try (FileWriter fw = new FileWriter(pathAbsFile, false);
+				PrintWriter pw = new PrintWriter(fw)
+				) {
+			for (String line : info) {
+				pw.println(new String(line.getBytes(StandardCharsets.ISO_8859_1)));
 			}
-
+			
 		} catch (IOException e) {
-			throw e;
-		} finally {
-			try {
-				osw.close();
-				os.close();
-
-			} catch (IOException e) {
-				throw e;
-			}
-
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
+
 }
