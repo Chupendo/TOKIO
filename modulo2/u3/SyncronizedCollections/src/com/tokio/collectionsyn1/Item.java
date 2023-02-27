@@ -2,14 +2,17 @@ package com.tokio.collectionsyn1;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Vector;
 
 public class Item {
 	
 	private int value;
-	private ArrayList<Integer> list;
+	private ArrayList<Integer> list; //No sincronizada
+	//private Vector<Integer> list; //Sincronizada
 	private Random random;
 	public Item() {
 		list = new ArrayList<>();
+		//list = new Vector<Integer>();
 		random = new Random();
 	}
 	public int getValue() {
@@ -28,12 +31,14 @@ public class Item {
 		}
 	}
 	
-	public void createNumber() {
+	//public void createNumber() {
+	public synchronized void createNumber() {
 		list.add(random.nextInt(10000));
 		System.out.println(list.toString());
 	}
 	
-	public void removeNumber() {
+	//public synchronized void removeNumber() {
+	public synchronized void removeNumber() {
 		
 		if(!list.isEmpty()||list.size()>0) {
 			list.remove(0);

@@ -16,7 +16,6 @@ public class CollectionSynMain {
 		executor.execute(new Task(item));
 		executor.execute(new Task(item));
 		
-		
 		executor.shutdown();
 
 	}
