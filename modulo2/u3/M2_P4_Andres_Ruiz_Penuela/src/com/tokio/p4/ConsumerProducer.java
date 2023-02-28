@@ -40,18 +40,22 @@ public class ConsumerProducer implements Runnable {
 				if (th.getName().contains("producer")) {
 					//Productor
 					if (lNums.size() == MAX) {
+						System.err.println(th.getName()+": Lista llena.");
 						try {
 							op.wait();
 						} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+					}else {
+						
 					}
 					op.add(lNums, rd.nextInt());
 					op.notify();
 				}else {
 					//Consumidor
 					if (lNums.isEmpty()||lNums.size()==0) {
+						System.err.println(th.getName()+": Lista vacia.");
 						try {
 							op.wait();
 						} catch (InterruptedException e) {

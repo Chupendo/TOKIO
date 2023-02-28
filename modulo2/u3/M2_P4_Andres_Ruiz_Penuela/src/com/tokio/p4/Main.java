@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-
+	
 	public static void main(String[] args) {
 		//Consumidor y Productor comparte la lista de numeros
 		List<Integer> lNums = new ArrayList<>();
 		//Subprocesos
-		ConsumerProducer consumer = ConsumerProducer.createAndStart("consumer",lNums);
-		ConsumerProducer producer = ConsumerProducer.createAndStart("producer",lNums);
+		//Requisito: El nombre de los procesos para evitar error debe contener consumer o producer
+		ConsumerProducer consumer = ConsumerProducer.createAndStart("consumer 1",lNums);
+		ConsumerProducer producer = ConsumerProducer.createAndStart("producer 1",lNums);
 		
 		
 		try {
