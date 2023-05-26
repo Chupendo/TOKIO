@@ -18,8 +18,6 @@ public class VarLamdaDemo1 {
 	}
 	
 	public interface MyFun{
-		
 		int func(int n);
 	}
-
 }
