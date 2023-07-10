@@ -22,7 +22,5 @@ public class ControlPestainFrame extends JFrame{
 		add(tabbedPanel);
 		
 		setVisible(true);
-		
-		
 	}
 }
